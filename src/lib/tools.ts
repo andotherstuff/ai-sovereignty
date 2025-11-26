@@ -109,7 +109,7 @@ export const AI_TOOLS: AITool[] = [
     url: 'https://cursor.sh',
     logo: '/logos/cursor.png',
     scores: {
-      openSource: 2, // Editor is VS Code fork, but AI backend is proprietary
+      openSource: 1, // Proprietary - built on VS Code but Cursor itself is closed-source, cannot self-host
       privacy: 2, // Sends code to their servers for AI processing
       protocolSupport: 4, // Supports OpenAI API, can configure custom endpoints
       openModelSupport: 3, // Can use Azure OpenAI, some local model support via API
@@ -154,7 +154,7 @@ export const AI_TOOLS: AITool[] = [
       { name: 'AT Protocol', supported: false, quality: 'none' }
     ],
     privacyLevel: 'low',
-    openSourceLevel: 'partially-open'
+    openSourceLevel: 'proprietary'
   },
   {
     id: 'lovable',
@@ -276,7 +276,7 @@ export const AI_TOOLS: AITool[] = [
     url: 'https://replit.com',
     logo: '/logos/replit.png',
     scores: {
-      openSource: 2,
+      openSource: 1, // Proprietary - some open-source contributions but core platform is closed, cannot self-host
       privacy: 2,
       protocolSupport: 2, // Limited - uses their own AI, some model selection
       openModelSupport: 2, // Limited model options, no bring-your-own
@@ -324,7 +324,7 @@ export const AI_TOOLS: AITool[] = [
       { name: 'AT Protocol', supported: false, quality: 'none' }
     ],
     privacyLevel: 'low',
-    openSourceLevel: 'partially-open'
+    openSourceLevel: 'proprietary'
   },
   {
     id: 'v0',
