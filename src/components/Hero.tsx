@@ -67,7 +67,7 @@ export function Hero({ onExplore }: HeroProps) {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Link to="/open-tools#quiz">
+            <Link to="/quiz">
               <Button
                 size="lg"
                 className="text-lg px-8 py-6 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold glow-blue-sm transition-all duration-300 hover:scale-105 group"

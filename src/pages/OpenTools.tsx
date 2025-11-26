@@ -1,9 +1,9 @@
 import { useSeoMeta } from '@unhead/react';
+import { useNavigate } from 'react-router-dom';
 import { PageLayout } from '@/components/PageLayout';
 import { Rubric } from '@/components/Rubric';
 import { ToolComparison } from '@/components/ToolComparison';
 import { QuickPick } from '@/components/QuickPick';
-import { Quiz } from '@/components/Quiz';
 import { GlobeHero } from '@/components/GlobeHero';
 import {
   Wrench,
@@ -21,19 +21,14 @@ export default function OpenTools() {
     twitterCard: 'summary_large_image',
   });
 
-  const quizRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
   const compareRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   // Handle hash navigation on page load
   useEffect(() => {
-    if (location.hash === '#quiz' && quizRef.current) {
-      // Small delay to ensure page is fully rendered
-      setTimeout(() => {
-        scrollToQuiz();
-      }, 100);
-    } else if (location.hash) {
-      // Handle other hash targets (like #shakespeare for tool cards)
+    if (location.hash) {
+      // Handle hash targets (like #shakespeare for tool cards)
       setTimeout(() => {
         const targetId = location.hash.slice(1); // Remove the # prefix
         const element = document.getElementById(targetId);
@@ -46,15 +41,6 @@ export default function OpenTools() {
       }, 100);
     }
   }, [location.hash]);
-
-  const scrollToQuiz = () => {
-    if (quizRef.current) {
-      const headerOffset = 80;
-      const elementPosition = quizRef.current.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
-  };
 
   const scrollToCompare = () => {
     if (compareRef.current) {
@@ -84,7 +70,7 @@ export default function OpenTools() {
         description="Not all vibe coding tools are created equal. We evaluate each one on the metrics that matter to freedom-minded creators, so you can choose with confidence."
         primaryAction={{
           label: 'Find Your Tool',
-          onClick: scrollToQuiz,
+          onClick: () => navigate('/quiz'),
         }}
         secondaryAction={{
           label: 'Compare All Tools',
@@ -102,11 +88,6 @@ export default function OpenTools() {
 
       {/* Quick Pick */}
       <QuickPick />
-
-      {/* Quiz */}
-      <div ref={quizRef}>
-        <Quiz />
-      </div>
     </PageLayout>
   );
 }

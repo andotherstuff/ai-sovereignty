@@ -133,7 +133,7 @@ export function QuickPick() {
                   <ArrowRight className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                   <span>
                     <strong className="text-foreground">Not sure if {topTool.name} is right for you?</strong>{' '}
-                    Take our quiz below to get a personalized recommendation based on your specific needs and priorities.
+                    <a href="/quiz" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2">Take our quiz</a> to get a personalized recommendation based on your specific needs and priorities.
                   </span>
                 </p>
               </div>
