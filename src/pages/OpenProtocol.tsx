@@ -20,9 +20,9 @@ import { Link } from 'react-router-dom';
 export default function OpenProtocol() {
   useSeoMeta({
     title: 'Open Protocol | FATE - Freedom AI Tool Evaluator',
-    description: 'The OpenAI API specification enables developers to switch between AI providers without changing application code. Learn about standardized endpoints, authentication, and response formats.',
+    description: 'Open protocols that prevent vendor lock-in. The universal API standard that lets you switch AI providers freely without changing your code.',
     ogTitle: 'Open Protocol | FATE',
-    ogDescription: 'Promote widespread adoption of the OpenAI API specification for true AI provider interoperability.',
+    ogDescription: 'Open protocols that prevent vendor lock-in. Switch AI providers freely without changing your code.',
     ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',

@@ -16,10 +16,10 @@ import {
 
 const Index = () => {
   useSeoMeta({
-    title: 'Freedom AI Tool Evaluator (FATE)',
-    description: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support. Find the perfect tool for vibe coding that aligns with your values.',
-    ogTitle: 'Freedom AI Tool Evaluator (FATE)',
-    ogDescription: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support.',
+    title: 'FATE - Freedom AI Tool Evaluator',
+    description: 'Navigate the AI landscape with freedom in mind. We champion open protocols that prevent vendor lock-in, open models you can run anywhere, and open tools that respect your sovereignty.',
+    ogTitle: 'FATE - Freedom AI Tool Evaluator',
+    ogDescription: 'Navigate the AI landscape with freedom in mind. Open protocols, open models, and open tools that respect your sovereignty.',
     ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',

@@ -14,9 +14,9 @@ import { useLocation } from 'react-router-dom';
 export default function OpenTools() {
   useSeoMeta({
     title: 'Open Tools | FATE - Freedom AI Tool Evaluator',
-    description: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support. Find the perfect vibe coding tool that aligns with your values.',
+    description: 'Vibe coding assistants evaluated for openness, privacy, and protocol support. Find AI tools that respect your sovereignty and align with your values.',
     ogTitle: 'Open Tools | FATE',
-    ogDescription: 'Compare AI coding tools evaluated for openness, privacy, and freedom tech support.',
+    ogDescription: 'Vibe coding assistants evaluated for openness, privacy, and protocol support.',
     ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',
