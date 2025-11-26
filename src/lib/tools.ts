@@ -1031,3 +1031,162 @@ export function calculateQuizResults(answers: Record<string, string>): { tool: A
     .map(tool => ({ tool, score: scores[tool.id] || 0 }))
     .sort((a, b) => b.score - a.score);
 }
+
+export interface RequirementMismatch {
+  questionId: string;
+  questionText: string;
+  userAnswer: string;
+  userAnswerLabel: string;
+  issue: string;
+  severity: 'critical' | 'warning';
+  betterMatches: AITool[];
+}
+
+// Define which answers indicate strong requirements that should trigger warnings
+const CRITICAL_REQUIREMENTS: Record<string, Record<string, {
+  check: (tool: AITool) => boolean;
+  issue: string;
+  severity: 'critical' | 'warning';
+}>> = {
+  openSource: {
+    'essential': {
+      check: (tool) => tool.openSourceLevel !== 'fully-open',
+      issue: 'is not fully open source',
+      severity: 'critical',
+    },
+    'prefer': {
+      check: (tool) => tool.openSourceLevel === 'proprietary',
+      issue: 'is proprietary (closed source)',
+      severity: 'warning',
+    },
+  },
+  builderPrivacy: {
+    'critical-anon': {
+      check: (tool) => tool.privacyLevel !== 'high',
+      issue: 'requires accounts and may expose your identity',
+      severity: 'critical',
+    },
+    'important-minimal': {
+      check: (tool) => tool.privacyLevel === 'low',
+      issue: 'has limited privacy protections',
+      severity: 'warning',
+    },
+  },
+  userAuth: {
+    'nostr-bitcoin': {
+      check: (tool) => !tool.protocols.find(p => p.name === 'Nostr' && p.supported),
+      issue: 'does not support Nostr authentication',
+      severity: 'critical',
+    },
+  },
+  userPayments: {
+    'bitcoin-lightning': {
+      check: (tool) => !tool.protocols.find(p => p.name === 'Bitcoin/Lightning' && p.supported),
+      issue: 'does not support Bitcoin/Lightning payments',
+      severity: 'critical',
+    },
+  },
+  deplatformRisk: {
+    'very-concerned': {
+      check: (tool) => tool.scores.decentralization < 3,
+      issue: 'relies on centralized infrastructure that could be shut down',
+      severity: 'critical',
+    },
+  },
+  contentCensorship: {
+    'high-risk': {
+      check: (tool) => tool.scores.decentralization < 3,
+      issue: 'uses centralized platforms that may censor content',
+      severity: 'critical',
+    },
+  },
+  models: {
+    'open': {
+      check: (tool) => tool.scores.openModelSupport < 3,
+      issue: 'has limited support for open models',
+      severity: 'warning',
+    },
+  },
+  builderPayment: {
+    'bitcoin-lightning': {
+      check: (tool) => !tool.protocols.find(p => p.name === 'Bitcoin/Lightning' && p.supported),
+      issue: 'does not accept Bitcoin/Lightning payments',
+      severity: 'warning',
+    },
+  },
+  dataPortability: {
+    'yes-full-portability': {
+      check: (tool) => tool.scores.portability < 3,
+      issue: 'has significant platform lock-in',
+      severity: 'warning',
+    },
+  },
+  userPrivacyFromTrackers: {
+    'critical-no-tracking': {
+      check: (tool) => tool.privacyLevel === 'low',
+      issue: 'may include third-party tracking',
+      severity: 'warning',
+    },
+  },
+  dataPrivacy: {
+    'lots-private': {
+      check: (tool) => tool.scores.decentralization >= 4,
+      issue: 'uses public/decentralized storage not suited for large private databases',
+      severity: 'warning',
+    },
+  },
+  moderation: {
+    'legal-compliance': {
+      check: (tool) => tool.scores.decentralization >= 4,
+      issue: 'uses decentralized storage where data cannot be fully deleted for compliance',
+      severity: 'critical',
+    },
+  },
+};
+
+export function findRequirementMismatches(
+  answers: Record<string, string>,
+  winningTool: AITool,
+  allResults: { tool: AITool; score: number }[]
+): RequirementMismatch[] {
+  const mismatches: RequirementMismatch[] = [];
+
+  Object.entries(answers).forEach(([questionId, answerId]) => {
+    const requirements = CRITICAL_REQUIREMENTS[questionId];
+    if (!requirements) return;
+
+    const requirement = requirements[answerId];
+    if (!requirement) return;
+
+    // Check if the winning tool fails this requirement
+    if (requirement.check(winningTool)) {
+      const question = QUIZ_QUESTIONS.find(q => q.id === questionId);
+      const option = question?.options.find(o => o.id === answerId);
+
+      if (question && option) {
+        // Find tools that would satisfy this requirement
+        const betterMatches = allResults
+          .filter(r => !requirement.check(r.tool) && r.tool.id !== winningTool.id)
+          .slice(0, 3)
+          .map(r => r.tool);
+
+        mismatches.push({
+          questionId,
+          questionText: question.question,
+          userAnswer: answerId,
+          userAnswerLabel: option.label,
+          issue: requirement.issue,
+          severity: requirement.severity,
+          betterMatches,
+        });
+      }
+    }
+  });
+
+  // Sort by severity (critical first)
+  return mismatches.sort((a, b) => {
+    if (a.severity === 'critical' && b.severity !== 'critical') return -1;
+    if (a.severity !== 'critical' && b.severity === 'critical') return 1;
+    return 0;
+  });
+}

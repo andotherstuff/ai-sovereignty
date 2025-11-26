@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { ChevronRight, ChevronLeft, RotateCcw, Sparkles, ExternalLink, ArrowRight } from 'lucide-react';
+import { ChevronRight, ChevronLeft, RotateCcw, Sparkles, ExternalLink, ArrowRight, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import { QUIZ_QUESTIONS, calculateQuizResults, type AITool } from '@/lib/tools';
+import { QUIZ_QUESTIONS, calculateQuizResults, findRequirementMismatches, type AITool, type RequirementMismatch } from '@/lib/tools';
 
 interface QuizProps {
   onComplete?: () => void;
@@ -98,7 +98,7 @@ export function Quiz({ onComplete }: QuizProps) {
 
   if (showResults) {
     const results = calculateQuizResults(answers);
-    return <QuizResults results={results} onReset={handleReset} onComplete={onComplete} />;
+    return <QuizResults results={results} answers={answers} onReset={handleReset} onComplete={onComplete} />;
   }
 
   return (
@@ -188,13 +188,15 @@ export function Quiz({ onComplete }: QuizProps) {
 
 interface QuizResultsProps {
   results: { tool: AITool; score: number }[];
+  answers: Record<string, string>;
   onReset: () => void;
   onComplete?: () => void;
 }
 
-function QuizResults({ results, onReset }: QuizResultsProps) {
+function QuizResults({ results, answers, onReset }: QuizResultsProps) {
   const topResult = results[0];
   const maxScore = results[0].score;
+  const mismatches = findRequirementMismatches(answers, topResult.tool, results);
 
   const openSourceLabels: Record<string, { label: string; color: string }> = {
     'fully-open': { label: 'Fully Open Source', color: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' },
@@ -223,6 +225,17 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
               <Sparkles className="w-4 h-4" />
               Your Best Match
             </div>
+
+            {/* Tool Logo */}
+            {topResult.tool.logo && (
+              <div className="w-24 h-24 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-6 overflow-hidden">
+                <img
+                  src={topResult.tool.logo}
+                  alt={`${topResult.tool.name} logo`}
+                  className="w-16 h-16 object-contain"
+                />
+              </div>
+            )}
 
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
               <span className="text-gradient">{topResult.tool.name}</span>
@@ -270,6 +283,82 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
             </div>
           </div>
 
+          {/* Requirement Mismatches Warning */}
+          {mismatches.length > 0 && (
+            <Card className="mb-12 border-amber-500/30 bg-amber-500/5">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <AlertTriangle className="w-6 h-6 text-amber-400 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-lg font-display font-medium text-amber-200">
+                      Important Considerations
+                    </h3>
+                    <p className="text-muted-foreground text-sm mt-1">
+                      Based on your answers, {topResult.tool.name} may not fully meet some of your requirements.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  {mismatches.map((mismatch, index) => (
+                    <div
+                      key={index}
+                      className={`p-4 rounded-lg ${
+                        mismatch.severity === 'critical'
+                          ? 'bg-red-500/10 border border-red-500/20'
+                          : 'bg-amber-500/10 border border-amber-500/20'
+                      }`}
+                    >
+                      <div className="flex items-start gap-2 mb-2">
+                        <span className={`text-xs font-medium px-2 py-0.5 rounded ${
+                          mismatch.severity === 'critical'
+                            ? 'bg-red-500/20 text-red-300'
+                            : 'bg-amber-500/20 text-amber-300'
+                        }`}>
+                          {mismatch.severity === 'critical' ? 'Critical' : 'Warning'}
+                        </span>
+                      </div>
+                      <p className="text-foreground mb-1">
+                        You indicated: <span className="font-medium text-cyan-300">"{mismatch.userAnswerLabel}"</span>
+                      </p>
+                      <p className="text-muted-foreground text-sm mb-3">
+                        However, {topResult.tool.name} <span className={
+                          mismatch.severity === 'critical' ? 'text-red-300' : 'text-amber-300'
+                        }>{mismatch.issue}</span>.
+                      </p>
+
+                      {mismatch.betterMatches.length > 0 && (
+                        <div className="mt-3 pt-3 border-t border-border/50">
+                          <p className="text-sm text-muted-foreground mb-2">
+                            Tools that better match this requirement:
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {mismatch.betterMatches.map((tool) => (
+                              <Link
+                                key={tool.id}
+                                to={`/open-tools#${tool.id}`}
+                                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted/50 hover:bg-muted transition-colors text-sm"
+                              >
+                                {tool.logo && (
+                                  <img
+                                    src={tool.logo}
+                                    alt={tool.name}
+                                    className="w-4 h-4 object-contain"
+                                  />
+                                )}
+                                <span>{tool.name}</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
           {/* Tool Ratings Summary */}
           <Card className="mb-12 border-cyan-500/30 bg-cyan-500/5">
             <CardContent className="p-6">
@@ -312,12 +401,34 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
                 }`}>
                   <CardContent className="p-5">
                     <div className="flex items-center gap-4">
-                      <div className={`w-11 h-11 rounded-full flex items-center justify-center font-display font-bold text-lg shrink-0 ${
-                        index === 0 ? 'bg-cyan-500 text-black' :
-                        index === 1 ? 'bg-muted-foreground/30 text-foreground' :
-                        'bg-muted text-muted-foreground'
-                      }`}>
-                        {index + 1}
+                      {/* Rank with logo */}
+                      <div className="relative shrink-0">
+                        <div className={`w-11 h-11 rounded-full flex items-center justify-center overflow-hidden ${
+                          index === 0 ? 'bg-cyan-500/20 ring-2 ring-cyan-500' :
+                          index === 1 ? 'bg-muted-foreground/20' :
+                          'bg-muted'
+                        }`}>
+                          {result.tool.logo ? (
+                            <img
+                              src={result.tool.logo}
+                              alt={result.tool.name}
+                              className="w-7 h-7 object-contain"
+                            />
+                          ) : (
+                            <span className={`font-display font-bold text-lg ${
+                              index === 0 ? 'text-cyan-400' : 'text-muted-foreground'
+                            }`}>
+                              {result.tool.name.charAt(0)}
+                            </span>
+                          )}
+                        </div>
+                        <div className={`absolute -bottom-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
+                          index === 0 ? 'bg-cyan-500 text-black' :
+                          index === 1 ? 'bg-muted-foreground/50 text-foreground' :
+                          'bg-muted text-muted-foreground'
+                        }`}>
+                          {index + 1}
+                        </div>
                       </div>
 
                       <div className="flex-1 min-w-0">
