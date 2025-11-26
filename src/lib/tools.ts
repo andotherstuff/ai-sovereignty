@@ -384,122 +384,6 @@ export const AI_TOOLS: AITool[] = [
     privacyLevel: 'high',
     openSourceLevel: 'fully-open'
   },
-  {
-    id: 'aider',
-    name: 'Aider',
-    tagline: 'AI pair programming in your terminal',
-    description: 'Aider is an open-source AI coding assistant that runs in your terminal. It integrates with git, understands your codebase, and supports a wide variety of LLM providers and models.',
-    url: 'https://aider.chat',
-    logo: '/logos/aider.png',
-    scores: {
-      openSource: 5, // Fully open source, Apache 2.0
-      privacy: 5, // Runs locally, you control where data goes
-      protocolSupport: 5, // Supports OpenAI, Anthropic, Ollama, OpenRouter, Azure, many more
-      openModelSupport: 5, // Excellent support for Llama, Mistral, Qwen, DeepSeek, and all major open models
-      decentralization: 2, // No native Nostr/Bitcoin support
-      easeOfUse: 3, // Terminal-based, requires some setup
-      costEfficiency: 5, // Free, BYO API keys or use free local models
-      capabilities: 5 // Very capable, excellent at code editing
-    },
-    features: [
-      'Fully open-source (Apache 2.0)',
-      'Terminal-based interface',
-      'Git integration built-in',
-      'Supports 50+ LLM providers',
-      'Works with Ollama, LM Studio, and local models',
-      'Excellent support for Llama, Mistral, Qwen, DeepSeek',
-      'Can use OpenRouter for any model',
-      'Codebase-aware conversations',
-      'Multi-file editing',
-      'Active development and large community'
-    ],
-    limitations: [
-      'Terminal-only interface',
-      'Requires command-line comfort',
-      'Setup required for local models',
-      'No GUI or visual preview',
-      'No native decentralized protocol support'
-    ],
-    bestFor: [
-      'Experienced developers',
-      'Terminal enthusiasts',
-      'Those wanting maximum model flexibility',
-      'Privacy-conscious developers',
-      'Git-heavy workflows',
-      'Using open models like Llama, Mistral, DeepSeek'
-    ],
-    pricing: {
-      type: 'free',
-      freetier: true,
-      startingPrice: 'Free (BYO API keys)',
-      details: 'Completely free and open-source. Bring your own API keys or use free local models via Ollama.'
-    },
-    protocols: [
-      { name: 'Nostr', supported: false, quality: 'none' },
-      { name: 'Bitcoin/Lightning', supported: false, quality: 'none' },
-      { name: 'ActivityPub', supported: false, quality: 'none' },
-      { name: 'AT Protocol', supported: false, quality: 'none' }
-    ],
-    privacyLevel: 'high',
-    openSourceLevel: 'fully-open'
-  },
-  {
-    id: 'continue',
-    name: 'Continue',
-    tagline: 'Open-source AI code assistant for VS Code & JetBrains',
-    description: 'Continue is an open-source AI coding assistant that integrates with VS Code and JetBrains IDEs. It supports a wide range of LLM providers and local models, giving you full control over your AI backend.',
-    url: 'https://continue.dev',
-    logo: '/logos/continue.png',
-    scores: {
-      openSource: 5, // Fully open source, Apache 2.0
-      privacy: 4, // Can be fully local, but IDE extensions may have telemetry
-      protocolSupport: 5, // Excellent OpenAI API support, many providers
-      openModelSupport: 5, // Great support for Ollama, LM Studio, all open models
-      decentralization: 1, // No native Nostr/Bitcoin support
-      easeOfUse: 4, // IDE integration makes it accessible
-      costEfficiency: 5, // Free, supports free local models
-      capabilities: 4 // Good capabilities, depends on model choice
-    },
-    features: [
-      'Fully open-source (Apache 2.0)',
-      'VS Code and JetBrains integration',
-      'Supports any OpenAI-compatible provider',
-      'Works with Ollama, LM Studio, llama.cpp',
-      'Supports Llama, Mistral, Qwen, CodeLlama, and more',
-      'OpenRouter integration for 100+ models',
-      'Customizable with your own prompts',
-      'Tab autocomplete',
-      'Chat with codebase context'
-    ],
-    limitations: [
-      'Requires IDE (VS Code or JetBrains)',
-      'Configuration needed for best experience',
-      'No web-based interface',
-      'No native decentralized protocol support',
-      'Quality depends heavily on model choice'
-    ],
-    bestFor: [
-      'VS Code or JetBrains users',
-      'Those wanting open-source Copilot alternative',
-      'Privacy-conscious developers',
-      'Using local models',
-      'Customizing AI assistant behavior'
-    ],
-    pricing: {
-      type: 'free',
-      freetier: true,
-      startingPrice: 'Free',
-      details: 'Completely free and open-source. Use with your own API keys or free local models.'
-    },
-    protocols: [
-      { name: 'Nostr', supported: false, quality: 'none' },
-      { name: 'Bitcoin/Lightning', supported: false, quality: 'none' },
-      { name: 'ActivityPub', supported: false, quality: 'none' },
-      { name: 'AT Protocol', supported: false, quality: 'none' }
-    ],
-    privacyLevel: 'high',
-    openSourceLevel: 'fully-open'
-  }
 ];
 
 export const RUBRIC_CATEGORIES = [
@@ -641,25 +525,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'freedom',
         label: 'Freedom & Sovereignty',
         description: 'I want full control over my tools and data',
-        weights: { shakespeare: 5, goose: 5, aider: 5, continue: 5, cursor: 2, lovable: 1, replit: 2, v0: 1 }
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 1, replit: 2, v0: 1 }
       },
       {
         id: 'ease',
         label: 'Ease of Use',
         description: 'I want to get things done quickly without complexity',
-        weights: { shakespeare: 3, goose: 2, aider: 2, continue: 3, cursor: 5, lovable: 5, replit: 5, v0: 5 }
+        weights: { shakespeare: 3, goose: 2, cursor: 5, lovable: 5, replit: 5, v0: 5 }
       },
       {
         id: 'capabilities',
         label: 'Maximum Capabilities',
         description: 'I want the most powerful tools regardless of other factors',
-        weights: { shakespeare: 3, goose: 4, aider: 5, continue: 4, cursor: 5, lovable: 5, replit: 5, v0: 4 }
+        weights: { shakespeare: 3, goose: 4, cursor: 5, lovable: 5, replit: 5, v0: 4 }
       },
       {
         id: 'cost',
         label: 'Cost Efficiency',
         description: 'I want to minimize expenses',
-        weights: { shakespeare: 5, goose: 5, aider: 5, continue: 5, cursor: 2, lovable: 2, replit: 3, v0: 2 }
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, replit: 3, v0: 2 }
       }
     ]
   },
@@ -672,25 +556,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'nostr',
         label: 'Nostr Applications',
         description: 'Social apps, clients, or anything on the Nostr protocol',
-        weights: { shakespeare: 5, goose: 2, aider: 2, continue: 1, cursor: 1, lovable: 1, replit: 1, v0: 1 }
+        weights: { shakespeare: 5, goose: 2, cursor: 1, lovable: 1, replit: 1, v0: 1 }
       },
       {
         id: 'bitcoin',
         label: 'Bitcoin/Lightning Apps',
         description: 'Wallets, payment integrations, Bitcoin tools',
-        weights: { shakespeare: 4, goose: 4, aider: 3, continue: 2, cursor: 2, lovable: 1, replit: 2, v0: 1 }
+        weights: { shakespeare: 4, goose: 4, cursor: 2, lovable: 1, replit: 2, v0: 1 }
       },
       {
         id: 'traditional',
         label: 'Traditional Web Apps',
         description: 'SaaS, e-commerce, or standard web applications',
-        weights: { shakespeare: 3, goose: 3, aider: 4, continue: 4, cursor: 5, lovable: 5, replit: 5, v0: 4 }
+        weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, replit: 5, v0: 4 }
       },
       {
         id: 'ui',
         label: 'UI/Design Projects',
         description: 'Component libraries, design systems, visual work',
-        weights: { shakespeare: 3, goose: 2, aider: 2, continue: 3, cursor: 4, lovable: 4, replit: 3, v0: 5 }
+        weights: { shakespeare: 3, goose: 2, cursor: 4, lovable: 4, replit: 3, v0: 5 }
       }
     ]
   },
@@ -703,25 +587,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'open',
         label: 'Open models (Llama, Mistral, etc.)',
         description: 'I want to use open-weight models I can run locally',
-        weights: { shakespeare: 5, goose: 5, aider: 5, continue: 5, cursor: 3, lovable: 1, replit: 2, v0: 1 }
+        weights: { shakespeare: 5, goose: 5, cursor: 3, lovable: 1, replit: 2, v0: 1 }
       },
       {
         id: 'any',
         label: 'Any provider (OpenRouter, etc.)',
         description: 'I want to choose from many providers',
-        weights: { shakespeare: 5, goose: 5, aider: 5, continue: 5, cursor: 4, lovable: 1, replit: 2, v0: 1 }
+        weights: { shakespeare: 5, goose: 5, cursor: 4, lovable: 1, replit: 2, v0: 1 }
       },
       {
         id: 'proprietary',
         label: 'Best proprietary (GPT-4, Claude)',
         description: 'I want the best models regardless of openness',
-        weights: { shakespeare: 4, goose: 4, aider: 5, continue: 4, cursor: 5, lovable: 5, replit: 4, v0: 4 }
+        weights: { shakespeare: 4, goose: 4, cursor: 5, lovable: 5, replit: 4, v0: 4 }
       },
       {
         id: 'doesnt-matter',
         label: 'Doesn\'t matter',
         description: 'I just want something that works',
-        weights: { shakespeare: 3, goose: 3, aider: 3, continue: 3, cursor: 4, lovable: 5, replit: 5, v0: 4 }
+        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 5, replit: 5, v0: 4 }
       }
     ]
   },
@@ -734,25 +618,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'critical',
         label: 'Critical - I\'m an activist/journalist',
         description: 'My safety may depend on privacy',
-        weights: { shakespeare: 5, goose: 5, aider: 5, continue: 4, cursor: 1, lovable: 1, replit: 1, v0: 1 }
+        weights: { shakespeare: 5, goose: 5, cursor: 1, lovable: 1, replit: 1, v0: 1 }
       },
       {
         id: 'important',
         label: 'Very Important',
         description: 'I care deeply about data sovereignty',
-        weights: { shakespeare: 5, goose: 5, aider: 5, continue: 4, cursor: 2, lovable: 2, replit: 2, v0: 2 }
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, replit: 2, v0: 2 }
       },
       {
         id: 'moderate',
         label: 'Somewhat Important',
         description: 'I prefer privacy but it\'s not a dealbreaker',
-        weights: { shakespeare: 4, goose: 4, aider: 4, continue: 4, cursor: 3, lovable: 3, replit: 3, v0: 3 }
+        weights: { shakespeare: 4, goose: 4, cursor: 3, lovable: 3, replit: 3, v0: 3 }
       },
       {
         id: 'low',
         label: 'Not a Priority',
         description: 'I\'m okay with standard terms of service',
-        weights: { shakespeare: 3, goose: 3, aider: 3, continue: 3, cursor: 4, lovable: 4, replit: 4, v0: 4 }
+        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 4, replit: 4, v0: 4 }
       }
     ]
   },
@@ -765,25 +649,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'beginner',
         label: 'Complete Beginner',
         description: 'Never written code before',
-        weights: { shakespeare: 4, goose: 1, aider: 1, continue: 2, cursor: 4, lovable: 5, replit: 4, v0: 5 }
+        weights: { shakespeare: 4, goose: 1, cursor: 4, lovable: 5, replit: 4, v0: 5 }
       },
       {
         id: 'some',
         label: 'Some Experience',
         description: 'I\'ve dabbled but I\'m not a developer',
-        weights: { shakespeare: 4, goose: 2, aider: 2, continue: 3, cursor: 5, lovable: 5, replit: 5, v0: 5 }
+        weights: { shakespeare: 4, goose: 2, cursor: 5, lovable: 5, replit: 5, v0: 5 }
       },
       {
         id: 'comfortable',
         label: 'Comfortable with Code',
         description: 'I can read and modify code',
-        weights: { shakespeare: 5, goose: 4, aider: 4, continue: 5, cursor: 5, lovable: 4, replit: 5, v0: 4 }
+        weights: { shakespeare: 5, goose: 4, cursor: 5, lovable: 4, replit: 5, v0: 4 }
       },
       {
         id: 'expert',
         label: 'Professional Developer',
         description: 'I write code daily',
-        weights: { shakespeare: 5, goose: 5, aider: 5, continue: 5, cursor: 5, lovable: 3, replit: 4, v0: 4 }
+        weights: { shakespeare: 5, goose: 5, cursor: 5, lovable: 3, replit: 4, v0: 4 }
       }
     ]
   },
@@ -796,25 +680,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'essential',
         label: 'Essential - Non-negotiable',
         description: 'I only use open-source software',
-        weights: { shakespeare: 5, goose: 5, aider: 5, continue: 5, cursor: 1, lovable: 0, replit: 1, v0: 0 }
+        weights: { shakespeare: 5, goose: 5, cursor: 1, lovable: 0, replit: 1, v0: 0 }
       },
       {
         id: 'prefer',
         label: 'Strongly Prefer',
         description: 'I choose open source when possible',
-        weights: { shakespeare: 5, goose: 5, aider: 5, continue: 5, cursor: 2, lovable: 2, replit: 2, v0: 2 }
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, replit: 2, v0: 2 }
       },
       {
         id: 'nice',
         label: 'Nice to Have',
         description: 'I appreciate open source but it\'s not required',
-        weights: { shakespeare: 4, goose: 4, aider: 4, continue: 4, cursor: 4, lovable: 4, replit: 3, v0: 3 }
+        weights: { shakespeare: 4, goose: 4, cursor: 4, lovable: 4, replit: 3, v0: 3 }
       },
       {
         id: 'indifferent',
         label: 'Doesn\'t Matter',
         description: 'I just want what works best',
-        weights: { shakespeare: 3, goose: 3, aider: 3, continue: 3, cursor: 5, lovable: 5, replit: 5, v0: 5 }
+        weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, replit: 5, v0: 5 }
       }
     ]
   }
