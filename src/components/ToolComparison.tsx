@@ -1,13 +1,18 @@
 import { useState } from 'react';
+import { LayoutGrid, TableIcon } from 'lucide-react';
 import { AI_TOOLS } from '@/lib/tools';
 import { ToolCard } from './ToolCard';
+import { ComparisonTable } from './ComparisonTable';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
 
 type SortOption = 'freedom' | 'ease' | 'overall';
+type ViewMode = 'cards' | 'table';
 
 export function ToolComparison() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>('freedom');
+  const [viewMode, setViewMode] = useState<ViewMode>('cards');
 
   const sortedTools = [...AI_TOOLS].sort((a, b) => {
     switch (sortBy) {
@@ -40,48 +45,77 @@ export function ToolComparison() {
           </p>
         </div>
 
-        {/* Sort Options */}
-        <div className="flex justify-center mb-10">
-          <Tabs value={sortBy} onValueChange={(v) => setSortBy(v as SortOption)}>
-            <TabsList className="bg-muted/50">
-              <TabsTrigger 
-                value="freedom"
-                className="data-[state=active]:bg-amber-500 data-[state=active]:text-black"
-              >
-                🔓 Freedom First
-              </TabsTrigger>
-              <TabsTrigger 
-                value="ease"
-                className="data-[state=active]:bg-amber-500 data-[state=active]:text-black"
-              >
-                ✨ Ease of Use
-              </TabsTrigger>
-              <TabsTrigger 
-                value="overall"
-                className="data-[state=active]:bg-amber-500 data-[state=active]:text-black"
-              >
-                📊 Balanced
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
+        {/* Controls */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10">
+          {/* View Mode Toggle */}
+          <div className="flex items-center gap-2 bg-muted/50 p-1 rounded-lg">
+            <Button
+              variant={viewMode === 'cards' ? 'secondary' : 'ghost'}
+              size="sm"
+              onClick={() => setViewMode('cards')}
+              className={viewMode === 'cards' ? 'bg-amber-500/20 text-amber-400' : ''}
+            >
+              <LayoutGrid className="w-4 h-4 mr-2" />
+              Cards
+            </Button>
+            <Button
+              variant={viewMode === 'table' ? 'secondary' : 'ghost'}
+              size="sm"
+              onClick={() => setViewMode('table')}
+              className={viewMode === 'table' ? 'bg-amber-500/20 text-amber-400' : ''}
+            >
+              <TableIcon className="w-4 h-4 mr-2" />
+              Table
+            </Button>
+          </div>
+
+          {/* Sort Options (only for cards view) */}
+          {viewMode === 'cards' && (
+            <Tabs value={sortBy} onValueChange={(v) => setSortBy(v as SortOption)}>
+              <TabsList className="bg-muted/50">
+                <TabsTrigger
+                  value="freedom"
+                  className="data-[state=active]:bg-amber-500 data-[state=active]:text-black"
+                >
+                  🔓 Freedom First
+                </TabsTrigger>
+                <TabsTrigger
+                  value="ease"
+                  className="data-[state=active]:bg-amber-500 data-[state=active]:text-black"
+                >
+                  ✨ Ease of Use
+                </TabsTrigger>
+                <TabsTrigger
+                  value="overall"
+                  className="data-[state=active]:bg-amber-500 data-[state=active]:text-black"
+                >
+                  📊 Balanced
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          )}
         </div>
 
-        {/* Tool Grid */}
-        <div className="grid gap-6 max-w-5xl mx-auto">
-          {sortedTools.map((tool, index) => (
-            <ToolCard
-              key={tool.id}
-              tool={tool}
-              rank={index + 1}
-              expanded={expandedId === tool.id}
-              onToggleExpand={() => setExpandedId(expandedId === tool.id ? null : tool.id)}
-            />
-          ))}
-        </div>
+        {/* Content */}
+        {viewMode === 'cards' ? (
+          <div className="grid gap-6 max-w-5xl mx-auto">
+            {sortedTools.map((tool, index) => (
+              <ToolCard
+                key={tool.id}
+                tool={tool}
+                rank={index + 1}
+                expanded={expandedId === tool.id}
+                onToggleExpand={() => setExpandedId(expandedId === tool.id ? null : tool.id)}
+              />
+            ))}
+          </div>
+        ) : (
+          <ComparisonTable />
+        )}
 
         {/* Disclaimer */}
         <p className="text-center text-sm text-muted-foreground mt-12 max-w-2xl mx-auto">
-          Scores are based on our evaluation criteria and may change as tools evolve. 
+          Scores are based on our evaluation criteria and may change as tools evolve.
           We encourage you to do your own research and try the tools yourself.
         </p>
       </div>
