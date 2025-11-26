@@ -1,23 +1,77 @@
+import { useRef } from 'react';
 import { useSeoMeta } from '@unhead/react';
-
-// FIXME: Update this page (the content is just a fallback if you fail to update the page)
+import { Header } from '@/components/Header';
+import { Hero } from '@/components/Hero';
+import { Manifesto } from '@/components/Manifesto';
+import { Rubric } from '@/components/Rubric';
+import { ToolComparison } from '@/components/ToolComparison';
+import { Quiz } from '@/components/Quiz';
+import { Footer } from '@/components/Footer';
 
 const Index = () => {
   useSeoMeta({
-    title: 'Welcome to Your Blank App',
-    description: 'A modern Nostr client application built with React, TailwindCSS, and Nostrify.',
+    title: 'LibreCoder — Find AI Tools That Respect Your Freedom',
+    description: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support. Find the perfect tool for vibe coding that aligns with your values.',
+    ogTitle: 'LibreCoder — Find AI Tools That Respect Your Freedom',
+    ogDescription: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support.',
+    ogType: 'website',
+    twitterCard: 'summary_large_image',
   });
 
+  const manifestoRef = useRef<HTMLDivElement>(null);
+  const rubricRef = useRef<HTMLDivElement>(null);
+  const compareRef = useRef<HTMLDivElement>(null);
+  const quizRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSection = (sectionId: string) => {
+    const refs: Record<string, React.RefObject<HTMLDivElement | null>> = {
+      manifesto: manifestoRef,
+      rubric: rubricRef,
+      compare: compareRef,
+      quiz: quizRef,
+    };
+
+    const ref = refs[sectionId];
+    if (ref?.current) {
+      const headerOffset = 80;
+      const elementPosition = ref.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-          Welcome to Your Blank App
-        </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">
-          Start building your amazing project here!
-        </p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <Header onNavigate={scrollToSection} />
+
+      <main>
+        <Hero
+          onExplore={() => scrollToSection('compare')}
+          onFindTool={() => scrollToSection('quiz')}
+        />
+
+        <div ref={manifestoRef}>
+          <Manifesto />
+        </div>
+
+        <div ref={rubricRef}>
+          <Rubric />
+        </div>
+
+        <div ref={compareRef}>
+          <ToolComparison />
+        </div>
+
+        <div ref={quizRef}>
+          <Quiz />
+        </div>
+      </main>
+
+      <Footer />
     </div>
   );
 };

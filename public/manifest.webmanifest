@@ -1,0 +1,10 @@
+{
+  "name": "LibreCoder",
+  "short_name": "LibreCoder",
+  "description": "Find AI tools that respect your freedom",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0d0b",
+  "theme_color": "#0f0d0b",
+  "icons": []
+}
