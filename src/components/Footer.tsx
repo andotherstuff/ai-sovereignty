@@ -126,15 +126,13 @@ export function Footer() {
             </div>
 
             <div className="flex items-center gap-4">
-              <a
-                href="https://soapbox.pub/mkstack"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/open-tools#shakespeare"
                 className="text-muted-foreground hover:text-cyan-300 transition-colors inline-flex items-center gap-2"
               >
                 <Heart className="w-4 h-4 text-cyan-400" />
-                Vibed with MKStack
-              </a>
+                Made with Shakespeare
+              </Link>
             </div>
           </div>
         </div>

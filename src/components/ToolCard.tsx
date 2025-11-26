@@ -40,9 +40,12 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
   );
 
   return (
-    <Card className={`group relative overflow-hidden transition-all duration-300 hover:border-cyan-500/30 ${
-      expanded ? 'border-cyan-500/30' : ''
-    } ${rank === 1 ? 'ring-2 ring-cyan-500/30' : ''}`}>
+    <Card
+      id={tool.id}
+      className={`group relative overflow-hidden transition-all duration-300 hover:border-cyan-500/30 ${
+        expanded ? 'border-cyan-500/30' : ''
+      } ${rank === 1 ? 'ring-2 ring-cyan-500/30' : ''}`}
+    >
       {/* Rank Badge */}
       {rank && (
         <div className={`absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg ${

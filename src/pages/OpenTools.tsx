@@ -32,6 +32,18 @@ export default function OpenTools() {
       setTimeout(() => {
         scrollToQuiz();
       }, 100);
+    } else if (location.hash) {
+      // Handle other hash targets (like #shakespeare for tool cards)
+      setTimeout(() => {
+        const targetId = location.hash.slice(1); // Remove the # prefix
+        const element = document.getElementById(targetId);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      }, 100);
     }
   }, [location.hash]);
 
