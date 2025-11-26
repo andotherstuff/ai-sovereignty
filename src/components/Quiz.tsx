@@ -221,7 +221,7 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-300 mb-6">
               <Sparkles className="w-4 h-4" />
-              Your Perfect Match
+              Your Best Match
             </div>
 
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
