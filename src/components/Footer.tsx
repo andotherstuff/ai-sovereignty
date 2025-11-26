@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ExternalLink, Heart } from 'lucide-react';
+import { ExternalLink, GitlabIcon, Heart } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -126,6 +126,15 @@ export function Footer() {
             </div>
 
             <div className="flex items-center gap-4">
+              <a
+                href="https://gitlab.com/soapbox-pub/fate.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-cyan-300 transition-colors inline-flex items-center gap-2"
+              >
+                <GitlabIcon className="w-4 h-4" />
+                GitLab
+              </a>
               <Link
                 to="/open-tools#shakespeare"
                 className="text-muted-foreground hover:text-cyan-300 transition-colors inline-flex items-center gap-2"
