@@ -36,33 +36,25 @@ export default function OpenModels() {
       icon: Scale,
       title: 'Accessible Weights',
       description: 'Model weights are freely available for download without restrictive terms. You can run the model locally on your own hardware.',
-      iconColor: 'text-emerald-400',
-      bgColor: 'bg-emerald-500/10',
-      borderColor: 'hover:border-emerald-500/40',
+      color: 'cyan',
     },
     {
       icon: Eye,
       title: 'Transparent Training',
       description: 'Training data, methodology, and processes are documented and available for scrutiny. You understand what went into the model.',
-      iconColor: 'text-amber-400',
-      bgColor: 'bg-amber-500/10',
-      borderColor: 'hover:border-amber-500/40',
+      color: 'sky',
     },
     {
       icon: GitFork,
       title: 'Freedom to Modify',
       description: 'You can fine-tune, adapt, and build upon the model for your specific needs without legal barriers.',
-      iconColor: 'text-violet-400',
-      bgColor: 'bg-violet-500/10',
-      borderColor: 'hover:border-violet-500/40',
+      color: 'blue',
     },
     {
       icon: Share2,
       title: 'Freedom to Redistribute',
       description: 'Share your modifications and derivatives with others, fostering a collaborative ecosystem.',
-      iconColor: 'text-rose-400',
-      bgColor: 'bg-rose-500/10',
-      borderColor: 'hover:border-rose-500/40',
+      color: 'indigo',
     },
   ];
 
@@ -234,8 +226,8 @@ export default function OpenModels() {
         <div className="relative container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
-              <BookOpen className="w-5 h-5 text-amber-400" />
-              <span className="text-amber-400 font-medium text-sm uppercase tracking-wide">OSI Definition</span>
+              <BookOpen className="w-5 h-5 text-cyan-400" />
+              <span className="text-cyan-400 font-medium text-sm uppercase tracking-wide">OSI Definition</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               What Makes AI <span className="text-gradient">Truly Open</span>?
@@ -249,10 +241,10 @@ export default function OpenModels() {
             {osiPrinciples.map((principle, index) => (
               <div
                 key={index}
-                className={`group p-6 rounded-2xl bg-card/50 border border-border ${principle.borderColor} transition-all duration-300`}
+                className="group p-6 rounded-2xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300"
               >
-                <div className={`w-12 h-12 rounded-xl ${principle.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <principle.icon className={`w-6 h-6 ${principle.iconColor}`} />
+                <div className={`w-12 h-12 rounded-xl bg-${principle.color}-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                  <principle.icon className={`w-6 h-6 text-${principle.color}-400`} />
                 </div>
                 <h3 className="font-display font-semibold text-lg mb-2">{principle.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{principle.description}</p>
@@ -290,8 +282,8 @@ export default function OpenModels() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Cpu className="w-5 h-5 text-violet-400" />
-              <span className="text-violet-400 font-medium text-sm uppercase tracking-wide">Model Directory</span>
+              <Cpu className="w-5 h-5 text-cyan-400" />
+              <span className="text-cyan-400 font-medium text-sm uppercase tracking-wide">Model Directory</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               Truly <span className="text-gradient">Open Models</span>
@@ -383,8 +375,8 @@ export default function OpenModels() {
         <div className="relative container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Server className="w-5 h-5 text-teal-400" />
-              <span className="text-teal-400 font-medium text-sm uppercase tracking-wide">Inference Engines</span>
+              <Server className="w-5 h-5 text-cyan-400" />
+              <span className="text-cyan-400 font-medium text-sm uppercase tracking-wide">Inference Engines</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               Run Models <span className="text-gradient">Anywhere</span>
@@ -461,8 +453,8 @@ export default function OpenModels() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
-                  <Shield className="w-8 h-8 text-emerald-400" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
+                  <Shield className="w-8 h-8 text-cyan-400" />
                 </div>
                 <h3 className="font-display font-semibold text-lg mb-2">Sovereignty</h3>
                 <p className="text-muted-foreground text-sm">
@@ -471,8 +463,8 @@ export default function OpenModels() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center mx-auto mb-4 border border-violet-500/30">
-                  <Users className="w-8 h-8 text-violet-400" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
+                  <Users className="w-8 h-8 text-cyan-400" />
                 </div>
                 <h3 className="font-display font-semibold text-lg mb-2">Community</h3>
                 <p className="text-muted-foreground text-sm">
@@ -481,8 +473,8 @@ export default function OpenModels() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mx-auto mb-4 border border-amber-500/30">
-                  <Zap className="w-8 h-8 text-amber-400" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
+                  <Zap className="w-8 h-8 text-cyan-400" />
                 </div>
                 <h3 className="font-display font-semibold text-lg mb-2">Innovation</h3>
                 <p className="text-muted-foreground text-sm">
