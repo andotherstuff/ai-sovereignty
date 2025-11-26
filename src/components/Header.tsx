@@ -1,22 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 
 interface HeaderProps {
-  onNavigate: (section: string) => void;
+  onNavigate?: (section: string) => void;
 }
 
 export function Header({ onNavigate }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,23 +21,25 @@ export function Header({ onNavigate }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const sectionNavItems = [
-    { id: 'manifesto', label: 'Why Open AI' },
-    { id: 'pillars', label: 'The Pillars' },
+  const navItems = [
+    { type: 'scroll', id: 'manifesto', label: 'Why Open AI', homepageOnly: true },
+    { type: 'link', to: '/open-protocol', label: 'Protocols' },
+    { type: 'link', to: '/open-models', label: 'Models' },
+    { type: 'link', to: '/open-tools', label: 'Tools' },
   ];
 
-  const learnNavItems = [
-    { to: '/open-protocol', label: 'Open Protocol' },
-    { to: '/open-models', label: 'Open Models' },
-    { to: '/open-tools', label: 'Open Tools' },
-  ];
-
-  // Note: Open Tools is already included in the dropdown
-
-  const handleNavClick = (id: string) => {
-    onNavigate(id);
-    setIsMobileMenuOpen(false);
+  const handleNavClick = (item: typeof navItems[0]) => {
+    if (item.type === 'scroll' && item.id && onNavigate) {
+      onNavigate(item.id);
+      setIsMobileMenuOpen(false);
+    }
   };
+
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
+  const isHomepage = location.pathname === '/';
 
   return (
     <header
@@ -54,49 +51,50 @@ export function Header({ onNavigate }: HeaderProps) {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          <Link
+            to="/"
             className="flex items-center gap-2 group"
           >
             <span className="text-xl md:text-2xl font-display font-bold text-gradient">FATE</span>
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
-            {sectionNavItems.map((item) => (
-              <Button
-                key={item.id}
-                variant="ghost"
-                size="sm"
-                onClick={() => handleNavClick(item.id)}
-                className="text-muted-foreground hover:text-foreground hover:bg-cyan-500/10 font-display font-medium"
-              >
-                {item.label}
-              </Button>
-            ))}
+            {navItems.map((item) => {
+              // Skip homepage-only items when not on homepage
+              if (item.homepageOnly && !isHomepage) return null;
 
-            {/* Learn Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-muted-foreground hover:text-foreground hover:bg-cyan-500/10 font-display font-medium"
-                >
-                  Learn
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-card border-border">
-                {learnNavItems.map((item) => (
-                  <DropdownMenuItem key={item.to} asChild>
-                    <Link to={item.to} className="cursor-pointer">
-                      {item.label}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+              if (item.type === 'scroll') {
+                return (
+                  <Button
+                    key={item.id}
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => handleNavClick(item)}
+                    className="text-muted-foreground hover:text-foreground hover:bg-cyan-500/10 font-display font-medium"
+                  >
+                    {item.label}
+                  </Button>
+                );
+              }
+
+              return (
+                <Link key={item.to} to={item.to!}>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={cn(
+                      'font-display font-medium',
+                      isActive(item.to!)
+                        ? 'text-cyan-400 bg-cyan-500/10'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-cyan-500/10'
+                    )}
+                  >
+                    {item.label}
+                  </Button>
+                </Link>
+              );
+            })}
 
             <a
               href="https://andotherstuff.org"
@@ -130,31 +128,39 @@ export function Header({ onNavigate }: HeaderProps) {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border">
           <nav className="container mx-auto px-6 py-4 flex flex-col gap-1">
-            {sectionNavItems.map((item) => (
-              <Button
-                key={item.id}
-                variant="ghost"
-                onClick={() => handleNavClick(item.id)}
-                className="justify-start text-muted-foreground hover:text-foreground font-display"
-              >
-                {item.label}
-              </Button>
-            ))}
+            {navItems.map((item) => {
+              // Skip homepage-only items when not on homepage
+              if (item.homepageOnly && !isHomepage) return null;
 
-            {/* Learn section in mobile */}
-            <div className="py-2 border-t border-border/50 mt-2">
-              <span className="text-xs text-muted-foreground uppercase tracking-wide px-4">Learn</span>
-            </div>
-            {learnNavItems.map((item) => (
-              <Link key={item.to} to={item.to} onClick={() => setIsMobileMenuOpen(false)}>
-                <Button
-                  variant="ghost"
-                  className="w-full justify-start text-muted-foreground hover:text-foreground font-display"
-                >
-                  {item.label}
-                </Button>
-              </Link>
-            ))}
+              if (item.type === 'scroll') {
+                return (
+                  <Button
+                    key={item.id}
+                    variant="ghost"
+                    onClick={() => handleNavClick(item)}
+                    className="justify-start text-muted-foreground hover:text-foreground font-display"
+                  >
+                    {item.label}
+                  </Button>
+                );
+              }
+
+              return (
+                <Link key={item.to} to={item.to!} onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button
+                    variant="ghost"
+                    className={cn(
+                      'w-full justify-start font-display',
+                      isActive(item.to!)
+                        ? 'text-cyan-400 bg-cyan-500/10'
+                        : 'text-muted-foreground hover:text-foreground'
+                    )}
+                  >
+                    {item.label}
+                  </Button>
+                </Link>
+              );
+            })}
 
             <a
               href="https://andotherstuff.org"
