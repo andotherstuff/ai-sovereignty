@@ -572,68 +572,344 @@ export interface QuizOption {
 }
 
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
+  // ============================================
+  // USE CASE QUESTIONS
+  // ============================================
   {
-    id: 'priority',
-    question: 'What matters most to you?',
-    description: 'Choose the value that should guide your tool selection',
+    id: 'dataPrivacy',
+    question: 'Will your app need to store private information that only specific users can see?',
+    description: 'Think about whether your data should be public or restricted',
     options: [
       {
-        id: 'freedom',
-        label: 'Freedom & Sovereignty',
-        description: 'I want full control over my tools and data',
-        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 1, base44: 1, replit: 2, v0: 1 }
+        id: 'public',
+        label: 'Everything can be public',
+        description: 'Like a blog, portfolio, public forum, or social feed',
+        weights: { shakespeare: 5, goose: 4, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 4 }
       },
       {
-        id: 'ease',
-        label: 'Ease of Use',
-        description: 'I want to get things done quickly without complexity',
-        weights: { shakespeare: 3, goose: 2, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 5 }
+        id: 'some-private',
+        label: 'Some private data between users',
+        description: 'Like direct messages or private chats',
+        weights: { shakespeare: 4, goose: 3, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 3 }
       },
       {
-        id: 'capabilities',
-        label: 'Maximum Capabilities',
-        description: 'I want the most powerful tools regardless of other factors',
-        weights: { shakespeare: 3, goose: 4, cursor: 5, lovable: 5, base44: 4, replit: 5, v0: 4 }
+        id: 'lots-private',
+        label: 'Lots of private user data',
+        description: 'Like health records, financial data, or business secrets',
+        weights: { shakespeare: 1, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 2 }
       },
       {
-        id: 'cost',
-        label: 'Cost Efficiency',
-        description: 'I want to minimize expenses',
-        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, base44: 2, replit: 3, v0: 2 }
+        id: 'not-sure',
+        label: 'I\'m not sure yet',
+        description: 'Still figuring out my requirements',
+        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 3 }
       }
     ]
   },
   {
-    id: 'protocols',
-    question: 'What are you building?',
-    description: 'Select the type of application you want to create',
+    id: 'userAuth',
+    question: 'How will people log into your app?',
+    description: 'Different login methods require different infrastructure',
     options: [
       {
-        id: 'nostr',
-        label: 'Nostr Applications',
-        description: 'Social apps, clients, or anything on the Nostr protocol',
-        weights: { shakespeare: 5, goose: 2, cursor: 1, lovable: 1, base44: 1, replit: 1, v0: 1 }
+        id: 'no-login',
+        label: 'No login needed',
+        description: 'Anyone can use it without an account',
+        weights: { shakespeare: 5, goose: 4, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 5 }
       },
       {
-        id: 'bitcoin',
-        label: 'Bitcoin/Lightning Apps',
-        description: 'Wallets, payment integrations, Bitcoin tools',
-        weights: { shakespeare: 4, goose: 4, cursor: 2, lovable: 1, base44: 1, replit: 2, v0: 1 }
+        id: 'nostr-bitcoin',
+        label: 'Nostr keys or Bitcoin wallet',
+        description: 'Users bring their own decentralized identity',
+        weights: { shakespeare: 5, goose: 4, cursor: 2, lovable: 1, base44: 1, replit: 2, v0: 1 }
       },
       {
-        id: 'traditional',
-        label: 'Traditional Web Apps',
-        description: 'SaaS, e-commerce, or standard web applications',
+        id: 'email-password',
+        label: 'Email & password',
+        description: 'Traditional accounts that you manage',
+        weights: { shakespeare: 1, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 2 }
+      },
+      {
+        id: 'social-login',
+        label: 'Social login (Google, Apple, etc.)',
+        description: 'OAuth through established providers',
+        weights: { shakespeare: 1, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 2 }
+      }
+    ]
+  },
+  {
+    id: 'userPayments',
+    question: 'If your app involves payments, how should your users pay?',
+    description: 'Payment methods affect what infrastructure you need',
+    options: [
+      {
+        id: 'no-payments',
+        label: 'No payments in my app',
+        description: 'Free app or monetized differently (ads, etc.)',
+        weights: { shakespeare: 4, goose: 4, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 4 }
+      },
+      {
+        id: 'bitcoin-lightning',
+        label: 'Bitcoin/Lightning only',
+        description: 'Zaps, tips, Lightning invoices, Bitcoin payments',
+        weights: { shakespeare: 5, goose: 4, cursor: 2, lovable: 1, base44: 1, replit: 2, v0: 1 }
+      },
+      {
+        id: 'bitcoin-plus-traditional',
+        label: 'Bitcoin + traditional options',
+        description: 'Offer both crypto and credit cards',
+        weights: { shakespeare: 2, goose: 3, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 2 }
+      },
+      {
+        id: 'credit-cards',
+        label: 'Credit cards / Stripe',
+        description: 'Standard e-commerce payments',
+        weights: { shakespeare: 1, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 2 }
+      }
+    ]
+  },
+  {
+    id: 'moderation',
+    question: 'Will you need to manage or moderate content?',
+    description: 'Consider how much control you need over what appears in your app',
+    options: [
+      {
+        id: 'no-moderation',
+        label: 'No moderation needed',
+        description: 'Users self-govern or it\'s for personal use',
+        weights: { shakespeare: 5, goose: 4, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 4 }
+      },
+      {
+        id: 'light-moderation',
+        label: 'Light moderation',
+        description: 'Hide spam, flag content, mute users',
+        weights: { shakespeare: 4, goose: 4, cursor: 4, lovable: 5, base44: 5, replit: 5, v0: 3 }
+      },
+      {
+        id: 'strict-control',
+        label: 'Strict content control',
+        description: 'Approve posts, manage permissions, remove content',
+        weights: { shakespeare: 2, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 2 }
+      },
+      {
+        id: 'legal-compliance',
+        label: 'Legal compliance required',
+        description: 'GDPR deletion, audit logs, data retention policies',
+        weights: { shakespeare: 0, goose: 2, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 1 }
+      }
+    ]
+  },
+  // ============================================
+  // PRIVACY & CENSORSHIP RESISTANCE QUESTIONS
+  // ============================================
+  {
+    id: 'deplatformRisk',
+    question: 'How concerned are you about your app being shut down or removed?',
+    description: 'Consider platform risk and censorship concerns',
+    options: [
+      {
+        id: 'very-concerned',
+        label: 'Very concerned',
+        description: 'Building something controversial or in a hostile jurisdiction',
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 1, base44: 1, replit: 1, v0: 1 }
+      },
+      {
+        id: 'somewhat-concerned',
+        label: 'Somewhat concerned',
+        description: 'I want to reduce dependency on any single platform',
+        weights: { shakespeare: 5, goose: 5, cursor: 3, lovable: 2, base44: 2, replit: 2, v0: 2 }
+      },
+      {
+        id: 'not-concerned',
+        label: 'Not concerned',
+        description: 'Building mainstream content, low risk',
+        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 5, base44: 5, replit: 5, v0: 4 }
+      },
+      {
+        id: 'want-support',
+        label: 'I want platform support',
+        description: 'I want a company backing me with support/SLAs',
+        weights: { shakespeare: 1, goose: 1, cursor: 4, lovable: 5, base44: 5, replit: 5, v0: 4 }
+      }
+    ]
+  },
+  {
+    id: 'contentCensorship',
+    question: 'Could your content or your users\' content be censored on mainstream platforms?',
+    description: 'Think about the nature of the content your app will host',
+    options: [
+      {
+        id: 'high-risk',
+        label: 'Yes, high risk',
+        description: 'Political speech, activism, journalism in hostile regions',
+        weights: { shakespeare: 5, goose: 5, cursor: 1, lovable: 1, base44: 1, replit: 1, v0: 1 }
+      },
+      {
+        id: 'possible-risk',
+        label: 'Possible risk',
+        description: 'Controversial but legal topics',
+        weights: { shakespeare: 5, goose: 4, cursor: 2, lovable: 2, base44: 2, replit: 2, v0: 2 }
+      },
+      {
+        id: 'low-risk',
+        label: 'Low risk',
+        description: 'Mainstream, uncontroversial content',
+        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 5, base44: 5, replit: 5, v0: 4 }
+      },
+      {
+        id: 'need-control',
+        label: 'I need content control',
+        description: 'I need to be able to remove content for legal/brand reasons',
+        weights: { shakespeare: 1, goose: 2, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 3 }
+      }
+    ]
+  },
+  {
+    id: 'builderPrivacy',
+    question: 'How important is YOUR privacy as the person building this app?',
+    description: 'Consider whether you need to protect your identity as the creator',
+    options: [
+      {
+        id: 'critical-anon',
+        label: 'Critical - I need anonymity',
+        description: 'I can\'t be identified as the creator',
+        weights: { shakespeare: 5, goose: 5, cursor: 1, lovable: 0, base44: 0, replit: 0, v0: 0 }
+      },
+      {
+        id: 'important-minimal',
+        label: 'Important - minimal footprint',
+        description: 'I prefer not to give my real info to platforms',
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, base44: 2, replit: 2, v0: 2 }
+      },
+      {
+        id: 'moderate-standard',
+        label: 'Moderate - standard privacy',
+        description: 'I\'ll use my real identity but limit data sharing',
+        weights: { shakespeare: 4, goose: 4, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 4 }
+      },
+      {
+        id: 'not-concerned',
+        label: 'Not concerned',
+        description: 'I\'m fine with accounts and standard terms',
+        weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 5 }
+      }
+    ]
+  },
+  {
+    id: 'userPrivacyFromYou',
+    question: 'Should your users\' data be private even from you (the app builder)?',
+    description: 'Consider who should have access to user data',
+    options: [
+      {
+        id: 'yes-fully-private',
+        label: 'Yes - I shouldn\'t see their private data',
+        description: 'Users own their keys, I can\'t access their encrypted content',
+        weights: { shakespeare: 5, goose: 4, cursor: 2, lovable: 1, base44: 1, replit: 1, v0: 1 }
+      },
+      {
+        id: 'partially-theirs',
+        label: 'Partially - some data is theirs',
+        description: 'Mix of user-private and app-accessible data',
+        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 3 }
+      },
+      {
+        id: 'no-i-need-access',
+        label: 'No - I need access to all data',
+        description: 'Analytics, support, business operations require data access',
+        weights: { shakespeare: 1, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 3 }
+      }
+    ]
+  },
+  {
+    id: 'userPrivacyFromTrackers',
+    question: 'How important is protecting your users from tracking and data harvesting?',
+    description: 'Consider third-party scripts, analytics, and data brokers',
+    options: [
+      {
+        id: 'critical-no-tracking',
+        label: 'Critical - no tracking allowed',
+        description: 'No Google Analytics, no third-party scripts, no data brokers',
+        weights: { shakespeare: 5, goose: 5, cursor: 3, lovable: 2, base44: 2, replit: 2, v0: 2 }
+      },
+      {
+        id: 'important-minimize',
+        label: 'Important - minimize tracking',
+        description: 'Avoid unnecessary third-party services',
+        weights: { shakespeare: 5, goose: 5, cursor: 4, lovable: 3, base44: 3, replit: 3, v0: 3 }
+      },
+      {
+        id: 'standard-practices',
+        label: 'Standard - typical web practices',
+        description: 'Use common analytics and services',
         weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 4 }
       },
       {
-        id: 'ui',
-        label: 'UI/Design Projects',
-        description: 'Component libraries, design systems, visual work',
-        weights: { shakespeare: 3, goose: 2, cursor: 4, lovable: 4, base44: 3, replit: 3, v0: 5 }
+        id: 'not-priority',
+        label: 'Not a priority',
+        description: 'Standard tracking is acceptable',
+        weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 5 }
       }
     ]
   },
+  {
+    id: 'builderPayment',
+    question: 'How do you want to pay for your AI coding tools?',
+    description: 'Payment method can affect your privacy as a builder',
+    options: [
+      {
+        id: 'bitcoin-lightning',
+        label: 'Bitcoin/Lightning',
+        description: 'Private, no credit card on file',
+        weights: { shakespeare: 5, goose: 4, cursor: 1, lovable: 1, base44: 1, replit: 1, v0: 1 }
+      },
+      {
+        id: 'byo-api-keys',
+        label: 'Bring my own API keys',
+        description: 'Pay AI providers directly, not the tool',
+        weights: { shakespeare: 5, goose: 5, cursor: 4, lovable: 1, base44: 1, replit: 1, v0: 1 }
+      },
+      {
+        id: 'credit-card-fine',
+        label: 'Credit card is fine',
+        description: 'Standard payment methods',
+        weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 5 }
+      },
+      {
+        id: 'free-only',
+        label: 'Free only',
+        description: 'I don\'t want to pay anything',
+        weights: { shakespeare: 3, goose: 4, cursor: 3, lovable: 3, base44: 3, replit: 4, v0: 3 }
+      }
+    ]
+  },
+  {
+    id: 'dataPortability',
+    question: 'Should your users be able to take their data to other apps?',
+    description: 'Consider whether users should own and control their data',
+    options: [
+      {
+        id: 'yes-full-portability',
+        label: 'Yes - full portability',
+        description: 'Users can export everything, use other clients',
+        weights: { shakespeare: 5, goose: 4, cursor: 3, lovable: 2, base44: 2, replit: 3, v0: 2 }
+      },
+      {
+        id: 'partial-portability',
+        label: 'Partial portability',
+        description: 'Some export options available',
+        weights: { shakespeare: 4, goose: 4, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 3 }
+      },
+      {
+        id: 'no-data-stays',
+        label: 'No - data stays in my app',
+        description: 'Proprietary data format, lock-in is acceptable',
+        weights: { shakespeare: 1, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 4 }
+      }
+    ]
+  },
+  // ============================================
+  // TECHNICAL & VALUES QUESTIONS (kept from original)
+  // ============================================
   {
     id: 'models',
     question: 'Which AI models do you want to use?',
@@ -662,37 +938,6 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         label: 'Doesn\'t matter',
         description: 'I just want something that works',
         weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 5, base44: 5, replit: 5, v0: 4 }
-      }
-    ]
-  },
-  {
-    id: 'privacy',
-    question: 'How important is privacy to you?',
-    description: 'Consider your threat model and who might be interested in your work',
-    options: [
-      {
-        id: 'critical',
-        label: 'Critical - I\'m an activist/journalist',
-        description: 'My safety may depend on privacy',
-        weights: { shakespeare: 5, goose: 5, cursor: 1, lovable: 1, base44: 1, replit: 1, v0: 1 }
-      },
-      {
-        id: 'important',
-        label: 'Very Important',
-        description: 'I care deeply about data sovereignty',
-        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, base44: 2, replit: 2, v0: 2 }
-      },
-      {
-        id: 'moderate',
-        label: 'Somewhat Important',
-        description: 'I prefer privacy but it\'s not a dealbreaker',
-        weights: { shakespeare: 4, goose: 4, cursor: 3, lovable: 3, base44: 3, replit: 3, v0: 3 }
-      },
-      {
-        id: 'low',
-        label: 'Not a Priority',
-        description: 'I\'m okay with standard terms of service',
-        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 4 }
       }
     ]
   },

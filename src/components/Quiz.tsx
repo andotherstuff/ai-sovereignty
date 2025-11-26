@@ -61,18 +61,18 @@ export function Quiz({ onComplete }: QuizProps) {
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8">
-              Answer 5 quick questions and we'll recommend the AI coding assistant
-              that best matches your values and needs.
+              Answer a few questions about your project needs, privacy requirements,
+              and values—we'll recommend the AI coding assistant that's right for you.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 text-muted-foreground mb-8">
               <span className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
-                5 Questions
+                14 Questions
               </span>
               <span className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
-                ~1 Minute
+                ~3 Minutes
               </span>
               <span className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
