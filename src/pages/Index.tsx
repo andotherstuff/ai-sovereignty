@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Manifesto } from '@/components/Manifesto';
 import { Rubric } from '@/components/Rubric';
+import { QuickPick } from '@/components/QuickPick';
 import { ToolComparison } from '@/components/ToolComparison';
 import { Quiz } from '@/components/Quiz';
 import { Footer } from '@/components/Footer';
@@ -61,6 +62,8 @@ const Index = () => {
         <div ref={rubricRef}>
           <Rubric />
         </div>
+
+        <QuickPick />
 
         <div ref={compareRef}>
           <ToolComparison />

@@ -5,7 +5,7 @@ export function Manifesto() {
     <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-amber-950/5 to-background" />
-      
+
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -21,7 +21,7 @@ export function Manifesto() {
           {/* Main Content */}
           <div className="prose prose-invert prose-lg max-w-none">
             <div className="space-y-8 text-muted-foreground leading-relaxed">
-              
+
               <div className="p-8 rounded-2xl bg-card/50 border border-amber-500/20">
                 <h3 className="text-2xl font-serif text-foreground mb-4">The Promise of AI—And The Peril</h3>
                 <p>
@@ -62,9 +62,9 @@ export function Manifesto() {
                 <h3 className="text-2xl font-serif text-foreground mb-4">The Open Source Definition</h3>
                 <p>
                   We follow the{' '}
-                  <a 
-                    href="https://opensource.org/osd" 
-                    target="_blank" 
+                  <a
+                    href="https://opensource.org/osd"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-amber-400 hover:text-amber-300 inline-flex items-center gap-1"
                   >
@@ -100,24 +100,6 @@ export function Manifesto() {
                   Open-source, self-hostable AI tools give you <span className="text-amber-400 font-medium">true sovereignty</span>. No one can see what you're building. No one can stop you.
                 </p>
               </div>
-
-              <blockquote className="border-l-4 border-amber-500 pl-6 py-4 my-8 bg-card/30 rounded-r-xl">
-                <p className="text-xl italic text-foreground">
-                  "The choice of AI tools is not just a technical decision—it's a political one. Every time we choose open over closed, we vote for a future where technology serves humanity, not the other way around."
-                </p>
-                <footer className="mt-4 text-muted-foreground flex items-center gap-2">
-                  — Inspired by{' '}
-                  <a 
-                    href="https://soapbox.pub/blog/our-stance-on-ai" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-amber-400 hover:text-amber-300 inline-flex items-center gap-1"
-                  >
-                    Soapbox's stance on AI
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </footer>
-              </blockquote>
 
             </div>
           </div>
