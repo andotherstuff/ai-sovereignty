@@ -1,5 +1,5 @@
 import { RUBRIC_CATEGORIES } from '@/lib/tools';
-import { Code, Shield, Network, Sparkles, Coins, Zap, Globe, Database } from 'lucide-react';
+import { Code, Shield, Network, Sparkles, Package, Zap, Globe, Database } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import {
   Accordion,
@@ -16,7 +16,7 @@ const categoryColors: Record<string, { icon: string; bg: string }> = {
   openModelSupport: { icon: 'text-emerald-400', bg: 'bg-emerald-500/10' },
   decentralization: { icon: 'text-teal-400', bg: 'bg-teal-500/10' },
   easeOfUse: { icon: 'text-cyan-400', bg: 'bg-cyan-500/10' },
-  costEfficiency: { icon: 'text-sky-400', bg: 'bg-sky-500/10' },
+  portability: { icon: 'text-sky-400', bg: 'bg-sky-500/10' },
   capabilities: { icon: 'text-violet-400', bg: 'bg-violet-500/10' },
 };
 
@@ -27,7 +27,7 @@ const iconComponents: Record<string, React.ElementType> = {
   Globe,
   Database,
   Sparkles,
-  Coins,
+  Package,
   Zap,
 };
 

@@ -24,7 +24,7 @@ export interface ToolScores {
   openModelSupport: number; // 1-5 (Support for open models like Llama, Mistral, etc.)
   decentralization: number; // 1-5 (Nostr, Bitcoin, etc.)
   easeOfUse: number; // 1-5
-  costEfficiency: number; // 1-5
+  portability: number; // 1-5 (Freedom from vendor lock-in)
   capabilities: number; // 1-5
 }
 
@@ -56,7 +56,7 @@ export const AI_TOOLS: AITool[] = [
       openModelSupport: 5, // Can use any model via OpenRouter, Ollama, or other compatible providers
       decentralization: 5, // Native Nostr, Bitcoin/Lightning support
       easeOfUse: 4,
-      costEfficiency: 5,
+      portability: 5, // No vendor lock-in: self-hostable, BYO API keys, local storage, deploy anywhere, no subscriptions
       capabilities: 4
     },
     features: [
@@ -115,7 +115,7 @@ export const AI_TOOLS: AITool[] = [
       openModelSupport: 3, // Can use Azure OpenAI, some local model support via API
       decentralization: 1, // No support for Nostr, Bitcoin, or decentralized protocols
       easeOfUse: 5, // Excellent UX, familiar VS Code interface
-      costEfficiency: 3, // $20/month for Pro, free tier limited
+      portability: 4, // Code stays local on your machine, can use any deployment, but subscription for AI features
       capabilities: 5 // Very capable, excellent code understanding
     },
     features: [
@@ -170,7 +170,7 @@ export const AI_TOOLS: AITool[] = [
       openModelSupport: 1, // No support for custom models
       decentralization: 1, // No support for Nostr, Bitcoin, etc.
       easeOfUse: 5,
-      costEfficiency: 3,
+      portability: 2, // Platform lock-in: managed Supabase, their deployment, subscription required, GitHub sync available
       capabilities: 5
     },
     features: [
@@ -226,7 +226,7 @@ export const AI_TOOLS: AITool[] = [
       openModelSupport: 2, // Limited model options, no bring-your-own
       decentralization: 2, // Can build apps that use these, but no native support
       easeOfUse: 5,
-      costEfficiency: 3,
+      portability: 2, // Platform lock-in: code on their servers, their hosting, subscription for features, export possible but workflow tied to platform
       capabilities: 5
     },
     features: [
@@ -284,7 +284,7 @@ export const AI_TOOLS: AITool[] = [
       openModelSupport: 1, // No custom model support
       decentralization: 1, // No decentralized protocol awareness
       easeOfUse: 5,
-      costEfficiency: 3,
+      portability: 3, // Output is copy-paste code you own, but UI-only, requires Vercel account, subscription model
       capabilities: 4
     },
     features: [
@@ -339,7 +339,7 @@ export const AI_TOOLS: AITool[] = [
       openModelSupport: 5, // Works with Ollama, any OpenAI-compatible endpoint
       decentralization: 3, // Some Bitcoin awareness via Block, limited Nostr
       easeOfUse: 3,
-      costEfficiency: 4,
+      portability: 5, // No vendor lock-in: runs locally, fully open-source, BYO everything, no platform dependencies
       capabilities: 4
     },
     features: [
@@ -472,17 +472,17 @@ export const RUBRIC_CATEGORIES = [
     ]
   },
   {
-    id: 'costEfficiency',
-    name: 'Cost Efficiency',
-    description: 'Is it affordable? Does it accept Bitcoin?',
-    weight: 'moderate',
-    icon: 'Coins',
+    id: 'portability',
+    name: 'Portability',
+    description: 'Can you take your code, data, and projects elsewhere? Free from vendor lock-in?',
+    weight: 'critical',
+    icon: 'Package',
     details: [
-      '5 = Free/open-source, or accepts Bitcoin/Lightning',
-      '4 = Affordable with flexible payment options',
-      '3 = Reasonable pricing, traditional payments only',
-      '2 = Expensive, subscription required',
-      '1 = Very expensive, enterprise-focused'
+      '5 = Full ownership: self-hostable, local storage, deploy anywhere, no subscriptions required',
+      '4 = Code stays local, flexible deployment, minor platform ties',
+      '3 = Exportable output, but workflow tied to platform or subscription',
+      '2 = Significant platform lock-in: managed databases, proprietary hosting, subscription walls',
+      '1 = Severe lock-in: code/data trapped, no export, platform-dependent'
     ]
   },
   {

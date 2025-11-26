@@ -73,7 +73,7 @@ export function ComparisonTable() {
                   <TableHead className="text-center font-display text-emerald-300">Open Models</TableHead>
                   <TableHead className="text-center font-display text-teal-300">Decentralized</TableHead>
                   <TableHead className="text-center font-display text-cyan-300">Ease of Use</TableHead>
-                  <TableHead className="text-center font-display text-sky-300">Cost</TableHead>
+                  <TableHead className="text-center font-display text-sky-300">Portability</TableHead>
                   <TableHead className="text-center font-display text-violet-300">Capabilities</TableHead>
                   <TableHead className="text-center font-display text-foreground">Nostr</TableHead>
                   <TableHead className="text-center font-display text-foreground">Bitcoin</TableHead>
@@ -141,7 +141,7 @@ export function ComparisonTable() {
                         <ScoreCell value={tool.scores.easeOfUse} color="cyan" />
                       </TableCell>
                       <TableCell className="text-center">
-                        <ScoreCell value={tool.scores.costEfficiency} color="sky" />
+                        <ScoreCell value={tool.scores.portability} color="sky" />
                       </TableCell>
                       <TableCell className="text-center">
                         <ScoreCell value={tool.scores.capabilities} color="violet" />
@@ -194,7 +194,7 @@ export function ComparisonTable() {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-sky-400" />
-            <span>Cost</span>
+            <span>Portability</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-violet-400" />
