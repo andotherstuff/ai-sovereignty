@@ -20,8 +20,10 @@ const Index = () => {
     description: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support. Find the perfect tool for vibe coding that aligns with your values.',
     ogTitle: 'Freedom AI Tool Evaluator (FATE)',
     ogDescription: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support.',
+    ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',
+    twitterImage: '/og-image.png',
   });
 
   const scrollToSection = (sectionId: string) => {

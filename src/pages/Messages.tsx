@@ -3,8 +3,11 @@ import { DMMessagingInterface } from '@/components/dm/DMMessagingInterface';
 
 const Messages = () => {
   useSeoMeta({
-    title: 'Messages',
+    title: 'Messages | FATE',
     description: 'Private encrypted messaging on Nostr',
+    ogImage: '/og-image.png',
+    twitterCard: 'summary_large_image',
+    twitterImage: '/og-image.png',
   });
 
   return (

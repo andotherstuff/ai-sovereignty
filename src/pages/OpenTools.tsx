@@ -17,8 +17,10 @@ export default function OpenTools() {
     description: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support. Find the perfect vibe coding tool that aligns with your values.',
     ogTitle: 'Open Tools | FATE',
     ogDescription: 'Compare AI coding tools evaluated for openness, privacy, and freedom tech support.',
+    ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',
+    twitterImage: '/og-image.png',
   });
 
   const navigate = useNavigate();

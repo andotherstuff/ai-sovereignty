@@ -8,8 +8,10 @@ export default function Quiz() {
     description: 'Take our quiz to find the AI coding assistant that best matches your values, privacy needs, and project requirements.',
     ogTitle: 'Find Your AI Tool | FATE',
     ogDescription: 'Answer a few questions about your project needs and values to find your perfect AI coding assistant.',
+    ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',
+    twitterImage: '/og-image.png',
   });
 
   return (

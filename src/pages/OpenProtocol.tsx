@@ -23,8 +23,10 @@ export default function OpenProtocol() {
     description: 'The OpenAI API specification enables developers to switch between AI providers without changing application code. Learn about standardized endpoints, authentication, and response formats.',
     ogTitle: 'Open Protocol | FATE',
     ogDescription: 'Promote widespread adoption of the OpenAI API specification for true AI provider interoperability.',
+    ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',
+    twitterImage: '/og-image.png',
   });
 
   const benefits = [

@@ -27,8 +27,10 @@ export default function OpenModels() {
     description: 'Discover truly open AI models with accessible weights, transparent training, and freedom to modify. Based on the OSI Open Source AI Definition.',
     ogTitle: 'Open Models | FATE',
     ogDescription: 'Highlighting truly open AI models and the inference engines that power them.',
+    ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',
+    twitterImage: '/og-image.png',
   });
 
   const osiPrinciples = [

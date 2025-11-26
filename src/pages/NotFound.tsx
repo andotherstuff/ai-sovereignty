@@ -6,8 +6,11 @@ const NotFound = () => {
   const location = useLocation();
 
   useSeoMeta({
-    title: "404 - Page Not Found",
+    title: "404 - Page Not Found | FATE",
     description: "The page you are looking for could not be found. Return to the home page to continue browsing.",
+    ogImage: '/og-image.png',
+    twitterCard: 'summary_large_image',
+    twitterImage: '/og-image.png',
   });
 
   useEffect(() => {
