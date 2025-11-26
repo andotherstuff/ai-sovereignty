@@ -14,7 +14,8 @@ import {
   Server,
   Zap,
   Users,
-  Shield
+  Shield,
+  Sparkles
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
