@@ -37,7 +37,7 @@ export function ToolComparison() {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
             Compare <span className="text-gradient">AI Tools</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -53,7 +53,7 @@ export function ToolComparison() {
               variant={viewMode === 'cards' ? 'secondary' : 'ghost'}
               size="sm"
               onClick={() => setViewMode('cards')}
-              className={viewMode === 'cards' ? 'bg-amber-500/20 text-amber-400' : ''}
+              className={viewMode === 'cards' ? 'bg-cyan-500/20 text-cyan-400' : ''}
             >
               <LayoutGrid className="w-4 h-4 mr-2" />
               Cards
@@ -62,7 +62,7 @@ export function ToolComparison() {
               variant={viewMode === 'table' ? 'secondary' : 'ghost'}
               size="sm"
               onClick={() => setViewMode('table')}
-              className={viewMode === 'table' ? 'bg-amber-500/20 text-amber-400' : ''}
+              className={viewMode === 'table' ? 'bg-cyan-500/20 text-cyan-400' : ''}
             >
               <TableIcon className="w-4 h-4 mr-2" />
               Table
@@ -75,19 +75,19 @@ export function ToolComparison() {
               <TabsList className="bg-muted/50">
                 <TabsTrigger
                   value="freedom"
-                  className="data-[state=active]:bg-amber-500 data-[state=active]:text-black"
+                  className="data-[state=active]:bg-cyan-500 data-[state=active]:text-black"
                 >
                   🔓 Freedom First
                 </TabsTrigger>
                 <TabsTrigger
                   value="ease"
-                  className="data-[state=active]:bg-amber-500 data-[state=active]:text-black"
+                  className="data-[state=active]:bg-cyan-500 data-[state=active]:text-black"
                 >
                   ✨ Ease of Use
                 </TabsTrigger>
                 <TabsTrigger
                   value="overall"
-                  className="data-[state=active]:bg-amber-500 data-[state=active]:text-black"
+                  className="data-[state=active]:bg-cyan-500 data-[state=active]:text-black"
                 >
                   📊 Balanced
                 </TabsTrigger>

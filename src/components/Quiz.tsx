@@ -48,15 +48,15 @@ export function Quiz({ onComplete }: QuizProps) {
   if (!started) {
     return (
       <section id="quiz" className="py-24 md:py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-amber-950/10 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/10 to-background" />
 
         <div className="relative container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="w-20 h-20 rounded-2xl bg-amber-500/20 flex items-center justify-center mx-auto mb-8">
-              <Sparkles className="w-10 h-10 text-amber-400" />
+            <div className="w-20 h-20 rounded-2xl bg-cyan-500/20 flex items-center justify-center mx-auto mb-8">
+              <Sparkles className="w-10 h-10 text-cyan-400" />
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-serif mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
               Find Your <span className="text-gradient">Perfect Tool</span>
             </h2>
 
@@ -65,24 +65,24 @@ export function Quiz({ onComplete }: QuizProps) {
               that best matches your values and needs.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-8">
+            <div className="flex flex-wrap justify-center gap-6 text-muted-foreground mb-8">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber-400" />
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
                 5 Questions
               </span>
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber-400" />
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
                 ~1 Minute
               </span>
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber-400" />
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
                 Personalized Results
               </span>
             </div>
 
             <Button
               size="lg"
-              className="text-lg px-10 py-6 bg-amber-500 hover:bg-amber-400 text-black font-medium glow-gold-sm transition-all duration-300 hover:scale-105"
+              className="text-lg px-10 py-6 bg-cyan-500 hover:bg-cyan-400 text-black font-display font-medium glow-blue-sm transition-all duration-300 hover:scale-105"
               onClick={() => setStarted(true)}
             >
               Start the Quiz
@@ -101,53 +101,53 @@ export function Quiz({ onComplete }: QuizProps) {
 
   return (
     <section id="quiz" className="py-24 md:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-amber-950/10 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/10 to-background" />
 
       <div className="relative container mx-auto px-6">
         <div className="max-w-2xl mx-auto">
           {/* Progress */}
           <div className="mb-8">
-            <div className="flex justify-between text-sm text-muted-foreground mb-2">
+            <div className="flex justify-between text-muted-foreground mb-3">
               <span>Question {currentQuestion + 1} of {QUIZ_QUESTIONS.length}</span>
               <span>{Math.round(progress)}% complete</span>
             </div>
-            <Progress value={progress} className="h-2 bg-muted" />
+            <Progress value={progress} className="h-2.5 bg-muted" />
           </div>
 
           {/* Question */}
           <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-serif mb-2">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-3">
               {question.question}
             </h2>
             {question.description && (
-              <p className="text-muted-foreground">{question.description}</p>
+              <p className="text-muted-foreground text-lg">{question.description}</p>
             )}
           </div>
 
           {/* Options */}
-          <div className="space-y-3">
+          <div className="space-y-4">
             {question.options.map((option) => {
               const isSelected = answers[question.id] === option.id;
               return (
                 <Card
                   key={option.id}
-                  className={`cursor-pointer transition-all duration-200 hover:border-amber-500/50 ${
-                    isSelected ? 'border-amber-500 bg-amber-500/10' : ''
+                  className={`cursor-pointer transition-all duration-200 hover:border-cyan-500/50 ${
+                    isSelected ? 'border-cyan-500 bg-cyan-500/10' : ''
                   }`}
                   onClick={() => handleAnswer(option.id)}
                 >
-                  <CardContent className="p-4 flex items-start gap-4">
-                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
-                      isSelected ? 'border-amber-500 bg-amber-500' : 'border-muted-foreground'
+                  <CardContent className="p-5 flex items-start gap-4">
+                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors mt-0.5 ${
+                      isSelected ? 'border-cyan-500 bg-cyan-500' : 'border-muted-foreground'
                     }`}>
                       {isSelected && (
                         <div className="w-2 h-2 rounded-full bg-black" />
                       )}
                     </div>
                     <div>
-                      <div className="font-medium">{option.label}</div>
+                      <div className="font-display font-medium text-lg">{option.label}</div>
                       {option.description && (
-                        <div className="text-sm text-muted-foreground mt-1">
+                        <div className="text-muted-foreground mt-1">
                           {option.description}
                         </div>
                       )}
@@ -196,18 +196,18 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
 
   return (
     <section id="quiz" className="py-24 md:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-amber-950/10 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/10 to-background" />
 
       <div className="relative container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           {/* Top Result */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-400 text-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-300 mb-6">
               <Sparkles className="w-4 h-4" />
               Your Perfect Match
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-serif mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
               <span className="text-gradient">{topResult.tool.name}</span>
             </h2>
 
@@ -215,13 +215,13 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
               {topResult.tool.tagline}
             </p>
 
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
               {topResult.tool.description}
             </p>
 
             <Button
               size="lg"
-              className="bg-amber-500 hover:bg-amber-400 text-black font-medium"
+              className="bg-cyan-500 hover:bg-cyan-400 text-black font-display font-medium glow-blue-sm"
               asChild
             >
               <a href={topResult.tool.url} target="_blank" rel="noopener noreferrer">
@@ -233,17 +233,17 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
 
           {/* All Results */}
           <div className="space-y-4">
-            <h3 className="text-lg font-medium text-center mb-6">How All Tools Ranked for You</h3>
+            <h3 className="text-xl font-display font-medium text-center mb-6">How All Tools Ranked for You</h3>
             {results.map((result, index) => {
               const percentage = (result.score / maxScore) * 100;
               return (
                 <Card key={result.tool.id} className={`overflow-hidden ${
-                  index === 0 ? 'border-amber-500/50 bg-amber-500/5' : ''
+                  index === 0 ? 'border-cyan-500/50 bg-cyan-500/5' : ''
                 }`}>
-                  <CardContent className="p-4">
+                  <CardContent className="p-5">
                     <div className="flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center font-serif shrink-0 ${
-                        index === 0 ? 'bg-amber-500 text-black' :
+                      <div className={`w-11 h-11 rounded-full flex items-center justify-center font-display font-bold text-lg shrink-0 ${
+                        index === 0 ? 'bg-cyan-500 text-black' :
                         index === 1 ? 'bg-muted-foreground/30 text-foreground' :
                         'bg-muted text-muted-foreground'
                       }`}>
@@ -251,13 +251,13 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="font-medium truncate">{result.tool.name}</span>
-                          <span className="text-amber-400 font-medium shrink-0 ml-4">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="font-display font-medium text-lg truncate">{result.tool.name}</span>
+                          <span className="text-cyan-300 font-medium shrink-0 ml-4">
                             {Math.round(percentage)}%
                           </span>
                         </div>
-                        <Progress value={percentage} className="h-2 bg-muted" />
+                        <Progress value={percentage} className="h-2.5 bg-muted" />
                       </div>
 
                       <Button
@@ -267,7 +267,7 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
                         asChild
                       >
                         <a href={result.tool.url} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4" />
+                          <ExternalLink className="w-5 h-5" />
                         </a>
                       </Button>
                     </div>
@@ -282,7 +282,7 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
             <Button
               variant="outline"
               onClick={onReset}
-              className="border-amber-500/30 text-amber-400 hover:bg-amber-500/10"
+              className="border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10"
             >
               <RotateCcw className="mr-2 w-4 h-4" />
               Take Quiz Again

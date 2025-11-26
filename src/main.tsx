@@ -8,6 +8,7 @@ import App from './App.tsx';
 import './index.css';
 
 // Fonts
+import '@fontsource-variable/montserrat';
 import '@fontsource-variable/outfit';
 import '@fontsource/playfair-display/400.css';
 import '@fontsource/playfair-display/500.css';

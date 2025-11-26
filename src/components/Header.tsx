@@ -1,7 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 interface HeaderProps {
   onNavigate: (section: string) => void;
@@ -19,11 +26,15 @@ export function Header({ onNavigate }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
+  const sectionNavItems = [
     { id: 'manifesto', label: 'Why Open AI' },
-    { id: 'rubric', label: 'Rubric' },
-    { id: 'compare', label: 'Compare' },
-    { id: 'quiz', label: 'Find Your Tool' },
+    { id: 'pillars', label: 'The Pillars' },
+  ];
+
+  const learnNavItems = [
+    { to: '/open-protocol', label: 'Open Protocol' },
+    { to: '/open-models', label: 'Open Models' },
+    { to: '/open-tools', label: 'Open Tools' },
   ];
 
   const handleNavClick = (id: string) => {
@@ -45,22 +56,46 @@ export function Header({ onNavigate }: HeaderProps) {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 group"
           >
-            <span className="text-xl md:text-2xl font-serif text-gradient">FATE</span>
+            <span className="text-xl md:text-2xl font-display font-bold text-gradient">FATE</span>
           </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
+            {sectionNavItems.map((item) => (
               <Button
                 key={item.id}
                 variant="ghost"
                 size="sm"
                 onClick={() => handleNavClick(item.id)}
-                className="text-muted-foreground hover:text-foreground hover:bg-amber-500/10"
+                className="text-muted-foreground hover:text-foreground hover:bg-cyan-500/10 font-display font-medium"
               >
                 {item.label}
               </Button>
             ))}
+
+            {/* Learn Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-muted-foreground hover:text-foreground hover:bg-cyan-500/10 font-display font-medium"
+                >
+                  Learn
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-card border-border">
+                {learnNavItems.map((item) => (
+                  <DropdownMenuItem key={item.to} asChild>
+                    <Link to={item.to} className="cursor-pointer">
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <a
               href="https://andotherstuff.org"
               target="_blank"
@@ -70,7 +105,7 @@ export function Header({ onNavigate }: HeaderProps) {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-amber-500/30 text-amber-400 hover:bg-amber-500/10"
+                className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 font-display font-medium"
               >
                 AOS
               </Button>
@@ -93,16 +128,32 @@ export function Header({ onNavigate }: HeaderProps) {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border">
           <nav className="container mx-auto px-6 py-4 flex flex-col gap-1">
-            {navItems.map((item) => (
+            {sectionNavItems.map((item) => (
               <Button
                 key={item.id}
                 variant="ghost"
                 onClick={() => handleNavClick(item.id)}
-                className="justify-start text-muted-foreground hover:text-foreground"
+                className="justify-start text-muted-foreground hover:text-foreground font-display"
               >
                 {item.label}
               </Button>
             ))}
+
+            {/* Learn section in mobile */}
+            <div className="py-2 border-t border-border/50 mt-2">
+              <span className="text-xs text-muted-foreground uppercase tracking-wide px-4">Learn</span>
+            </div>
+            {learnNavItems.map((item) => (
+              <Link key={item.to} to={item.to} onClick={() => setIsMobileMenuOpen(false)}>
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start text-muted-foreground hover:text-foreground font-display"
+                >
+                  {item.label}
+                </Button>
+              </Link>
+            ))}
+
             <a
               href="https://andotherstuff.org"
               target="_blank"
@@ -111,7 +162,7 @@ export function Header({ onNavigate }: HeaderProps) {
             >
               <Button
                 variant="outline"
-                className="w-full border-amber-500/30 text-amber-400"
+                className="w-full border-cyan-500/30 text-cyan-400 font-display"
               >
                 Visit And Other Stuff
               </Button>

@@ -4,13 +4,13 @@ export function Manifesto() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-amber-950/5 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/5 to-background" />
 
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
               Why <span className="text-gradient">Open AI</span> Matters
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -20,15 +20,15 @@ export function Manifesto() {
 
           {/* Main Content */}
           <div className="prose prose-invert prose-lg max-w-none">
-            <div className="space-y-8 text-muted-foreground leading-relaxed">
+            <div className="space-y-8 text-muted-foreground leading-relaxed text-lg">
 
-              <div className="p-8 rounded-2xl bg-card/50 border border-amber-500/20">
-                <h3 className="text-2xl font-serif text-foreground mb-4">The Promise of AI—And The Peril</h3>
+              <div className="p-8 rounded-2xl bg-card/50 border border-cyan-500/20">
+                <h3 className="text-2xl font-display font-semibold text-foreground mb-4">The Promise of AI—And The Peril</h3>
                 <p>
                   Artificial intelligence is transforming how we create software. "Vibe coding"—building applications through natural language conversation with AI—is making development accessible to millions who never wrote a line of code before.
                 </p>
                 <p className="mt-4">
-                  But here's the critical question: <span className="text-amber-400 font-medium">Who controls these AI tools?</span>
+                  But here's the critical question: <span className="text-cyan-300 font-medium">Who controls these AI tools?</span>
                 </p>
                 <p className="mt-4">
                   When the AI you depend on is a black box controlled by a corporation, you've traded one form of gatekeeping for another. Your creativity flows through their servers. Your ideas pass through their filters. Your sovereignty over your own tools is an illusion.
@@ -37,8 +37,8 @@ export function Manifesto() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-6 rounded-xl bg-card/30 border border-border">
-                  <h4 className="text-lg font-semibold text-foreground mb-3">🔒 Closed AI</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="text-xl font-display font-semibold text-foreground mb-4">🔒 Closed AI</h4>
+                  <ul className="space-y-3">
                     <li>• Your data trains their models</li>
                     <li>• No visibility into how it works</li>
                     <li>• Can be shut down or censored</li>
@@ -46,9 +46,9 @@ export function Manifesto() {
                     <li>• Terms can change anytime</li>
                   </ul>
                 </div>
-                <div className="p-6 rounded-xl bg-amber-500/10 border border-amber-500/30">
-                  <h4 className="text-lg font-semibold text-foreground mb-3">🔓 Open AI</h4>
-                  <ul className="space-y-2 text-sm">
+                <div className="p-6 rounded-xl bg-cyan-500/10 border border-cyan-500/30">
+                  <h4 className="text-xl font-display font-semibold text-foreground mb-4">🔓 Open AI</h4>
+                  <ul className="space-y-3">
                     <li>• Audit what runs on your machine</li>
                     <li>• Self-host for true privacy</li>
                     <li>• Can't be taken away from you</li>
@@ -59,45 +59,44 @@ export function Manifesto() {
               </div>
 
               <div className="p-8 rounded-2xl bg-card/50 border border-border">
-                <h3 className="text-2xl font-serif text-foreground mb-4">The Open Source Definition</h3>
+                <h3 className="text-2xl font-display font-semibold text-foreground mb-4">The Open Source AI Definition</h3>
                 <p>
                   We follow the{' '}
                   <a
-                    href="https://opensource.org/osd"
+                    href="https://opensource.org/ai/open-source-ai-definition"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-amber-400 hover:text-amber-300 inline-flex items-center gap-1"
+                    className="text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-1"
                   >
-                    Open Source Initiative's definition
+                    Open Source Initiative's Open Source AI Definition
                     <ExternalLink className="w-4 h-4" />
                   </a>
-                  . True open source means:
+                  . True open source AI means:
                 </p>
-                <ul className="mt-4 space-y-2">
-                  <li><span className="text-amber-400">→</span> Free redistribution</li>
-                  <li><span className="text-amber-400">→</span> Access to source code</li>
-                  <li><span className="text-amber-400">→</span> Right to create derivatives</li>
-                  <li><span className="text-amber-400">→</span> No discrimination against persons or fields</li>
-                  <li><span className="text-amber-400">→</span> License must not restrict other software</li>
+                <ul className="mt-4 space-y-3">
+                  <li><span className="text-cyan-300">→</span> Freedom to use the system for any purpose</li>
+                  <li><span className="text-cyan-300">→</span> Freedom to study how the system works</li>
+                  <li><span className="text-cyan-300">→</span> Freedom to modify the system</li>
+                  <li><span className="text-cyan-300">→</span> Freedom to share the system with others</li>
                 </ul>
-                <p className="mt-4 text-sm italic">
-                  "Open source" isn't a marketing term—it's a commitment to user freedom.
+                <p className="mt-6 italic text-muted-foreground">
+                  "Open source AI" isn't a marketing term—it's a commitment to user freedom and transparency.
                 </p>
               </div>
 
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-950/30 to-background border border-amber-500/20">
-                <h3 className="text-2xl font-serif text-foreground mb-4">For Activists & Privacy Seekers</h3>
+              <div className="p-8 rounded-2xl bg-gradient-to-br from-cyan-950/30 to-background border border-cyan-500/20">
+                <h3 className="text-2xl font-display font-semibold text-foreground mb-4">For Activists & Privacy Seekers</h3>
                 <p>
                   If you're building tools for activism, journalism, or communities under surveillance, the stakes are even higher. Proprietary AI tools can:
                 </p>
-                <ul className="mt-4 space-y-2">
-                  <li><span className="text-amber-400">⚠️</span> Log your prompts and creations</li>
-                  <li><span className="text-amber-400">⚠️</span> Be compelled to share data with authorities</li>
-                  <li><span className="text-amber-400">⚠️</span> Refuse to help with "sensitive" topics</li>
-                  <li><span className="text-amber-400">⚠️</span> Shut down your account without warning</li>
+                <ul className="mt-4 space-y-3">
+                  <li><span className="text-cyan-300">⚠️</span> Log your prompts and creations</li>
+                  <li><span className="text-cyan-300">⚠️</span> Be compelled to share data with authorities</li>
+                  <li><span className="text-cyan-300">⚠️</span> Refuse to help with "sensitive" topics</li>
+                  <li><span className="text-cyan-300">⚠️</span> Shut down your account without warning</li>
                 </ul>
                 <p className="mt-4">
-                  Open-source, self-hostable AI tools give you <span className="text-amber-400 font-medium">true sovereignty</span>. No one can see what you're building. No one can stop you.
+                  Open-source, self-hostable AI tools give you <span className="text-cyan-300 font-medium">true sovereignty</span>. No one can see what you're building. No one can stop you.
                 </p>
               </div>
 
