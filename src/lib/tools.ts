@@ -450,7 +450,7 @@ export const RUBRIC_CATEGORIES = [
     weight: 'critical',
     icon: 'Code',
     details: [
-      '5 = Fully open-source, self-hostable, MIT/Apache licensed',
+      '5 = Fully open-source, self-hostable, OSI-approved license (MIT, Apache, AGPL, GPL, etc.)',
       '4 = Mostly open, some proprietary components',
       '3 = Partially open, core features closed',
       '2 = Source-available but restricted license',
