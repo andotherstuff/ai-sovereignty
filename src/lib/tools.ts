@@ -57,7 +57,7 @@ export const AI_TOOLS: AITool[] = [
       decentralization: 5, // Native Nostr, Bitcoin/Lightning support
       easeOfUse: 4,
       portability: 5, // No vendor lock-in: self-hostable, BYO API keys, local storage, deploy anywhere, no subscriptions
-      capabilities: 4
+      capabilities: 3 // Frontend-focused (React/Tailwind/shadcn), web apps only, limited stack flexibility
     },
     features: [
       'Fully open-source (MIT License)',
@@ -116,7 +116,7 @@ export const AI_TOOLS: AITool[] = [
       decentralization: 1, // No support for Nostr, Bitcoin, or decentralized protocols
       easeOfUse: 5, // Excellent UX, familiar VS Code interface
       portability: 4, // Code stays local on your machine, can use any deployment, but subscription for AI features
-      capabilities: 5 // Very capable, excellent code understanding
+      capabilities: 5 // Full-stack, any language/framework, complex apps
     },
     features: [
       'Built on VS Code - familiar interface',
@@ -171,7 +171,7 @@ export const AI_TOOLS: AITool[] = [
       decentralization: 1, // No support for Nostr, Bitcoin, etc.
       easeOfUse: 5,
       portability: 2, // Platform lock-in: managed Supabase, their deployment, subscription required, GitHub sync available
-      capabilities: 5
+      capabilities: 4 // Full-stack but locked to React + Supabase stack
     },
     features: [
       'Highly polished user experience',
@@ -227,7 +227,7 @@ export const AI_TOOLS: AITool[] = [
       decentralization: 1, // No support for Nostr, Bitcoin, etc.
       easeOfUse: 5, // Very user-friendly, natural language to app
       portability: 2, // Platform lock-in: their database, their deployment, subscription model
-      capabilities: 4 // Good full-stack generation, slightly less mature than competitors
+      capabilities: 4 // Full-stack but locked to their specific stack
     },
     features: [
       'Natural language to full-stack app',
@@ -283,7 +283,7 @@ export const AI_TOOLS: AITool[] = [
       decentralization: 2, // Can build apps that use these, but no native support
       easeOfUse: 5,
       portability: 2, // Platform lock-in: code on their servers, their hosting, subscription for features, export possible but workflow tied to platform
-      capabilities: 5
+      capabilities: 5 // Full-stack, multi-language, flexible frameworks
     },
     features: [
       'Multi-language support',
@@ -341,7 +341,7 @@ export const AI_TOOLS: AITool[] = [
       decentralization: 1, // No decentralized protocol awareness
       easeOfUse: 5,
       portability: 3, // Output is copy-paste code you own, but UI-only, requires Vercel account, subscription model
-      capabilities: 4
+      capabilities: 2 // Frontend/UI only (React components), no backend, locked to React/Tailwind/shadcn
     },
     features: [
       'Excellent UI/UX generation',
@@ -396,7 +396,7 @@ export const AI_TOOLS: AITool[] = [
       decentralization: 3, // Some Bitcoin awareness via Block, limited Nostr
       easeOfUse: 3,
       portability: 5, // No vendor lock-in: runs locally, fully open-source, BYO everything, no platform dependencies
-      capabilities: 4
+      capabilities: 5 // Full-stack, any language/framework, works with any codebase
     },
     features: [
       'Fully open-source (Apache 2.0)',
@@ -544,15 +544,15 @@ export const RUBRIC_CATEGORIES = [
   {
     id: 'capabilities',
     name: 'Capabilities',
-    description: 'How powerful and flexible is the AI?',
+    description: 'Full-stack or frontend only? Flexible tech stack or locked in?',
     weight: 'important',
     icon: 'Zap',
     details: [
-      '5 = Highly capable, can build complex applications',
-      '4 = Strong capabilities across most use cases',
-      '3 = Good for common tasks',
-      '2 = Limited to specific use cases',
-      '1 = Basic capabilities only'
+      '5 = Full-stack (frontend + backend), any language/framework, complex apps',
+      '4 = Full-stack but limited to specific frameworks, strong overall',
+      '3 = Frontend + basic backend, or full-stack with major constraints',
+      '2 = Frontend only, or very limited stack options',
+      '1 = Single purpose, minimal flexibility'
     ]
   }
 ];
