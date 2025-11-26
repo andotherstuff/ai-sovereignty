@@ -113,7 +113,16 @@ export function Footer() {
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-muted-foreground">
-              © {new Date().getFullYear()} And Other Stuff. Built for the freedom tech community.
+              Licensed under{' '}
+              <a
+                href="https://www.gnu.org/licenses/agpl-3.0.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-300 transition-colors"
+              >
+                AGPL-3.0
+              </a>
+              . Built for the freedom tech community.
             </div>
 
             <div className="flex items-center gap-4">
