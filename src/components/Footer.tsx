@@ -95,20 +95,16 @@ export function Footer() {
                 href="https://andotherstuff.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block"
+                className="inline-flex items-center gap-3 group"
               >
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-border hover:border-cyan-500/30 transition-colors">
-                  <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center overflow-hidden">
-                    <img
-                      src="/logos/aos.png"
-                      alt="And Other Stuff logo"
-                      className="w-10 h-10 object-contain"
-                    />
-                  </div>
-                  <div>
-                    <div className="font-display font-medium">And Other Stuff</div>
-                    <div className="text-muted-foreground">Technology for Human Thriving</div>
-                  </div>
+                <img
+                  src="/logos/aos.png"
+                  alt="And Other Stuff logo"
+                  className="w-12 h-12 object-contain"
+                />
+                <div>
+                  <div className="font-display font-medium group-hover:text-cyan-300 transition-colors">And Other Stuff</div>
+                  <div className="text-muted-foreground text-sm">Technology for Human Thriving</div>
                 </div>
               </a>
             </div>
