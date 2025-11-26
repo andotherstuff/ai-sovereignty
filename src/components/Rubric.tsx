@@ -8,15 +8,27 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const iconMap: Record<string, React.ReactNode> = {
-  Code: <Code className="w-6 h-6" />,
-  Shield: <Shield className="w-6 h-6" />,
-  Network: <Network className="w-6 h-6" />,
-  Globe: <Globe className="w-6 h-6" />,
-  Database: <Database className="w-6 h-6" />,
-  Sparkles: <Sparkles className="w-6 h-6" />,
-  Coins: <Coins className="w-6 h-6" />,
-  Zap: <Zap className="w-6 h-6" />,
+// Map category IDs to their chart colors (matching ToolCard score bars)
+const categoryColors: Record<string, { icon: string; bg: string }> = {
+  openSource: { icon: 'text-orange-400', bg: 'bg-orange-500/10' },
+  privacy: { icon: 'text-yellow-400', bg: 'bg-yellow-500/10' },
+  protocolSupport: { icon: 'text-lime-400', bg: 'bg-lime-500/10' },
+  openModelSupport: { icon: 'text-emerald-400', bg: 'bg-emerald-500/10' },
+  decentralization: { icon: 'text-teal-400', bg: 'bg-teal-500/10' },
+  easeOfUse: { icon: 'text-cyan-400', bg: 'bg-cyan-500/10' },
+  costEfficiency: { icon: 'text-sky-400', bg: 'bg-sky-500/10' },
+  capabilities: { icon: 'text-violet-400', bg: 'bg-violet-500/10' },
+};
+
+const iconComponents: Record<string, React.ElementType> = {
+  Code,
+  Shield,
+  Network,
+  Globe,
+  Database,
+  Sparkles,
+  Coins,
+  Zap,
 };
 
 const weightColors: Record<string, string> = {
@@ -50,9 +62,15 @@ export function Rubric() {
               >
                 <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-cyan-500/5 transition-colors">
                   <div className="flex items-center gap-4 w-full">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400">
-                      {iconMap[category.icon]}
-                    </div>
+                    {(() => {
+                      const colors = categoryColors[category.id] || { icon: 'text-cyan-400', bg: 'bg-cyan-500/10' };
+                      const IconComponent = iconComponents[category.icon];
+                      return (
+                        <div className={`flex items-center justify-center w-12 h-12 rounded-xl ${colors.bg} ${colors.icon}`}>
+                          {IconComponent && <IconComponent className="w-6 h-6" />}
+                        </div>
+                      );
+                    })()}
                     <div className="flex-1 text-left">
                       <div className="flex items-center gap-3 mb-1">
                         <h3 className="text-lg font-display font-semibold">{category.name}</h3>

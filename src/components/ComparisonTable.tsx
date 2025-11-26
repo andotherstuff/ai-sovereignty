@@ -10,10 +10,11 @@ import {
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 
-type CategoryColor = 'amber' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet';
+type CategoryColor = 'orange' | 'amber' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet';
 
 // Using lighter color variants for better accessibility on dark backgrounds
 const categoryColors: Record<CategoryColor, string> = {
+  orange: 'text-orange-300',
   amber: 'text-amber-300',
   yellow: 'text-yellow-200',
   lime: 'text-lime-300',
@@ -66,7 +67,7 @@ export function ComparisonTable() {
               <TableHeader>
                 <TableRow className="border-cyan-500/20 hover:bg-transparent">
                   <TableHead className="w-[180px] font-display font-semibold text-foreground text-base">Tool</TableHead>
-                  <TableHead className="text-center font-display text-amber-300">Open Source</TableHead>
+                  <TableHead className="text-center font-display text-orange-300">Open Source</TableHead>
                   <TableHead className="text-center font-display text-yellow-200">Privacy</TableHead>
                   <TableHead className="text-center font-display text-lime-300">Open Protocol</TableHead>
                   <TableHead className="text-center font-display text-emerald-300">Open Models</TableHead>
@@ -122,7 +123,7 @@ export function ComparisonTable() {
                         </div>
                       </TableCell>
                       <TableCell className="text-center">
-                        <ScoreCell value={tool.scores.openSource} color="amber" />
+                        <ScoreCell value={tool.scores.openSource} color="orange" />
                       </TableCell>
                       <TableCell className="text-center">
                         <ScoreCell value={tool.scores.privacy} color="yellow" />
@@ -168,7 +169,7 @@ export function ComparisonTable() {
         {/* Legend */}
         <div className="flex flex-wrap justify-center gap-4 mt-8 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-amber-400" />
+            <div className="w-3 h-3 rounded-full bg-orange-400" />
             <span>Open Source</span>
           </div>
           <div className="flex items-center gap-2">

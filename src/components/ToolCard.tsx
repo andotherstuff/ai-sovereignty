@@ -108,7 +108,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
 
         {/* Score Bars */}
         <div className="space-y-3">
-          <ScoreBar label="Open Source" value={tool.scores.openSource} color="amber" />
+          <ScoreBar label="Open Source" value={tool.scores.openSource} color="orange" />
           <ScoreBar label="Privacy" value={tool.scores.privacy} color="yellow" />
           <ScoreBar label="Open Protocol" value={tool.scores.protocolSupport} color="lime" />
           <ScoreBar label="Open Models" value={tool.scores.openModelSupport} color="emerald" />
@@ -234,10 +234,15 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
   );
 }
 
-type ScoreColor = 'amber' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet';
+type ScoreColor = 'orange' | 'amber' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet';
 
 // Using lighter color variants for better accessibility on dark backgrounds
 const colorClasses: Record<ScoreColor, { bar: string; text: string; label: string }> = {
+  orange: {
+    bar: 'bg-orange-400',
+    text: 'text-orange-300',
+    label: 'text-orange-200'
+  },
   amber: {
     bar: 'bg-amber-400',
     text: 'text-amber-300',
