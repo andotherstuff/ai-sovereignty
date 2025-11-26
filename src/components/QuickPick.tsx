@@ -1,8 +1,53 @@
 import { ArrowRight, Star, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { AI_TOOLS, type AITool } from '@/lib/tools';
+import { useMemo } from 'react';
+
+// Calculate the freedom score (weighted towards openness and privacy)
+function calculateFreedomScore(tool: AITool): number {
+  return Math.round(
+    (tool.scores.openSource * 1.5 +
+     tool.scores.privacy * 1.5 +
+     tool.scores.protocolSupport * 1.2 +
+     tool.scores.openModelSupport * 1.2 +
+     tool.scores.decentralization * 1.0 +
+     tool.scores.easeOfUse +
+     tool.scores.portability * 1.5 +
+     tool.scores.capabilities) / 9.9 * 20
+  );
+}
+
+// Get the tool with the highest freedom score
+function getTopFreedomTool(): AITool {
+  return AI_TOOLS.reduce((best, tool) => {
+    const bestScore = calculateFreedomScore(best);
+    const toolScore = calculateFreedomScore(tool);
+    return toolScore > bestScore ? tool : best;
+  }, AI_TOOLS[0]);
+}
+
+const openSourceLabels: Record<string, { label: string; className: string }> = {
+  'fully-open': { label: 'Fully Open Source', className: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' },
+  'partially-open': { label: 'Partially Open', className: 'bg-yellow-500/20 text-yellow-200 border-yellow-500/30' },
+  'proprietary': { label: 'Proprietary', className: 'bg-red-500/20 text-red-300 border-red-500/30' },
+};
+
+const privacyLabels: Record<string, { label: string; className: string }> = {
+  'high': { label: 'Privacy First', className: 'bg-blue-500/20 text-blue-300 border-blue-500/30' },
+  'medium': { label: 'Some Privacy', className: 'bg-yellow-500/20 text-yellow-200 border-yellow-500/30' },
+  'low': { label: 'Limited Privacy', className: 'bg-red-500/20 text-red-300 border-red-500/30' },
+};
 
 export function QuickPick() {
+  const topTool = useMemo(() => getTopFreedomTool(), []);
+  const freedomScore = useMemo(() => calculateFreedomScore(topTool), [topTool]);
+
+  const hasNostr = topTool.protocols.find(p => p.name === 'Nostr' && p.supported);
+  const hasBitcoin = topTool.protocols.find(p => p.name === 'Bitcoin/Lightning' && p.supported);
+  const osInfo = openSourceLabels[topTool.openSourceLevel];
+  const privacyInfo = privacyLabels[topTool.privacyLevel];
+
   return (
     <section className="py-16 md:py-20">
       <div className="container mx-auto px-6">
@@ -23,26 +68,28 @@ export function QuickPick() {
                 {/* Content */}
                 <div>
                   <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                    <span className="text-gradient">Shakespeare</span>
+                    <span className="text-gradient">{topTool.name}</span>
                   </h2>
                   <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
-                    If you care about freedom, privacy, and building on open protocols like Nostr and Bitcoin,
-                    Shakespeare is the clear winner. It's fully open-source, runs in your browser,
-                    accepts Bitcoin payments, and is purpose-built for the freedom tech community.
+                    {topTool.description}
                   </p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">
-                      Fully Open Source
+                    <Badge className={osInfo.className}>
+                      {osInfo.label}
                     </Badge>
-                    <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30">
-                      Nostr Native
-                    </Badge>
-                    <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30">
-                      ₿ Bitcoin Ready
-                    </Badge>
-                    <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">
-                      Privacy First
+                    {hasNostr && (
+                      <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30">
+                        Nostr Native
+                      </Badge>
+                    )}
+                    {hasBitcoin && (
+                      <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30">
+                        ₿ Bitcoin Ready
+                      </Badge>
+                    )}
+                    <Badge className={privacyInfo.className}>
+                      {privacyInfo.label}
                     </Badge>
                   </div>
 
@@ -51,8 +98,8 @@ export function QuickPick() {
                     className="bg-cyan-500 hover:bg-cyan-400 text-black font-display font-semibold group glow-blue-sm"
                     asChild
                   >
-                    <a href="https://shakespeare.diy" target="_blank" rel="noopener noreferrer">
-                      Try Shakespeare Free
+                    <a href={topTool.url} target="_blank" rel="noopener noreferrer">
+                      Try {topTool.name} Free
                       <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </a>
                   </Button>
@@ -63,19 +110,19 @@ export function QuickPick() {
                   <h4 className="font-display font-medium text-muted-foreground mb-4">Freedom Score</h4>
 
                   <div className="space-y-4">
-                    <ScoreRow label="Open Source" value={5} />
-                    <ScoreRow label="Privacy" value={5} />
-                    <ScoreRow label="Open Protocol" value={5} />
-                    <ScoreRow label="Open Models" value={5} />
-                    <ScoreRow label="Decentralization" value={5} />
-                    <ScoreRow label="Ease of Use" value={4} />
-                    <ScoreRow label="Cost Efficiency" value={5} />
-                    <ScoreRow label="Capabilities" value={4} />
+                    <ScoreRow label="Open Source" value={topTool.scores.openSource} />
+                    <ScoreRow label="Privacy" value={topTool.scores.privacy} />
+                    <ScoreRow label="Open Protocol" value={topTool.scores.protocolSupport} />
+                    <ScoreRow label="Open Models" value={topTool.scores.openModelSupport} />
+                    <ScoreRow label="Decentralization" value={topTool.scores.decentralization} />
+                    <ScoreRow label="Ease of Use" value={topTool.scores.easeOfUse} />
+                    <ScoreRow label="Portability" value={topTool.scores.portability} />
+                    <ScoreRow label="Capabilities" value={topTool.scores.capabilities} />
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
                     <span className="text-muted-foreground">Overall Freedom Score</span>
-                    <span className="text-2xl font-display font-bold text-cyan-400">96/100</span>
+                    <span className="text-2xl font-display font-bold text-cyan-400">{freedomScore}/100</span>
                   </div>
                 </div>
               </div>
@@ -85,7 +132,7 @@ export function QuickPick() {
                 <p className="text-muted-foreground flex items-start gap-3">
                   <ArrowRight className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-foreground">Not sure if Shakespeare is right for you?</strong>{' '}
+                    <strong className="text-foreground">Not sure if {topTool.name} is right for you?</strong>{' '}
                     Take our quiz below to get a personalized recommendation based on your specific needs and priorities.
                   </span>
                 </p>
