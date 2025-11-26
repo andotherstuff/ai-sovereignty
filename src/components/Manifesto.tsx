@@ -79,9 +79,6 @@ export function Manifesto() {
                   <li><span className="text-cyan-300">→</span> Freedom to modify the system</li>
                   <li><span className="text-cyan-300">→</span> Freedom to share the system with others</li>
                 </ul>
-                <p className="mt-6 italic text-muted-foreground">
-                  "Open source AI" isn't a marketing term—it's a commitment to user freedom and transparency.
-                </p>
               </div>
 
               <div className="p-8 rounded-2xl bg-gradient-to-br from-cyan-950/30 to-background border border-cyan-500/20">
