@@ -45,7 +45,7 @@ export function Hero({ onExplore, onFindTool }: HeroProps) {
         </h1>
 
         <p className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground font-light mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Take control of your AI destiny
+          Find the right vibe coding tool for you
         </p>
 
         {/* Tagline */}
