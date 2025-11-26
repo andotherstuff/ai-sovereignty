@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { ChevronRight, ChevronLeft, RotateCcw, Sparkles, ExternalLink } from 'lucide-react';
+import { ChevronRight, ChevronLeft, RotateCcw, Sparkles, ExternalLink, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
+import { Badge } from '@/components/ui/badge';
 import { QUIZ_QUESTIONS, calculateQuizResults, type AITool } from '@/lib/tools';
 
 interface QuizProps {
@@ -194,6 +196,21 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
   const topResult = results[0];
   const maxScore = results[0].score;
 
+  const openSourceLabels: Record<string, { label: string; color: string }> = {
+    'fully-open': { label: 'Fully Open Source', color: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' },
+    'partially-open': { label: 'Partially Open', color: 'bg-yellow-500/20 text-yellow-200 border-yellow-500/30' },
+    'proprietary': { label: 'Proprietary', color: 'bg-red-500/20 text-red-300 border-red-500/30' },
+  };
+
+  const privacyLabels: Record<string, { label: string; color: string }> = {
+    'high': { label: 'Privacy-First', color: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' },
+    'medium': { label: 'Some Privacy', color: 'bg-yellow-500/20 text-yellow-200 border-yellow-500/30' },
+    'low': { label: 'Limited Privacy', color: 'bg-red-500/20 text-red-300 border-red-500/30' },
+  };
+
+  const osInfo = openSourceLabels[topResult.tool.openSourceLevel];
+  const privacyInfo = privacyLabels[topResult.tool.privacyLevel];
+
   return (
     <section id="quiz" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/10 to-background" />
@@ -215,21 +232,74 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
               {topResult.tool.tagline}
             </p>
 
+            {/* Quick Badges */}
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
+              <Badge variant="outline" className={osInfo.color}>
+                {osInfo.label}
+              </Badge>
+              <Badge variant="outline" className={privacyInfo.color}>
+                {privacyInfo.label}
+              </Badge>
+              {topResult.tool.protocols.find(p => p.name === 'Nostr' && p.supported) && (
+                <Badge variant="outline" className="bg-purple-500/20 text-purple-300 border-purple-500/30">
+                  Nostr Ready
+                </Badge>
+              )}
+              {topResult.tool.protocols.find(p => p.name === 'Bitcoin/Lightning' && p.supported) && (
+                <Badge variant="outline" className="bg-orange-500/20 text-orange-300 border-orange-500/30">
+                  ₿ Bitcoin
+                </Badge>
+              )}
+            </div>
+
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
               {topResult.tool.description}
             </p>
 
-            <Button
-              size="lg"
-              className="bg-cyan-500 hover:bg-cyan-400 text-black font-display font-medium glow-blue-sm"
-              asChild
-            >
-              <a href={topResult.tool.url} target="_blank" rel="noopener noreferrer">
-                Try {topResult.tool.name}
-                <ExternalLink className="ml-2 w-5 h-5" />
-              </a>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button
+                size="lg"
+                className="bg-cyan-500 hover:bg-cyan-400 text-black font-display font-medium glow-blue-sm"
+                asChild
+              >
+                <a href={topResult.tool.url} target="_blank" rel="noopener noreferrer">
+                  Try {topResult.tool.name}
+                  <ExternalLink className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+            </div>
           </div>
+
+          {/* Tool Ratings Summary */}
+          <Card className="mb-12 border-cyan-500/30 bg-cyan-500/5">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-display font-medium">{topResult.tool.name} Ratings</h3>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-cyan-300 hover:text-cyan-200"
+                  asChild
+                >
+                  <Link to={`/open-tools#${topResult.tool.id}`}>
+                    View Full Details
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </Button>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+                <ScoreBar label="Open Source" value={topResult.tool.scores.openSource} color="orange" />
+                <ScoreBar label="Privacy" value={topResult.tool.scores.privacy} color="yellow" />
+                <ScoreBar label="Open Protocol" value={topResult.tool.scores.protocolSupport} color="lime" />
+                <ScoreBar label="Open Models" value={topResult.tool.scores.openModelSupport} color="emerald" />
+                <ScoreBar label="Decentralization" value={topResult.tool.scores.decentralization} color="teal" />
+                <ScoreBar label="Ease of Use" value={topResult.tool.scores.easeOfUse} color="cyan" />
+                <ScoreBar label="Portability" value={topResult.tool.scores.portability} color="sky" />
+                <ScoreBar label="Capabilities" value={topResult.tool.scores.capabilities} color="violet" />
+              </div>
+            </CardContent>
+          </Card>
 
           {/* All Results */}
           <div className="space-y-4">
@@ -291,5 +361,76 @@ function QuizResults({ results, onReset }: QuizResultsProps) {
         </div>
       </div>
     </section>
+  );
+}
+
+// Score bar component for displaying category ratings
+type ScoreColor = 'orange' | 'amber' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet';
+
+const colorClasses: Record<ScoreColor, { bar: string; text: string; label: string }> = {
+  orange: {
+    bar: 'bg-orange-400',
+    text: 'text-orange-300',
+    label: 'text-orange-200'
+  },
+  amber: {
+    bar: 'bg-amber-400',
+    text: 'text-amber-300',
+    label: 'text-amber-200'
+  },
+  yellow: {
+    bar: 'bg-yellow-400',
+    text: 'text-yellow-200',
+    label: 'text-yellow-100'
+  },
+  lime: {
+    bar: 'bg-lime-400',
+    text: 'text-lime-300',
+    label: 'text-lime-200'
+  },
+  emerald: {
+    bar: 'bg-emerald-400',
+    text: 'text-emerald-300',
+    label: 'text-emerald-200'
+  },
+  teal: {
+    bar: 'bg-teal-400',
+    text: 'text-teal-300',
+    label: 'text-teal-200'
+  },
+  cyan: {
+    bar: 'bg-cyan-400',
+    text: 'text-cyan-300',
+    label: 'text-cyan-200'
+  },
+  sky: {
+    bar: 'bg-sky-400',
+    text: 'text-sky-300',
+    label: 'text-sky-200'
+  },
+  violet: {
+    bar: 'bg-violet-400',
+    text: 'text-violet-300',
+    label: 'text-violet-200'
+  },
+};
+
+function ScoreBar({ label, value, color }: { label: string; value: number; color: ScoreColor }) {
+  const percentage = (value / 5) * 100;
+  const colors = colorClasses[color];
+
+  return (
+    <div className="space-y-1.5">
+      <div className="flex justify-between items-center">
+        <span className={`text-sm ${colors.label}`}>{label}</span>
+        <span className={`text-sm font-medium ${colors.text}`}>{value}/5</span>
+      </div>
+      <div className="h-2 bg-muted rounded-full overflow-hidden">
+        <div
+          className={`h-full rounded-full transition-all duration-500 ${colors.bar}`}
+          style={{ width: `${percentage}%` }}
+        />
+      </div>
+    </div>
   );
 }
