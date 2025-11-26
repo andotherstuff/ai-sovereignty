@@ -1,7 +1,7 @@
 {
-  "name": "LibreCoder",
-  "short_name": "LibreCoder",
-  "description": "Find AI tools that respect your freedom",
+  "name": "FATE - Freedom AI Tool Evaluator",
+  "short_name": "FATE",
+  "description": "Take control of your AI destiny",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f0d0b",

@@ -9,9 +9,10 @@ export function Footer() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* About */}
             <div>
-              <h3 className="font-serif text-xl text-gradient mb-4">LibreCoder</h3>
+              <h3 className="font-serif text-xl text-gradient mb-2">FATE</h3>
+              <p className="text-xs text-amber-400/70 uppercase tracking-wide mb-3">Freedom AI Tool Evaluator</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Helping freedom-minded creators find AI tools that respect their sovereignty, 
+                Helping freedom-minded creators find AI tools that respect their sovereignty,
                 privacy, and values.
               </p>
             </div>
@@ -21,9 +22,9 @@ export function Footer() {
               <h4 className="font-medium mb-4">Resources</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a 
-                    href="https://opensource.org/osd" 
-                    target="_blank" 
+                  <a
+                    href="https://opensource.org/osd"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-amber-400 transition-colors inline-flex items-center gap-1"
                   >
@@ -32,9 +33,9 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://soapbox.pub/blog/our-stance-on-ai" 
-                    target="_blank" 
+                  <a
+                    href="https://soapbox.pub/blog/our-stance-on-ai"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-amber-400 transition-colors inline-flex items-center gap-1"
                   >
@@ -43,9 +44,9 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://nostr.com" 
-                    target="_blank" 
+                  <a
+                    href="https://nostr.com"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-amber-400 transition-colors inline-flex items-center gap-1"
                   >
@@ -59,9 +60,9 @@ export function Footer() {
             {/* Parent Org */}
             <div>
               <h4 className="font-medium mb-4">A Project Of</h4>
-              <a 
-                href="https://andotherstuff.org" 
-                target="_blank" 
+              <a
+                href="https://andotherstuff.org"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block"
               >
@@ -83,11 +84,11 @@ export function Footer() {
             <div className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} And Other Stuff. Built for the freedom tech community.
             </div>
-            
+
             <div className="flex items-center gap-4 text-sm">
-              <a 
-                href="https://soapbox.pub/mkstack" 
-                target="_blank" 
+              <a
+                href="https://soapbox.pub/mkstack"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-amber-400 transition-colors inline-flex items-center gap-1.5"
               >

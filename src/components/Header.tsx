@@ -32,7 +32,7 @@ export function Header({ onNavigate }: HeaderProps) {
   };
 
   return (
-    <header 
+    <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled ? 'bg-background/80 backdrop-blur-lg border-b border-border/50' : 'bg-transparent'
@@ -41,11 +41,11 @@ export function Header({ onNavigate }: HeaderProps) {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <button 
+          <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 group"
           >
-            <span className="text-xl md:text-2xl font-serif text-gradient">LibreCoder</span>
+            <span className="text-xl md:text-2xl font-serif text-gradient">FATE</span>
           </button>
 
           {/* Desktop Navigation */}

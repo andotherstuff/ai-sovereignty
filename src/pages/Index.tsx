@@ -11,9 +11,9 @@ import { Footer } from '@/components/Footer';
 
 const Index = () => {
   useSeoMeta({
-    title: 'LibreCoder — Find AI Tools That Respect Your Freedom',
+    title: 'FATE — Freedom AI Tool Evaluator',
     description: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support. Find the perfect tool for vibe coding that aligns with your values.',
-    ogTitle: 'LibreCoder — Find AI Tools That Respect Your Freedom',
+    ogTitle: 'FATE — Freedom AI Tool Evaluator',
     ogDescription: 'Compare AI coding assistants through the lens of openness, privacy, and protocol support.',
     ogType: 'website',
     twitterCard: 'summary_large_image',
