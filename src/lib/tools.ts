@@ -213,6 +213,62 @@ export const AI_TOOLS: AITool[] = [
     openSourceLevel: 'proprietary'
   },
   {
+    id: 'base44',
+    name: 'Base44',
+    tagline: 'AI-powered app builder for rapid prototyping',
+    description: 'Base44 is a commercial AI coding platform that generates full-stack web applications from natural language descriptions. It provides an integrated development environment with database, authentication, and deployment built-in.',
+    url: 'https://base44.com',
+    logo: '/logos/base44.png',
+    scores: {
+      openSource: 1, // Fully proprietary, closed-source
+      privacy: 2, // Requires account, stores code on their servers
+      protocolSupport: 1, // Locked to their proprietary AI backend
+      openModelSupport: 1, // No support for custom models
+      decentralization: 1, // No support for Nostr, Bitcoin, etc.
+      easeOfUse: 5, // Very user-friendly, natural language to app
+      portability: 2, // Platform lock-in: their database, their deployment, subscription model
+      capabilities: 4 // Good full-stack generation, slightly less mature than competitors
+    },
+    features: [
+      'Natural language to full-stack app',
+      'Integrated database and authentication',
+      'One-click deployment',
+      'Real-time preview',
+      'Built-in hosting',
+      'Template library',
+      'Collaborative editing'
+    ],
+    limitations: [
+      'Fully proprietary, closed-source',
+      'No support for decentralized protocols',
+      'Requires account and stores your data',
+      'Subscription-based pricing',
+      'Platform lock-in for database and hosting',
+      'Cannot use custom AI providers or models',
+      'No OpenAI API compatibility'
+    ],
+    bestFor: [
+      'Rapid prototyping',
+      'MVPs and proof of concepts',
+      'Non-technical founders',
+      'Traditional web applications'
+    ],
+    pricing: {
+      type: 'freemium',
+      freetier: true,
+      startingPrice: '$19/month',
+      details: 'Free tier with limitations. Paid plans for more features, apps, and usage.'
+    },
+    protocols: [
+      { name: 'Nostr', supported: false, quality: 'none' },
+      { name: 'Bitcoin/Lightning', supported: false, quality: 'none' },
+      { name: 'ActivityPub', supported: false, quality: 'none' },
+      { name: 'AT Protocol', supported: false, quality: 'none' }
+    ],
+    privacyLevel: 'low',
+    openSourceLevel: 'proprietary'
+  },
+  {
     id: 'replit',
     name: 'Replit',
     tagline: 'Cloud IDE with AI coding assistance',
@@ -525,25 +581,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'freedom',
         label: 'Freedom & Sovereignty',
         description: 'I want full control over my tools and data',
-        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 1, replit: 2, v0: 1 }
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 1, base44: 1, replit: 2, v0: 1 }
       },
       {
         id: 'ease',
         label: 'Ease of Use',
         description: 'I want to get things done quickly without complexity',
-        weights: { shakespeare: 3, goose: 2, cursor: 5, lovable: 5, replit: 5, v0: 5 }
+        weights: { shakespeare: 3, goose: 2, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 5 }
       },
       {
         id: 'capabilities',
         label: 'Maximum Capabilities',
         description: 'I want the most powerful tools regardless of other factors',
-        weights: { shakespeare: 3, goose: 4, cursor: 5, lovable: 5, replit: 5, v0: 4 }
+        weights: { shakespeare: 3, goose: 4, cursor: 5, lovable: 5, base44: 4, replit: 5, v0: 4 }
       },
       {
         id: 'cost',
         label: 'Cost Efficiency',
         description: 'I want to minimize expenses',
-        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, replit: 3, v0: 2 }
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, base44: 2, replit: 3, v0: 2 }
       }
     ]
   },
@@ -556,25 +612,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'nostr',
         label: 'Nostr Applications',
         description: 'Social apps, clients, or anything on the Nostr protocol',
-        weights: { shakespeare: 5, goose: 2, cursor: 1, lovable: 1, replit: 1, v0: 1 }
+        weights: { shakespeare: 5, goose: 2, cursor: 1, lovable: 1, base44: 1, replit: 1, v0: 1 }
       },
       {
         id: 'bitcoin',
         label: 'Bitcoin/Lightning Apps',
         description: 'Wallets, payment integrations, Bitcoin tools',
-        weights: { shakespeare: 4, goose: 4, cursor: 2, lovable: 1, replit: 2, v0: 1 }
+        weights: { shakespeare: 4, goose: 4, cursor: 2, lovable: 1, base44: 1, replit: 2, v0: 1 }
       },
       {
         id: 'traditional',
         label: 'Traditional Web Apps',
         description: 'SaaS, e-commerce, or standard web applications',
-        weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, replit: 5, v0: 4 }
+        weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 4 }
       },
       {
         id: 'ui',
         label: 'UI/Design Projects',
         description: 'Component libraries, design systems, visual work',
-        weights: { shakespeare: 3, goose: 2, cursor: 4, lovable: 4, replit: 3, v0: 5 }
+        weights: { shakespeare: 3, goose: 2, cursor: 4, lovable: 4, base44: 3, replit: 3, v0: 5 }
       }
     ]
   },
@@ -587,25 +643,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'open',
         label: 'Open models (Llama, Mistral, etc.)',
         description: 'I want to use open-weight models I can run locally',
-        weights: { shakespeare: 5, goose: 5, cursor: 3, lovable: 1, replit: 2, v0: 1 }
+        weights: { shakespeare: 5, goose: 5, cursor: 3, lovable: 1, base44: 1, replit: 2, v0: 1 }
       },
       {
         id: 'any',
         label: 'Any provider (OpenRouter, etc.)',
         description: 'I want to choose from many providers',
-        weights: { shakespeare: 5, goose: 5, cursor: 4, lovable: 1, replit: 2, v0: 1 }
+        weights: { shakespeare: 5, goose: 5, cursor: 4, lovable: 1, base44: 1, replit: 2, v0: 1 }
       },
       {
         id: 'proprietary',
         label: 'Best proprietary (GPT-4, Claude)',
         description: 'I want the best models regardless of openness',
-        weights: { shakespeare: 4, goose: 4, cursor: 5, lovable: 5, replit: 4, v0: 4 }
+        weights: { shakespeare: 4, goose: 4, cursor: 5, lovable: 5, base44: 4, replit: 4, v0: 4 }
       },
       {
         id: 'doesnt-matter',
         label: 'Doesn\'t matter',
         description: 'I just want something that works',
-        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 5, replit: 5, v0: 4 }
+        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 5, base44: 5, replit: 5, v0: 4 }
       }
     ]
   },
@@ -618,25 +674,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'critical',
         label: 'Critical - I\'m an activist/journalist',
         description: 'My safety may depend on privacy',
-        weights: { shakespeare: 5, goose: 5, cursor: 1, lovable: 1, replit: 1, v0: 1 }
+        weights: { shakespeare: 5, goose: 5, cursor: 1, lovable: 1, base44: 1, replit: 1, v0: 1 }
       },
       {
         id: 'important',
         label: 'Very Important',
         description: 'I care deeply about data sovereignty',
-        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, replit: 2, v0: 2 }
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, base44: 2, replit: 2, v0: 2 }
       },
       {
         id: 'moderate',
         label: 'Somewhat Important',
         description: 'I prefer privacy but it\'s not a dealbreaker',
-        weights: { shakespeare: 4, goose: 4, cursor: 3, lovable: 3, replit: 3, v0: 3 }
+        weights: { shakespeare: 4, goose: 4, cursor: 3, lovable: 3, base44: 3, replit: 3, v0: 3 }
       },
       {
         id: 'low',
         label: 'Not a Priority',
         description: 'I\'m okay with standard terms of service',
-        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 4, replit: 4, v0: 4 }
+        weights: { shakespeare: 3, goose: 3, cursor: 4, lovable: 4, base44: 4, replit: 4, v0: 4 }
       }
     ]
   },
@@ -649,25 +705,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'beginner',
         label: 'Complete Beginner',
         description: 'Never written code before',
-        weights: { shakespeare: 4, goose: 1, cursor: 4, lovable: 5, replit: 4, v0: 5 }
+        weights: { shakespeare: 4, goose: 1, cursor: 4, lovable: 5, base44: 5, replit: 4, v0: 5 }
       },
       {
         id: 'some',
         label: 'Some Experience',
         description: 'I\'ve dabbled but I\'m not a developer',
-        weights: { shakespeare: 4, goose: 2, cursor: 5, lovable: 5, replit: 5, v0: 5 }
+        weights: { shakespeare: 4, goose: 2, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 5 }
       },
       {
         id: 'comfortable',
         label: 'Comfortable with Code',
         description: 'I can read and modify code',
-        weights: { shakespeare: 5, goose: 4, cursor: 5, lovable: 4, replit: 5, v0: 4 }
+        weights: { shakespeare: 5, goose: 4, cursor: 5, lovable: 4, base44: 4, replit: 5, v0: 4 }
       },
       {
         id: 'expert',
         label: 'Professional Developer',
         description: 'I write code daily',
-        weights: { shakespeare: 5, goose: 5, cursor: 5, lovable: 3, replit: 4, v0: 4 }
+        weights: { shakespeare: 5, goose: 5, cursor: 5, lovable: 3, base44: 3, replit: 4, v0: 4 }
       }
     ]
   },
@@ -680,25 +736,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         id: 'essential',
         label: 'Essential - Non-negotiable',
         description: 'I only use open-source software',
-        weights: { shakespeare: 5, goose: 5, cursor: 1, lovable: 0, replit: 1, v0: 0 }
+        weights: { shakespeare: 5, goose: 5, cursor: 1, lovable: 0, base44: 0, replit: 1, v0: 0 }
       },
       {
         id: 'prefer',
         label: 'Strongly Prefer',
         description: 'I choose open source when possible',
-        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, replit: 2, v0: 2 }
+        weights: { shakespeare: 5, goose: 5, cursor: 2, lovable: 2, base44: 2, replit: 2, v0: 2 }
       },
       {
         id: 'nice',
         label: 'Nice to Have',
         description: 'I appreciate open source but it\'s not required',
-        weights: { shakespeare: 4, goose: 4, cursor: 4, lovable: 4, replit: 3, v0: 3 }
+        weights: { shakespeare: 4, goose: 4, cursor: 4, lovable: 4, base44: 4, replit: 3, v0: 3 }
       },
       {
         id: 'indifferent',
         label: 'Doesn\'t Matter',
         description: 'I just want what works best',
-        weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, replit: 5, v0: 5 }
+        weights: { shakespeare: 3, goose: 3, cursor: 5, lovable: 5, base44: 5, replit: 5, v0: 5 }
       }
     ]
   }
