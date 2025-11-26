@@ -2,7 +2,7 @@ import { ExternalLink } from 'lucide-react';
 
 export function Manifesto() {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section id="manifesto" className="py-24 md:py-32 relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/5 to-background" />
 
@@ -11,7 +11,7 @@ export function Manifesto() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-              Why <span className="text-gradient">Open AI</span> Matters
+              Why <span className="text-gradient">(Really) Open AI</span> Matters
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               The tools we use shape the world we build. When AI is open, we all benefit.
@@ -32,6 +32,9 @@ export function Manifesto() {
                 </p>
                 <p className="mt-4">
                   When the AI you depend on is a black box controlled by a corporation, you've traded one form of gatekeeping for another. Your creativity flows through their servers. Your ideas pass through their filters. Your sovereignty over your own tools is an illusion.
+                </p>
+                <p className="mt-4">
+                  The irony runs deeper: <span className="text-cyan-300 font-medium">OpenAI—the company—has hijacked the very meaning of "open."</span> Despite its name, OpenAI keeps its model weights locked away, refuses to disclose training data, and operates as one of the most closed AI companies in existence. They started as a non-profit promising to benefit humanity, then pivoted to a capped-profit structure backed by Microsoft. When we say "open AI," we mean the <em>opposite</em> of what OpenAI the company represents.
                 </p>
               </div>
 

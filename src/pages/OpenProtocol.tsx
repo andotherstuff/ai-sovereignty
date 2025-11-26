@@ -1,11 +1,12 @@
 import { useSeoMeta } from '@unhead/react';
 import { PageLayout } from '@/components/PageLayout';
-import { 
-  ArrowRightLeft, 
-  Server, 
-  Key, 
-  FileJson, 
-  CheckCircle2, 
+import { GlobeHero } from '@/components/GlobeHero';
+import {
+  ArrowRightLeft,
+  Server,
+  Key,
+  FileJson,
+  CheckCircle2,
   Zap,
   Code,
   Globe,
@@ -87,66 +88,30 @@ export default function OpenProtocol() {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        {/* Background effects */}
-        <div className="absolute inset-0 bg-gradient-to-b from-cyan-950/10 via-background to-background" />
-        <div className="absolute top-20 right-[20%] w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-[10%] w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-3xl" />
-
-        <div className="relative container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm mb-8">
-              <Globe className="w-4 h-4" />
-              <span>Universal API Standard</span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-              The <span className="text-gradient-glow">Open Protocol</span>
-              <br />
-              <span className="text-foreground">for AI</span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              One API specification. Dozens of providers. 
-              <span className="text-cyan-400 font-medium"> Complete freedom</span> to choose—and change.
-            </p>
-
-            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-12">
-              The OpenAI API specification has become the de facto standard for AI inference. 
-              By building to this spec, your applications become provider-agnostic, giving you 
-              true flexibility and avoiding vendor lock-in.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/open-models">
-                <Button
-                  size="lg"
-                  className="text-lg px-8 py-6 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold glow-blue-sm transition-all duration-300 hover:scale-105"
-                >
-                  Explore Open Models
-                  <Sparkles className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <a
-                href="https://platform.openai.com/docs/api-reference"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-lg px-8 py-6 border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10"
-                >
-                  View API Docs
-                  <ExternalLink className="ml-2 w-5 h-5" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with Globe */}
+      <GlobeHero
+        badge={{
+          icon: <Globe className="w-4 h-4" />,
+          text: 'Universal API Standard',
+        }}
+        title={
+          <>
+            <span className="text-gradient-glow">Open Protocol</span>
+            <br />
+            <span className="text-foreground">for AI</span>
+          </>
+        }
+        subtitle="One API specification. Dozens of providers. Complete freedom to choose—and change."
+        description="The OpenAI API specification has become the de facto standard for AI inference. By building to this spec, your applications become provider-agnostic, giving you true flexibility and avoiding vendor lock-in."
+        primaryAction={{
+          label: 'Explore Open Models',
+          href: '/open-models',
+        }}
+        secondaryAction={{
+          label: 'View API Docs',
+          href: 'https://platform.openai.com/docs/api-reference',
+        }}
+      />
 
       {/* Benefits Section */}
       <section className="py-20 md:py-28">
@@ -156,7 +121,7 @@ export default function OpenProtocol() {
               Why <span className="text-gradient">Standardization</span> Matters
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A common API specification creates a healthy ecosystem where providers compete 
+              A common API specification creates a healthy ecosystem where providers compete
               on quality and cost, not lock-in.
             </p>
           </div>
@@ -181,7 +146,7 @@ export default function OpenProtocol() {
       {/* Core Endpoints Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/5 to-background" />
-        
+
         <div className="relative container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
@@ -200,8 +165,8 @@ export default function OpenProtocol() {
               >
                 <div className="flex-shrink-0">
                   <span className={`inline-block px-3 py-1 rounded-lg text-xs font-mono font-bold ${
-                    endpoint.method === 'POST' 
-                      ? 'bg-emerald-500/20 text-emerald-400' 
+                    endpoint.method === 'POST'
+                      ? 'bg-emerald-500/20 text-emerald-400'
                       : 'bg-blue-500/20 text-blue-400'
                   }`}>
                     {endpoint.method}
@@ -275,7 +240,7 @@ export default function OpenProtocol() {
       {/* How It Works Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/5 to-background" />
-        
+
         <div className="relative container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
@@ -293,7 +258,7 @@ export default function OpenProtocol() {
               </div>
               <h3 className="font-display font-semibold text-lg mb-2">Standard Endpoints</h3>
               <p className="text-muted-foreground text-sm">
-                <code className="text-cyan-300">/v1/chat/completions</code> works the same everywhere—request format, 
+                <code className="text-cyan-300">/v1/chat/completions</code> works the same everywhere—request format,
                 response structure, and streaming support.
               </p>
             </div>
@@ -304,7 +269,7 @@ export default function OpenProtocol() {
               </div>
               <h3 className="font-display font-semibold text-lg mb-2">Bearer Authentication</h3>
               <p className="text-muted-foreground text-sm">
-                Simple <code className="text-cyan-300">Authorization: Bearer</code> header authentication 
+                Simple <code className="text-cyan-300">Authorization: Bearer</code> header authentication
                 that every HTTP client already supports.
               </p>
             </div>
@@ -315,7 +280,7 @@ export default function OpenProtocol() {
               </div>
               <h3 className="font-display font-semibold text-lg mb-2">JSON Responses</h3>
               <p className="text-muted-foreground text-sm">
-                Consistent JSON response format with <code className="text-cyan-300">choices</code>, 
+                Consistent JSON response format with <code className="text-cyan-300">choices</code>,
                 <code className="text-cyan-300 ml-1">usage</code>, and standardized error handling.
               </p>
             </div>
@@ -332,7 +297,7 @@ export default function OpenProtocol() {
                 Choose Your <span className="text-gradient">Open Models</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Now that you understand the protocol, discover the truly open AI models 
+                Now that you understand the protocol, discover the truly open AI models
                 that you can use with any compatible provider.
               </p>
               <Link to="/open-models">

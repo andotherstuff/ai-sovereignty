@@ -37,6 +37,8 @@ export function Header({ onNavigate }: HeaderProps) {
     { to: '/open-tools', label: 'Open Tools' },
   ];
 
+  // Note: Open Tools is already included in the dropdown
+
   const handleNavClick = (id: string) => {
     onNavigate(id);
     setIsMobileMenuOpen(false);

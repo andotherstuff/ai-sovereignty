@@ -1,13 +1,13 @@
 import { useSeoMeta } from '@unhead/react';
 import { PageLayout } from '@/components/PageLayout';
-import { 
-  Scale, 
-  Eye, 
-  GitFork, 
-  Share2, 
-  CheckCircle2, 
+import { GlobeHero } from '@/components/GlobeHero';
+import {
+  Scale,
+  Eye,
+  GitFork,
+  Share2,
+  CheckCircle2,
   Cpu,
-  Sparkles,
   ExternalLink,
   Database,
   BookOpen,
@@ -179,70 +179,35 @@ export default function OpenModels() {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        {/* Background effects */}
-        <div className="absolute inset-0 bg-gradient-to-b from-cyan-950/10 via-background to-background" />
-        <div className="absolute top-20 left-[20%] w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-[10%] w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-3xl" />
-
-        <div className="relative container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm mb-8">
-              <Database className="w-4 h-4" />
-              <span>Truly Open AI</span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-              <span className="text-gradient-glow">Open Models</span>
-              <br />
-              <span className="text-foreground">You Can Own</span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              AI models with accessible weights, transparent training, and the 
-              <span className="text-cyan-400 font-medium"> freedom to modify and redistribute</span>.
-            </p>
-
-            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-12">
-              Not all "open" models are truly open. We follow the OSI Open Source AI Definition 
-              to highlight models that respect your freedom.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/open-protocol">
-                <Button
-                  size="lg"
-                  className="text-lg px-8 py-6 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold glow-blue-sm transition-all duration-300 hover:scale-105"
-                >
-                  Learn the Protocol
-                  <Sparkles className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <a
-                href="https://opensource.org/ai/open-source-ai-definition"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-lg px-8 py-6 border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10"
-                >
-                  OSI Definition
-                  <ExternalLink className="ml-2 w-5 h-5" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with Globe */}
+      <GlobeHero
+        badge={{
+          icon: <Database className="w-4 h-4" />,
+          text: 'Truly Open AI',
+        }}
+        title={
+          <>
+            <span className="text-gradient-glow">Open Models</span>
+            <br />
+            <span className="text-foreground">You Can Own</span>
+          </>
+        }
+        subtitle="AI models with accessible weights, transparent training, and the freedom to modify and redistribute"
+        description="Not all 'open' models are truly open. We follow the OSI Open Source AI Definition to highlight models that respect your freedom."
+        primaryAction={{
+          label: 'Learn the Protocol',
+          href: '/open-protocol',
+        }}
+        secondaryAction={{
+          label: 'OSI Definition',
+          href: 'https://opensource.org/ai/open-source-ai-definition',
+        }}
+      />
 
       {/* OSI Definition Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/5 to-background" />
-        
+
         <div className="relative container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -277,14 +242,14 @@ export default function OpenModels() {
             <div className="p-8 rounded-2xl bg-gradient-to-br from-cyan-950/30 via-card/50 to-background border border-cyan-500/20">
               <blockquote className="text-center">
                 <p className="text-lg md:text-xl text-foreground font-medium italic mb-4">
-                  "Open Source AI means models with accessible weights, transparent training processes, 
+                  "Open Source AI means models with accessible weights, transparent training processes,
                   and the freedom to modify and redistribute."
                 </p>
                 <cite className="text-muted-foreground text-sm">
                   — Based on the{' '}
-                  <a 
-                    href="https://opensource.org/ai/open-source-ai-definition" 
-                    target="_blank" 
+                  <a
+                    href="https://opensource.org/ai/open-source-ai-definition"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-cyan-400 hover:text-cyan-300"
                   >
@@ -334,7 +299,7 @@ export default function OpenModels() {
                       {model.openness}
                     </Badge>
                   </div>
-                  
+
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                     {model.description}
                   </p>
@@ -350,7 +315,7 @@ export default function OpenModels() {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div>
                       <p className="text-xs text-muted-foreground mb-1.5">Highlights</p>
                       <div className="flex flex-wrap gap-1.5">
@@ -377,7 +342,7 @@ export default function OpenModels() {
       {/* Inference Engines Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-950/5 to-background" />
-        
+
         <div className="relative container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -410,7 +375,7 @@ export default function OpenModels() {
                       {engine.platform}
                     </Badge>
                   </div>
-                  
+
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                     {engine.description}
                   </p>
@@ -489,7 +454,7 @@ export default function OpenModels() {
                 Find Your <span className="text-gradient">Perfect Tool</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Ready to start coding with open AI? Use FATE to compare vibe coding tools 
+                Ready to start coding with open AI? Use FATE to compare vibe coding tools
                 and find the one that supports the models you want.
               </p>
               <Link to="/">

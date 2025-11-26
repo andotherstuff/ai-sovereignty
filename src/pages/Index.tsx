@@ -159,12 +159,12 @@ const Index = () => {
                   comparing all the tools on our evaluation rubric.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/open-tools">
+                  <Link to="/open-tools#quiz">
                     <Button
                       size="lg"
                       className="text-lg px-8 py-6 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold glow-blue-sm transition-all duration-300 hover:scale-105"
                     >
-                      Compare Tools
+                      Find Your Tool
                       <Sparkles className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>

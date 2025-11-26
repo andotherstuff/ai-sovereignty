@@ -1,12 +1,13 @@
-import { ArrowDown, Sparkles, Shield, Code, Zap } from 'lucide-react';
+import { ArrowDown, Sparkles, Globe, Database, Wrench } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface HeroProps {
   onExplore: () => void;
   onFindTool: () => void;
 }
 
-export function Hero({ onExplore, onFindTool }: HeroProps) {
+export function Hero({ onExplore }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -54,27 +55,27 @@ export function Hero({ onExplore, onFindTool }: HeroProps) {
           </h1>
 
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Find the right <span className="text-cyan-400 font-medium">vibe coding</span> tool for you
+            Navigate the AI landscape with <span className="text-cyan-400 font-medium">freedom</span> in mind
           </p>
 
           {/* Tagline */}
           <p className="max-w-xl text-base md:text-lg text-muted-foreground/80 mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: '0.3s' }}>
-            Not all AI is created equal. We evaluate coding assistants through the lens of{' '}
-            <span className="text-cyan-400 font-medium">openness</span>,{' '}
-            <span className="text-sky-400 font-medium">privacy</span>, and{' '}
-            <span className="text-blue-400 font-medium">protocol support</span>—so you can code with tools that align with your values.
+            We champion <span className="text-cyan-400 font-medium">open protocols</span> that prevent vendor lock-in,
+            <span className="text-sky-400 font-medium"> open models</span> you can run anywhere, and{' '}
+            <span className="text-blue-400 font-medium">open tools</span> that respect your sovereignty—so you can build with AI that aligns with your values.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Button
-              size="lg"
-              className="text-lg px-8 py-6 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold glow-blue-sm transition-all duration-300 hover:scale-105 group"
-              onClick={onFindTool}
-            >
-              Find Your Tool
-              <Sparkles className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
-            </Button>
+            <Link to="/open-tools#quiz">
+              <Button
+                size="lg"
+                className="text-lg px-8 py-6 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold glow-blue-sm transition-all duration-300 hover:scale-105 group"
+              >
+                Find Your Tool
+                <Sparkles className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"
@@ -85,23 +86,23 @@ export function Hero({ onExplore, onFindTool }: HeroProps) {
             </Button>
           </div>
 
-          {/* Value Props */}
+          {/* Three Pillars of Open AI */}
           <div className="grid md:grid-cols-3 gap-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="group p-5 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/80">
-              <Code className="w-7 h-7 text-cyan-400 mb-3 group-hover:scale-110 transition-transform" />
-              <h3 className="font-display font-semibold mb-2 text-sm">Open Source First</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">We prioritize tools you can audit, modify, and self-host</p>
-            </div>
-            <div className="group p-5 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-md hover:border-sky-500/40 transition-all duration-300 hover:bg-card/80">
-              <Shield className="w-7 h-7 text-sky-400 mb-3 group-hover:scale-110 transition-transform" />
-              <h3 className="font-display font-semibold mb-2 text-sm">Privacy Aware</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">Know exactly what data each tool collects—and what it doesn't</p>
-            </div>
-            <div className="group p-5 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-md hover:border-blue-500/40 transition-all duration-300 hover:bg-card/80">
-              <Zap className="w-7 h-7 text-blue-400 mb-3 group-hover:scale-110 transition-transform" />
-              <h3 className="font-display font-semibold mb-2 text-sm">Protocol Savvy</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">Find tools that speak Nostr, Bitcoin, and freedom tech</p>
-            </div>
+            <Link to="/open-protocol" className="group p-5 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/80">
+              <Globe className="w-7 h-7 text-cyan-400 mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="font-display font-semibold mb-2 text-sm">Open Protocol</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">One universal API standard that lets you switch providers freely</p>
+            </Link>
+            <Link to="/open-models" className="group p-5 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-md hover:border-sky-500/40 transition-all duration-300 hover:bg-card/80">
+              <Database className="w-7 h-7 text-sky-400 mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="font-display font-semibold mb-2 text-sm">Open Models</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">AI with accessible weights, transparent training, and freedom to modify</p>
+            </Link>
+            <Link to="/open-tools" className="group p-5 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-md hover:border-blue-500/40 transition-all duration-300 hover:bg-card/80">
+              <Wrench className="w-7 h-7 text-blue-400 mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="font-display font-semibold mb-2 text-sm">Open Tools</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">Vibe coding assistants evaluated for openness, privacy, and protocol support</p>
+            </Link>
           </div>
         </div>
       </div>

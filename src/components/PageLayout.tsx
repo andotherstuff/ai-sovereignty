@@ -86,6 +86,11 @@ export function PageLayout({ children }: PageLayoutProps) {
                       Open Models
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/open-tools" className="cursor-pointer">
+                      Open Tools
+                    </Link>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
 
