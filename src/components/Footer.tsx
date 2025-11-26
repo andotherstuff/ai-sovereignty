@@ -9,8 +9,7 @@ export function Footer() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* About */}
             <div>
-              <h3 className="font-serif text-xl text-gradient mb-2">FATE</h3>
-              <p className="text-xs text-amber-400/70 uppercase tracking-wide mb-3">Freedom AI Tool Evaluator</p>
+              <h3 className="font-serif text-lg text-gradient mb-3">Freedom AI Tool Evaluator</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Helping freedom-minded creators find AI tools that respect their sovereignty,
                 privacy, and values.

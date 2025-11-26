@@ -40,13 +40,9 @@ export function Hero({ onExplore, onFindTool }: HeroProps) {
         </a>
 
         {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium tracking-tight mb-4 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-          <span className="text-gradient">FATE</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <span className="text-gradient">Freedom AI Tool Evaluator</span>
         </h1>
-
-        <p className="text-lg md:text-xl text-amber-400/80 font-medium tracking-wide uppercase mb-6 animate-fade-in" style={{ animationDelay: '0.15s' }}>
-          Freedom AI Tool Evaluator
-        </p>
 
         <p className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground font-light mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           Take control of your AI destiny
