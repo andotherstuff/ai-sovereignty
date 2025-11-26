@@ -36,25 +36,33 @@ export default function OpenModels() {
       icon: Scale,
       title: 'Accessible Weights',
       description: 'Model weights are freely available for download without restrictive terms. You can run the model locally on your own hardware.',
-      color: 'cyan',
+      iconColor: 'text-emerald-400',
+      bgColor: 'bg-emerald-500/10',
+      borderColor: 'hover:border-emerald-500/40',
     },
     {
       icon: Eye,
       title: 'Transparent Training',
       description: 'Training data, methodology, and processes are documented and available for scrutiny. You understand what went into the model.',
-      color: 'sky',
+      iconColor: 'text-amber-400',
+      bgColor: 'bg-amber-500/10',
+      borderColor: 'hover:border-amber-500/40',
     },
     {
       icon: GitFork,
       title: 'Freedom to Modify',
       description: 'You can fine-tune, adapt, and build upon the model for your specific needs without legal barriers.',
-      color: 'blue',
+      iconColor: 'text-violet-400',
+      bgColor: 'bg-violet-500/10',
+      borderColor: 'hover:border-violet-500/40',
     },
     {
       icon: Share2,
       title: 'Freedom to Redistribute',
       description: 'Share your modifications and derivatives with others, fostering a collaborative ecosystem.',
-      color: 'indigo',
+      iconColor: 'text-rose-400',
+      bgColor: 'bg-rose-500/10',
+      borderColor: 'hover:border-rose-500/40',
     },
   ];
 
@@ -67,6 +75,7 @@ export default function OpenModels() {
       highlights: ['Multilingual', 'Long context (128K)', 'Tool use'],
       openness: 'Open Weight',
       link: 'https://llama.meta.com/',
+      accentColor: 'violet',
     },
     {
       name: 'Mistral',
@@ -76,6 +85,7 @@ export default function OpenModels() {
       highlights: ['Mixture of Experts', 'Apache 2.0', 'Fast inference'],
       openness: 'Open Weight',
       link: 'https://mistral.ai/',
+      accentColor: 'orange',
     },
     {
       name: 'Qwen 2.5',
@@ -85,6 +95,7 @@ export default function OpenModels() {
       highlights: ['Code specialist', 'Math focused', '128K context'],
       openness: 'Open Weight',
       link: 'https://qwenlm.github.io/',
+      accentColor: 'emerald',
     },
     {
       name: 'DeepSeek V3',
@@ -94,6 +105,7 @@ export default function OpenModels() {
       highlights: ['MoE architecture', 'Strong reasoning', 'MIT License'],
       openness: 'Open Weight',
       link: 'https://www.deepseek.com/',
+      accentColor: 'cyan',
     },
     {
       name: 'Gemma 2',
@@ -103,6 +115,7 @@ export default function OpenModels() {
       highlights: ['Efficient', 'Good for fine-tuning', 'Google research'],
       openness: 'Open Weight',
       link: 'https://ai.google.dev/gemma',
+      accentColor: 'sky',
     },
     {
       name: 'Phi-3',
@@ -112,6 +125,7 @@ export default function OpenModels() {
       highlights: ['Small & capable', 'MIT License', 'Great for edge'],
       openness: 'Open Weight',
       link: 'https://azure.microsoft.com/en-us/products/phi-3',
+      accentColor: 'lime',
     },
     {
       name: 'Command R+',
@@ -121,6 +135,7 @@ export default function OpenModels() {
       highlights: ['RAG optimized', 'Tool use', 'Long context'],
       openness: 'Open Weight',
       link: 'https://cohere.com/command',
+      accentColor: 'amber',
     },
     {
       name: 'Yi',
@@ -130,6 +145,7 @@ export default function OpenModels() {
       highlights: ['Bilingual', 'Apache 2.0', 'Vision variants'],
       openness: 'Open Weight',
       link: 'https://www.01.ai/',
+      accentColor: 'rose',
     },
   ];
 
@@ -140,6 +156,7 @@ export default function OpenModels() {
       features: ['One-click install', 'Model library', 'OpenAI API compatible'],
       platform: 'Desktop & Server',
       link: 'https://ollama.ai/',
+      accentColor: 'teal',
     },
     {
       name: 'LM Studio',
@@ -147,6 +164,7 @@ export default function OpenModels() {
       features: ['GUI interface', 'Model search', 'Easy setup'],
       platform: 'Desktop',
       link: 'https://lmstudio.ai/',
+      accentColor: 'violet',
     },
     {
       name: 'llama.cpp',
@@ -154,6 +172,7 @@ export default function OpenModels() {
       features: ['Lightweight', 'CPU & GPU', 'GGUF format'],
       platform: 'All',
       link: 'https://github.com/ggerganov/llama.cpp',
+      accentColor: 'orange',
     },
     {
       name: 'vLLM',
@@ -161,6 +180,7 @@ export default function OpenModels() {
       features: ['PagedAttention', 'High throughput', 'OpenAI compatible'],
       platform: 'Server',
       link: 'https://vllm.ai/',
+      accentColor: 'emerald',
     },
     {
       name: 'Text Generation Inference',
@@ -168,6 +188,7 @@ export default function OpenModels() {
       features: ['Hugging Face', 'Tensor parallelism', 'Docker ready'],
       platform: 'Server',
       link: 'https://huggingface.co/docs/text-generation-inference',
+      accentColor: 'amber',
     },
     {
       name: 'LocalAI',
@@ -175,6 +196,7 @@ export default function OpenModels() {
       features: ['OpenAI drop-in', 'Multi-backend', 'Docker compose'],
       platform: 'Server',
       link: 'https://localai.io/',
+      accentColor: 'sky',
     },
   ];
 
@@ -212,8 +234,8 @@ export default function OpenModels() {
         <div className="relative container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
-              <BookOpen className="w-5 h-5 text-cyan-400" />
-              <span className="text-cyan-400 font-medium text-sm uppercase tracking-wide">OSI Definition</span>
+              <BookOpen className="w-5 h-5 text-amber-400" />
+              <span className="text-amber-400 font-medium text-sm uppercase tracking-wide">OSI Definition</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               What Makes AI <span className="text-gradient">Truly Open</span>?
@@ -227,10 +249,10 @@ export default function OpenModels() {
             {osiPrinciples.map((principle, index) => (
               <div
                 key={index}
-                className="group p-6 rounded-2xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300"
+                className={`group p-6 rounded-2xl bg-card/50 border border-border ${principle.borderColor} transition-all duration-300`}
               >
-                <div className={`w-12 h-12 rounded-xl bg-${principle.color}-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <principle.icon className={`w-6 h-6 text-${principle.color}-400`} />
+                <div className={`w-12 h-12 rounded-xl ${principle.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                  <principle.icon className={`w-6 h-6 ${principle.iconColor}`} />
                 </div>
                 <h3 className="font-display font-semibold text-lg mb-2">{principle.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{principle.description}</p>
@@ -268,8 +290,8 @@ export default function OpenModels() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Cpu className="w-5 h-5 text-cyan-400" />
-              <span className="text-cyan-400 font-medium text-sm uppercase tracking-wide">Model Directory</span>
+              <Cpu className="w-5 h-5 text-violet-400" />
+              <span className="text-violet-400 font-medium text-sm uppercase tracking-wide">Model Directory</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               Truly <span className="text-gradient">Open Models</span>
@@ -280,62 +302,76 @@ export default function OpenModels() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {openModels.map((model, index) => (
-              <a
-                key={index}
-                href={model.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
-                <div className="h-full p-6 rounded-2xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/80">
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <h3 className="font-display font-semibold text-lg group-hover:text-cyan-300 transition-colors">
-                        {model.name}
-                      </h3>
-                      <p className="text-xs text-muted-foreground">{model.creator}</p>
+            {openModels.map((model, index) => {
+              const colorClasses: Record<string, { border: string; badge: string; highlight: string; text: string }> = {
+                violet: { border: 'hover:border-violet-500/40', badge: 'border-violet-500/30 text-violet-400', highlight: 'bg-violet-500/10 text-violet-400', text: 'group-hover:text-violet-300' },
+                orange: { border: 'hover:border-orange-500/40', badge: 'border-orange-500/30 text-orange-400', highlight: 'bg-orange-500/10 text-orange-400', text: 'group-hover:text-orange-300' },
+                emerald: { border: 'hover:border-emerald-500/40', badge: 'border-emerald-500/30 text-emerald-400', highlight: 'bg-emerald-500/10 text-emerald-400', text: 'group-hover:text-emerald-300' },
+                cyan: { border: 'hover:border-cyan-500/40', badge: 'border-cyan-500/30 text-cyan-400', highlight: 'bg-cyan-500/10 text-cyan-400', text: 'group-hover:text-cyan-300' },
+                sky: { border: 'hover:border-sky-500/40', badge: 'border-sky-500/30 text-sky-400', highlight: 'bg-sky-500/10 text-sky-400', text: 'group-hover:text-sky-300' },
+                lime: { border: 'hover:border-lime-500/40', badge: 'border-lime-500/30 text-lime-400', highlight: 'bg-lime-500/10 text-lime-400', text: 'group-hover:text-lime-300' },
+                amber: { border: 'hover:border-amber-500/40', badge: 'border-amber-500/30 text-amber-400', highlight: 'bg-amber-500/10 text-amber-400', text: 'group-hover:text-amber-300' },
+                rose: { border: 'hover:border-rose-500/40', badge: 'border-rose-500/30 text-rose-400', highlight: 'bg-rose-500/10 text-rose-400', text: 'group-hover:text-rose-300' },
+              };
+              const colors = colorClasses[model.accentColor] || colorClasses.cyan;
+
+              return (
+                <a
+                  key={index}
+                  href={model.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                >
+                  <div className={`h-full p-6 rounded-2xl bg-card/50 border border-border ${colors.border} transition-all duration-300 hover:bg-card/80`}>
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <h3 className={`font-display font-semibold text-lg ${colors.text} transition-colors`}>
+                          {model.name}
+                        </h3>
+                        <p className="text-xs text-muted-foreground">{model.creator}</p>
+                      </div>
+                      <Badge variant="outline" className={`text-xs ${colors.badge}`}>
+                        {model.openness}
+                      </Badge>
                     </div>
-                    <Badge variant="outline" className="text-xs border-cyan-500/30 text-cyan-400">
-                      {model.openness}
-                    </Badge>
-                  </div>
 
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                    {model.description}
-                  </p>
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                      {model.description}
+                    </p>
 
-                  <div className="space-y-3">
-                    <div>
-                      <p className="text-xs text-muted-foreground mb-1.5">Sizes</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {model.sizes.map((size, i) => (
-                          <span key={i} className="px-2 py-0.5 text-xs rounded-md bg-muted text-muted-foreground">
-                            {size}
-                          </span>
-                        ))}
+                    <div className="space-y-3">
+                      <div>
+                        <p className="text-xs text-muted-foreground mb-1.5">Sizes</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {model.sizes.map((size, i) => (
+                            <span key={i} className="px-2 py-0.5 text-xs rounded-md bg-muted text-muted-foreground">
+                              {size}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <p className="text-xs text-muted-foreground mb-1.5">Highlights</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {model.highlights.map((highlight, i) => (
+                            <span key={i} className={`px-2 py-0.5 text-xs rounded-md ${colors.highlight}`}>
+                              {highlight}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
-                    <div>
-                      <p className="text-xs text-muted-foreground mb-1.5">Highlights</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {model.highlights.map((highlight, i) => (
-                          <span key={i} className="px-2 py-0.5 text-xs rounded-md bg-cyan-500/10 text-cyan-400">
-                            {highlight}
-                          </span>
-                        ))}
-                      </div>
+                    <div className={`flex items-center gap-1 mt-4 text-xs ${colors.highlight.split(' ')[1]} opacity-0 group-hover:opacity-100 transition-opacity`}>
+                      <span>Learn more</span>
+                      <ExternalLink className="w-3 h-3" />
                     </div>
                   </div>
-
-                  <div className="flex items-center gap-1 mt-4 text-xs text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span>Learn more</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -347,8 +383,8 @@ export default function OpenModels() {
         <div className="relative container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Server className="w-5 h-5 text-cyan-400" />
-              <span className="text-cyan-400 font-medium text-sm uppercase tracking-wide">Inference Engines</span>
+              <Server className="w-5 h-5 text-teal-400" />
+              <span className="text-teal-400 font-medium text-sm uppercase tracking-wide">Inference Engines</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               Run Models <span className="text-gradient">Anywhere</span>
@@ -359,44 +395,56 @@ export default function OpenModels() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {inferenceEngines.map((engine, index) => (
-              <a
-                key={index}
-                href={engine.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
-                <div className="h-full p-6 rounded-2xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="font-display font-semibold text-lg group-hover:text-cyan-300 transition-colors">
-                      {engine.name}
-                    </h3>
-                    <Badge variant="outline" className="text-xs border-border text-muted-foreground">
-                      {engine.platform}
-                    </Badge>
-                  </div>
+            {inferenceEngines.map((engine, index) => {
+              const engineColors: Record<string, { border: string; text: string; feature: string }> = {
+                teal: { border: 'hover:border-teal-500/40', text: 'group-hover:text-teal-300', feature: 'text-teal-400' },
+                violet: { border: 'hover:border-violet-500/40', text: 'group-hover:text-violet-300', feature: 'text-violet-400' },
+                orange: { border: 'hover:border-orange-500/40', text: 'group-hover:text-orange-300', feature: 'text-orange-400' },
+                emerald: { border: 'hover:border-emerald-500/40', text: 'group-hover:text-emerald-300', feature: 'text-emerald-400' },
+                amber: { border: 'hover:border-amber-500/40', text: 'group-hover:text-amber-300', feature: 'text-amber-400' },
+                sky: { border: 'hover:border-sky-500/40', text: 'group-hover:text-sky-300', feature: 'text-sky-400' },
+              };
+              const colors = engineColors[engine.accentColor] || engineColors.teal;
 
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                    {engine.description}
-                  </p>
+              return (
+                <a
+                  key={index}
+                  href={engine.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                >
+                  <div className={`h-full p-6 rounded-2xl bg-card/50 border border-border ${colors.border} transition-all duration-300`}>
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className={`font-display font-semibold text-lg ${colors.text} transition-colors`}>
+                        {engine.name}
+                      </h3>
+                      <Badge variant="outline" className="text-xs border-border text-muted-foreground">
+                        {engine.platform}
+                      </Badge>
+                    </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {engine.features.map((feature, i) => (
-                      <span key={i} className="inline-flex items-center gap-1 text-xs text-cyan-400">
-                        <CheckCircle2 className="w-3 h-3" />
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                      {engine.description}
+                    </p>
 
-                  <div className="flex items-center gap-1 mt-4 text-xs text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span>Get started</span>
-                    <ExternalLink className="w-3 h-3" />
+                    <div className="flex flex-wrap gap-2">
+                      {engine.features.map((feature, i) => (
+                        <span key={i} className={`inline-flex items-center gap-1 text-xs ${colors.feature}`}>
+                          <CheckCircle2 className="w-3 h-3" />
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className={`flex items-center gap-1 mt-4 text-xs ${colors.feature} opacity-0 group-hover:opacity-100 transition-opacity`}>
+                      <span>Get started</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </div>
                   </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -413,8 +461,8 @@ export default function OpenModels() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-                  <Shield className="w-8 h-8 text-cyan-400" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
+                  <Shield className="w-8 h-8 text-emerald-400" />
                 </div>
                 <h3 className="font-display font-semibold text-lg mb-2">Sovereignty</h3>
                 <p className="text-muted-foreground text-sm">
@@ -423,8 +471,8 @@ export default function OpenModels() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-                  <Users className="w-8 h-8 text-cyan-400" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center mx-auto mb-4 border border-violet-500/30">
+                  <Users className="w-8 h-8 text-violet-400" />
                 </div>
                 <h3 className="font-display font-semibold text-lg mb-2">Community</h3>
                 <p className="text-muted-foreground text-sm">
@@ -433,8 +481,8 @@ export default function OpenModels() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-                  <Zap className="w-8 h-8 text-cyan-400" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mx-auto mb-4 border border-amber-500/30">
+                  <Zap className="w-8 h-8 text-amber-400" />
                 </div>
                 <h3 className="font-display font-semibold text-lg mb-2">Innovation</h3>
                 <p className="text-muted-foreground text-sm">
