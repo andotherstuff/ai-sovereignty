@@ -522,20 +522,6 @@ export const RUBRIC_CATEGORIES = [
     ]
   },
   {
-    id: 'permissionlessPayment',
-    name: 'Permissionless Payment',
-    description: 'Can you use it without an account and pay with Bitcoin/Lightning?',
-    weight: 'critical',
-    icon: 'Wallet',
-    details: [
-      '5 = No account required, accepts Bitcoin/Lightning, pseudonymous access via Nostr',
-      '4 = Free/BYO keys, can use Bitcoin-accepting providers indirectly',
-      '3 = Free tier available, some alternative payment options',
-      '2 = Account required but free tier exists, credit card only for paid',
-      '1 = Account required, credit card only, no Bitcoin/Lightning support'
-    ]
-  },
-  {
     id: 'easeOfUse',
     name: 'Ease of Use',
     description: 'How accessible is it for non-technical users?',
@@ -575,6 +561,20 @@ export const RUBRIC_CATEGORIES = [
       '3 = Frontend + basic backend, or full-stack with major constraints',
       '2 = Frontend only, or very limited stack options',
       '1 = Single purpose, minimal flexibility'
+    ]
+  },
+  {
+    id: 'permissionlessPayment',
+    name: 'Permissionless Payment',
+    description: 'Can you use it without an account and pay with Bitcoin/Lightning?',
+    weight: 'critical',
+    icon: 'Wallet',
+    details: [
+      '5 = No account required, accepts Bitcoin/Lightning, pseudonymous access via Nostr',
+      '4 = Free/BYO keys, can use Bitcoin-accepting providers indirectly',
+      '3 = Free tier available, some alternative payment options',
+      '2 = Account required but free tier exists, credit card only for paid',
+      '1 = Account required, credit card only, no Bitcoin/Lightning support'
     ]
   }
 ];

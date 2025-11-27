@@ -117,10 +117,10 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
           <ScoreBar label="Open Protocol" value={tool.scores.protocolSupport} color="lime" />
           <ScoreBar label="Open Models" value={tool.scores.openModelSupport} color="emerald" />
           <ScoreBar label="Decentralization" value={tool.scores.decentralization} color="teal" />
-          <ScoreBar label="Permissionless Pay" value={tool.scores.permissionlessPayment} color="amber" />
           <ScoreBar label="Ease of Use" value={tool.scores.easeOfUse} color="cyan" />
           <ScoreBar label="Portability" value={tool.scores.portability} color="sky" />
           <ScoreBar label="Capabilities" value={tool.scores.capabilities} color="violet" />
+          <ScoreBar label="Permissionless Pay" value={tool.scores.permissionlessPayment} color="pink" />
         </div>
 
         {/* Expanded Content */}
@@ -239,7 +239,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
   );
 }
 
-type ScoreColor = 'orange' | 'amber' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet';
+type ScoreColor = 'orange' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet' | 'pink';
 
 // Using lighter color variants for better accessibility on dark backgrounds
 const colorClasses: Record<ScoreColor, { bar: string; text: string; label: string }> = {
@@ -247,11 +247,6 @@ const colorClasses: Record<ScoreColor, { bar: string; text: string; label: strin
     bar: 'bg-orange-400',
     text: 'text-orange-300',
     label: 'text-orange-200'
-  },
-  amber: {
-    bar: 'bg-amber-400',
-    text: 'text-amber-300',
-    label: 'text-amber-200'
   },
   yellow: {
     bar: 'bg-yellow-400',
@@ -287,6 +282,11 @@ const colorClasses: Record<ScoreColor, { bar: string; text: string; label: strin
     bar: 'bg-violet-400',
     text: 'text-violet-300',
     label: 'text-violet-200'
+  },
+  pink: {
+    bar: 'bg-pink-400',
+    text: 'text-pink-300',
+    label: 'text-pink-200'
   },
 };
 

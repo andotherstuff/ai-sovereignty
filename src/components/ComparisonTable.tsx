@@ -10,12 +10,11 @@ import {
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 
-type CategoryColor = 'orange' | 'amber' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet';
+type CategoryColor = 'orange' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet' | 'pink';
 
 // Using lighter color variants for better accessibility on dark backgrounds
 const categoryColors: Record<CategoryColor, string> = {
   orange: 'text-orange-300',
-  amber: 'text-amber-300',
   yellow: 'text-yellow-200',
   lime: 'text-lime-300',
   emerald: 'text-emerald-300',
@@ -23,6 +22,7 @@ const categoryColors: Record<CategoryColor, string> = {
   cyan: 'text-cyan-300',
   sky: 'text-sky-300',
   violet: 'text-violet-300',
+  pink: 'text-pink-300',
 };
 
 function ScoreCell({ value, color }: { value: number; color: CategoryColor }) {
@@ -72,10 +72,10 @@ export function ComparisonTable() {
                   <TableHead className="text-center font-display text-lime-300">Open Protocol</TableHead>
                   <TableHead className="text-center font-display text-emerald-300">Open Models</TableHead>
                   <TableHead className="text-center font-display text-teal-300">Decentralized</TableHead>
-                  <TableHead className="text-center font-display text-amber-300">Permissionless</TableHead>
                   <TableHead className="text-center font-display text-cyan-300">Ease of Use</TableHead>
                   <TableHead className="text-center font-display text-sky-300">Portability</TableHead>
                   <TableHead className="text-center font-display text-violet-300">Capabilities</TableHead>
+                  <TableHead className="text-center font-display text-pink-300">Permissionless</TableHead>
                   <TableHead className="text-center font-display text-foreground">Nostr</TableHead>
                   <TableHead className="text-center font-display text-foreground">Bitcoin</TableHead>
                 </TableRow>
@@ -139,9 +139,6 @@ export function ComparisonTable() {
                         <ScoreCell value={tool.scores.decentralization} color="teal" />
                       </TableCell>
                       <TableCell className="text-center">
-                        <ScoreCell value={tool.scores.permissionlessPayment} color="amber" />
-                      </TableCell>
-                      <TableCell className="text-center">
                         <ScoreCell value={tool.scores.easeOfUse} color="cyan" />
                       </TableCell>
                       <TableCell className="text-center">
@@ -149,6 +146,9 @@ export function ComparisonTable() {
                       </TableCell>
                       <TableCell className="text-center">
                         <ScoreCell value={tool.scores.capabilities} color="violet" />
+                      </TableCell>
+                      <TableCell className="text-center">
+                        <ScoreCell value={tool.scores.permissionlessPayment} color="pink" />
                       </TableCell>
                       <TableCell className="text-center">
                         <BooleanCell
@@ -193,10 +193,6 @@ export function ComparisonTable() {
             <span>Decentralized</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-amber-400" />
-            <span>Permissionless</span>
-          </div>
-          <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-cyan-400" />
             <span>Ease of Use</span>
           </div>
@@ -207,6 +203,10 @@ export function ComparisonTable() {
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-violet-400" />
             <span>Capabilities</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-pink-400" />
+            <span>Permissionless</span>
           </div>
         </div>
       </div>

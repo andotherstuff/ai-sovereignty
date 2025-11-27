@@ -15,10 +15,10 @@ const categoryColors: Record<string, { icon: string; bg: string }> = {
   protocolSupport: { icon: 'text-lime-400', bg: 'bg-lime-500/10' },
   openModelSupport: { icon: 'text-emerald-400', bg: 'bg-emerald-500/10' },
   decentralization: { icon: 'text-teal-400', bg: 'bg-teal-500/10' },
-  permissionlessPayment: { icon: 'text-amber-400', bg: 'bg-amber-500/10' },
   easeOfUse: { icon: 'text-cyan-400', bg: 'bg-cyan-500/10' },
   portability: { icon: 'text-sky-400', bg: 'bg-sky-500/10' },
   capabilities: { icon: 'text-violet-400', bg: 'bg-violet-500/10' },
+  permissionlessPayment: { icon: 'text-pink-400', bg: 'bg-pink-500/10' },
 };
 
 const iconComponents: Record<string, React.ElementType> = {
