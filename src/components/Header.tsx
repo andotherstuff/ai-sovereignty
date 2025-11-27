@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/Logo';
+import { useTheme } from '@/hooks/useTheme';
 
 interface HeaderProps {
   onNavigate?: (section: string) => void;
@@ -13,6 +14,11 @@ export function Header({ onNavigate }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,7 +82,7 @@ export function Header({ onNavigate }: HeaderProps) {
                     variant="ghost"
                     size="sm"
                     onClick={() => handleNavClick(item)}
-                    className="text-muted-foreground hover:text-foreground hover:bg-cyan-500/10 font-display font-medium"
+                    className="text-muted-foreground hover:text-foreground hover:bg-cyan-600/10 dark:hover:bg-cyan-500/10 font-display font-medium"
                   >
                     {item.label}
                   </Button>
@@ -91,8 +97,8 @@ export function Header({ onNavigate }: HeaderProps) {
                     className={cn(
                       'font-display font-medium',
                       isActive(item.to!)
-                        ? 'text-cyan-400 bg-cyan-500/10'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-cyan-500/10'
+                        ? 'text-cyan-600 bg-cyan-600/10 dark:text-cyan-400 dark:bg-cyan-500/10'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-cyan-600/10 dark:hover:bg-cyan-500/10'
                     )}
                   >
                     {item.label}
@@ -110,11 +116,26 @@ export function Header({ onNavigate }: HeaderProps) {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 font-display font-medium"
+                className="border-cyan-600/40 text-cyan-700 hover:bg-cyan-500/10 font-display font-medium dark:border-cyan-500/30 dark:text-cyan-400"
               >
                 AOS
               </Button>
             </a>
+
+            {/* Theme Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="ml-2 text-muted-foreground hover:text-foreground hover:bg-cyan-500/10"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -157,7 +178,7 @@ export function Header({ onNavigate }: HeaderProps) {
                     className={cn(
                       'w-full justify-start font-display',
                       isActive(item.to!)
-                        ? 'text-cyan-400 bg-cyan-500/10'
+                        ? 'text-cyan-600 bg-cyan-600/10 dark:text-cyan-400 dark:bg-cyan-500/10'
                         : 'text-muted-foreground hover:text-foreground'
                     )}
                   >
@@ -175,11 +196,30 @@ export function Header({ onNavigate }: HeaderProps) {
             >
               <Button
                 variant="outline"
-                className="w-full border-cyan-500/30 text-cyan-400 font-display"
+                className="w-full border-cyan-600/40 text-cyan-700 font-display dark:border-cyan-500/30 dark:text-cyan-400"
               >
                 Visit And Other Stuff
               </Button>
             </a>
+
+            {/* Theme Toggle - Mobile */}
+            <Button
+              variant="ghost"
+              onClick={toggleTheme}
+              className="w-full justify-start text-muted-foreground hover:text-foreground font-display mt-2"
+            >
+              {theme === 'dark' ? (
+                <>
+                  <Sun className="h-5 w-5 mr-2" />
+                  Light Mode
+                </>
+              ) : (
+                <>
+                  <Moon className="h-5 w-5 mr-2" />
+                  Dark Mode
+                </>
+              )}
+            </Button>
           </nav>
         </div>
       )}

@@ -12,15 +12,15 @@ interface ToolCardProps {
 }
 
 const openSourceLabels: Record<string, { label: string; color: string }> = {
-  'fully-open': { label: 'Fully Open Source', color: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' },
-  'partially-open': { label: 'Partially Open', color: 'bg-yellow-500/20 text-yellow-200 border-yellow-500/30' },
-  'proprietary': { label: 'Proprietary', color: 'bg-red-500/20 text-red-300 border-red-500/30' },
+  'fully-open': { label: 'Fully Open Source', color: 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-500/30' },
+  'partially-open': { label: 'Partially Open', color: 'bg-yellow-500/20 text-yellow-700 dark:text-yellow-200 border-yellow-500/30' },
+  'proprietary': { label: 'Proprietary', color: 'bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30' },
 };
 
 const privacyLabels: Record<string, { label: string; color: string }> = {
-  'high': { label: 'Privacy-First', color: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' },
-  'medium': { label: 'Some Privacy', color: 'bg-yellow-500/20 text-yellow-200 border-yellow-500/30' },
-  'low': { label: 'Limited Privacy', color: 'bg-red-500/20 text-red-300 border-red-500/30' },
+  'high': { label: 'Privacy-First', color: 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-500/30' },
+  'medium': { label: 'Some Privacy', color: 'bg-yellow-500/20 text-yellow-700 dark:text-yellow-200 border-yellow-500/30' },
+  'low': { label: 'Limited Privacy', color: 'bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30' },
 };
 
 export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolCardProps) {
@@ -69,7 +69,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
                 className="w-10 h-10 object-contain"
               />
             ) : (
-              <span className="text-2xl font-display font-bold text-cyan-400">
+              <span className="text-2xl font-display font-bold text-cyan-600 dark:text-cyan-400">
                 {tool.name.charAt(0)}
               </span>
             )}
@@ -99,12 +99,12 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
              tool.pricing.type === 'pay-as-you-go' ? 'Pay As You Go' : 'Paid'}
           </Badge>
           {tool.protocols.find(p => p.name === 'Nostr' && p.supported) && (
-            <Badge variant="outline" className="bg-purple-500/20 text-purple-300 border-purple-500/30">
+            <Badge variant="outline" className="bg-purple-500/20 text-purple-700 dark:text-purple-300 border-purple-500/30">
               Nostr Ready
             </Badge>
           )}
           {tool.protocols.find(p => p.name === 'Bitcoin/Lightning' && p.supported) && (
-            <Badge variant="outline" className="bg-orange-500/20 text-orange-300 border-orange-500/30">
+            <Badge variant="outline" className="bg-orange-500/20 text-orange-700 dark:text-orange-300 border-orange-500/30">
               ₿ Bitcoin
             </Badge>
           )}
@@ -134,22 +134,22 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
             {/* Features & Limitations */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-display font-medium text-emerald-300 mb-3">✓ Strengths</h4>
+                <h4 className="font-display font-medium text-emerald-600 dark:text-emerald-300 mb-3">✓ Strengths</h4>
                 <ul className="space-y-2">
                   {tool.features.slice(0, 5).map((feature, i) => (
                     <li key={i} className="text-muted-foreground flex items-start gap-2">
-                      <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-1" />
+                      <Check className="w-4 h-4 text-emerald-500 dark:text-emerald-400 shrink-0 mt-1" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h4 className="font-display font-medium text-cyan-300 mb-3">⚠ Considerations</h4>
+                <h4 className="font-display font-medium text-cyan-600 dark:text-cyan-300 mb-3">⚠ Considerations</h4>
                 <ul className="space-y-2">
                   {tool.limitations.map((limitation, i) => (
                     <li key={i} className="text-muted-foreground flex items-start gap-2">
-                      <AlertTriangle className="w-4 h-4 text-cyan-400 shrink-0 mt-1" />
+                      <AlertTriangle className="w-4 h-4 text-cyan-500 dark:text-cyan-400 shrink-0 mt-1" />
                       <span>{limitation}</span>
                     </li>
                   ))}
@@ -181,7 +181,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
                     }`}
                   >
                     {protocol.supported ? (
-                      <Check className="w-4 h-4 text-emerald-400" />
+                      <Check className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
                     ) : (
                       <X className="w-4 h-4 text-muted-foreground" />
                     )}
@@ -199,7 +199,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
             {/* Pricing */}
             <div className="p-4 rounded-lg bg-muted/30">
               <h4 className="font-display font-medium text-foreground mb-1">Pricing</h4>
-              <p className="text-cyan-300 font-medium text-lg">{tool.pricing.startingPrice || 'Free'}</p>
+              <p className="text-cyan-600 dark:text-cyan-300 font-medium text-lg">{tool.pricing.startingPrice || 'Free'}</p>
               <p className="text-muted-foreground mt-1">{tool.pricing.details}</p>
             </div>
           </div>
@@ -219,7 +219,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
             <Button
               variant="outline"
               size="sm"
-              className="text-cyan-300 border-cyan-500/30 hover:bg-cyan-500/10"
+              className="text-cyan-600 dark:text-cyan-300 border-cyan-600/40 dark:border-cyan-500/30 hover:bg-cyan-500/10"
               asChild
             >
               <a href={tool.url} target="_blank" rel="noopener noreferrer">
@@ -231,7 +231,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
 
           {/* Overall Score */}
           <div className="text-right">
-            <div className="text-2xl font-display font-bold text-cyan-400">{overallScore}<span className="text-base text-muted-foreground font-normal">/100</span></div>
+            <div className="text-2xl font-display font-bold text-cyan-600 dark:text-cyan-400">{overallScore}<span className="text-base text-muted-foreground font-normal">/100</span></div>
           </div>
         </div>
       </CardContent>
@@ -241,52 +241,52 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
 
 type ScoreColor = 'orange' | 'yellow' | 'lime' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'violet' | 'pink';
 
-// Using lighter color variants for better accessibility on dark backgrounds
+// Using appropriate color variants for both light and dark modes
 const colorClasses: Record<ScoreColor, { bar: string; text: string; label: string }> = {
   orange: {
-    bar: 'bg-orange-400',
-    text: 'text-orange-300',
-    label: 'text-orange-200'
+    bar: 'bg-orange-500 dark:bg-orange-400',
+    text: 'text-orange-600 dark:text-orange-300',
+    label: 'text-orange-700 dark:text-orange-200'
   },
   yellow: {
-    bar: 'bg-yellow-400',
-    text: 'text-yellow-200',
-    label: 'text-yellow-100'
+    bar: 'bg-yellow-500 dark:bg-yellow-400',
+    text: 'text-yellow-700 dark:text-yellow-200',
+    label: 'text-yellow-800 dark:text-yellow-100'
   },
   lime: {
-    bar: 'bg-lime-400',
-    text: 'text-lime-300',
-    label: 'text-lime-200'
+    bar: 'bg-lime-500 dark:bg-lime-400',
+    text: 'text-lime-600 dark:text-lime-300',
+    label: 'text-lime-700 dark:text-lime-200'
   },
   emerald: {
-    bar: 'bg-emerald-400',
-    text: 'text-emerald-300',
-    label: 'text-emerald-200'
+    bar: 'bg-emerald-500 dark:bg-emerald-400',
+    text: 'text-emerald-600 dark:text-emerald-300',
+    label: 'text-emerald-700 dark:text-emerald-200'
   },
   teal: {
-    bar: 'bg-teal-400',
-    text: 'text-teal-300',
-    label: 'text-teal-200'
+    bar: 'bg-teal-500 dark:bg-teal-400',
+    text: 'text-teal-600 dark:text-teal-300',
+    label: 'text-teal-700 dark:text-teal-200'
   },
   cyan: {
-    bar: 'bg-cyan-400',
-    text: 'text-cyan-300',
-    label: 'text-cyan-200'
+    bar: 'bg-cyan-500 dark:bg-cyan-400',
+    text: 'text-cyan-600 dark:text-cyan-300',
+    label: 'text-cyan-700 dark:text-cyan-200'
   },
   sky: {
-    bar: 'bg-sky-400',
-    text: 'text-sky-300',
-    label: 'text-sky-200'
+    bar: 'bg-sky-500 dark:bg-sky-400',
+    text: 'text-sky-600 dark:text-sky-300',
+    label: 'text-sky-700 dark:text-sky-200'
   },
   violet: {
-    bar: 'bg-violet-400',
-    text: 'text-violet-300',
-    label: 'text-violet-200'
+    bar: 'bg-violet-500 dark:bg-violet-400',
+    text: 'text-violet-600 dark:text-violet-300',
+    label: 'text-violet-700 dark:text-violet-200'
   },
   pink: {
-    bar: 'bg-pink-400',
-    text: 'text-pink-300',
-    label: 'text-pink-200'
+    bar: 'bg-pink-500 dark:bg-pink-400',
+    text: 'text-pink-600 dark:text-pink-300',
+    label: 'text-pink-700 dark:text-pink-200'
   },
 };
 

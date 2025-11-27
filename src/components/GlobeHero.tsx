@@ -44,8 +44,8 @@ export function GlobeHero({
       />
 
       {/* Gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70 dark:via-background/90 dark:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/70 dark:via-transparent dark:to-background/50" />
 
       {/* Atmospheric glow effect on the right side */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl" />
@@ -68,13 +68,13 @@ export function GlobeHero({
                 href={badge.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm mb-8 animate-fade-in hover:bg-cyan-500/20 transition-colors backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-600/10 border border-cyan-600/30 text-cyan-700 dark:bg-cyan-500/10 dark:border-cyan-500/20 dark:text-cyan-400 text-sm mb-8 animate-fade-in hover:bg-cyan-500/20 transition-colors backdrop-blur-sm"
               >
                 {badge.icon}
                 <span>{badge.text}</span>
               </a>
             ) : (
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm mb-8 animate-fade-in backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-600/10 border border-cyan-600/30 text-cyan-700 dark:bg-cyan-500/10 dark:border-cyan-500/20 dark:text-cyan-400 text-sm mb-8 animate-fade-in backdrop-blur-sm">
                 {badge.icon}
                 <span>{badge.text}</span>
               </div>
@@ -128,7 +128,7 @@ export function GlobeHero({
                     <Button
                       size="lg"
                       variant="outline"
-                      className="text-lg px-8 py-6 border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 backdrop-blur-sm"
+                      className="text-lg px-8 py-6 border-cyan-600/40 text-cyan-700 hover:bg-cyan-500/10 hover:border-cyan-600/60 dark:border-cyan-500/30 dark:text-cyan-400 dark:hover:border-cyan-500/50 transition-all duration-300 backdrop-blur-sm"
                     >
                       {secondaryAction.label}
                     </Button>
@@ -137,7 +137,7 @@ export function GlobeHero({
                   <Button
                     size="lg"
                     variant="outline"
-                    className="text-lg px-8 py-6 border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 backdrop-blur-sm"
+                    className="text-lg px-8 py-6 border-cyan-600/40 text-cyan-700 hover:bg-cyan-500/10 hover:border-cyan-600/60 dark:border-cyan-500/30 dark:text-cyan-400 dark:hover:border-cyan-500/50 transition-all duration-300 backdrop-blur-sm"
                     onClick={secondaryAction.onClick}
                   >
                     {secondaryAction.label}
