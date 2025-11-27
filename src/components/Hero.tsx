@@ -55,7 +55,7 @@ export function Hero({ onExplore }: HeroProps) {
           </h1>
 
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Navigate the AI landscape with <span className="text-cyan-400 font-medium">sovereignty</span> in mind
+            A framework for evaluating AI protocols, models, and tools for <span className="text-cyan-400 font-medium">human freedom</span>
           </p>
 
           {/* Tagline */}

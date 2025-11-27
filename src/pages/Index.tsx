@@ -17,9 +17,9 @@ import {
 const Index = () => {
   useSeoMeta({
     title: 'AI Sovereignty Index',
-    description: 'Navigate the AI landscape with sovereignty in mind. We champion open protocols that prevent vendor lock-in, open models you can run anywhere, and open tools that respect your autonomy.',
+    description: 'A framework for evaluating AI protocols, models, and tools for human freedom. Open protocols that prevent vendor lock-in, open models you can run anywhere, and open tools that respect your sovereignty.',
     ogTitle: 'AI Sovereignty Index',
-    ogDescription: 'Navigate the AI landscape with sovereignty in mind. Open protocols, open models, and open tools that respect your autonomy.',
+    ogDescription: 'A framework for evaluating AI protocols, models, and tools for human freedom.',
     ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',

@@ -14,7 +14,7 @@ export function Manifesto() {
               Why <span className="text-gradient">Open AI*</span> Matters
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The tools we use shape the world we build. When AI is open, we all benefit.
+              Closed AI concentrates power. Open AI distributes it. The difference matters more than you think.
             </p>
           </div>
 
