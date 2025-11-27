@@ -230,9 +230,9 @@ export function Manifesto() {
                         </div>
                       </a>
 
-                      {/* Story Card 3 - Oslo Freedom Forum */}
+                      {/* Story Card 3 - Chorus at Oslo Freedom Forum */}
                       <a
-                        href="https://oslofreedomforum.com/"
+                        href="https://soapbox.pub/blog/chorus-vibe-coding"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group block"
@@ -240,61 +240,25 @@ export function Manifesto() {
                         <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-pink-500/40 transition-all duration-300 hover:bg-card/80">
                           <div className="relative h-32 mb-4 rounded-lg overflow-hidden">
                             <img
-                              src="/activists/gustavo-tovar-arroyo.webp"
-                              alt="Gustavo Tovar Arroyo speaks at Oslo Freedom Forum in Taiwan"
+                              src="/activists/chorus-off-launch.png"
+                              alt="Chorus app launch at Oslo Freedom Forum 2025"
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                           </div>
-                          <span className="text-xs text-pink-400 font-medium uppercase tracking-wide">Global Movement</span>
+                          <span className="text-xs text-pink-400 font-medium uppercase tracking-wide">Oslo Freedom Forum</span>
                           <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-pink-300 transition-colors">
-                            Oslo Freedom Forum
+                            Chorus: Vibe Coded for Activists
                           </h5>
                           <p className="text-sm text-muted-foreground line-clamp-2">
-                            Where the world's leading human rights defenders share their stories and strategies.
+                            A censorship-resistant app built with AI and launched at Oslo Freedom Forum 2025.
                           </p>
                           <span className="inline-flex items-center gap-1 text-pink-400 text-sm mt-3 group-hover:gap-2 transition-all">
-                            Watch talks
+                            Watch the launch
                             <ExternalLink className="w-3 h-3" />
                           </span>
                         </div>
                       </a>
-                    </div>
-                  </div>
-
-                  {/* The Solution */}
-                  <div className="relative p-6 md:p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/30">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl" />
-
-                    <div className="relative">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                          <span className="text-2xl">🔓</span>
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-display font-bold text-foreground">The Open Source Advantage</h4>
-                          <p className="text-sm text-cyan-400">True sovereignty starts with code you can control</p>
-                        </div>
-                      </div>
-
-                      <p className="text-muted-foreground leading-relaxed mb-6">
-                        Open-source, self-hostable AI tools give you <span className="text-cyan-300 font-medium">true sovereignty</span>. Run them on your own hardware. Audit every line of code. No one can see what you're building. No one can stop you.
-                      </p>
-
-                      <div className="grid sm:grid-cols-3 gap-4">
-                        <div className="flex items-center gap-3 p-3 rounded-lg bg-card/50">
-                          <span className="text-cyan-400 text-xl">🏠</span>
-                          <span className="text-sm font-medium">Self-Hosted</span>
-                        </div>
-                        <div className="flex items-center gap-3 p-3 rounded-lg bg-card/50">
-                          <span className="text-cyan-400 text-xl">🔍</span>
-                          <span className="text-sm font-medium">Auditable</span>
-                        </div>
-                        <div className="flex items-center gap-3 p-3 rounded-lg bg-card/50">
-                          <span className="text-cyan-400 text-xl">🛡️</span>
-                          <span className="text-sm font-medium">Uncensorable</span>
-                        </div>
-                      </div>
                     </div>
                   </div>
 
