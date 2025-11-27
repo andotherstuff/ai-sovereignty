@@ -77,8 +77,8 @@ export function Manifesto() {
                     </div>
                     <div className="relative overflow-hidden">
                       <img
-                        src="/activists/venancio-mondlane.webp"
-                        alt="Venancio Mondlane, Mozambique opposition leader, delivers a passionate speech at Oslo Freedom Forum"
+                        src="/activists/off-lobby.webp"
+                        alt="Attendees gather at the Oslo Freedom Forum lobby"
                         className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
@@ -301,11 +301,11 @@ export function Manifesto() {
                   {/* Oslo Freedom Forum Community */}
                   <div className="mt-8 pt-8 border-t border-border/50">
                     <div className="flex flex-col lg:flex-row items-center gap-6">
-                      {/* OFF Lobby Image */}
+                      {/* Venancio Mondlane Image */}
                       <div className="relative w-full lg:w-1/3 h-32 rounded-xl overflow-hidden">
                         <img
-                          src="/activists/off-lobby.webp"
-                          alt="Attendees gather at the Oslo Freedom Forum lobby"
+                          src="/activists/venancio-mondlane.webp"
+                          alt="Venancio Mondlane, Mozambique opposition leader, delivers a passionate speech at Oslo Freedom Forum"
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/60" />
