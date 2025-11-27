@@ -72,6 +72,7 @@ export function ComparisonTable() {
                   <TableHead className="text-center font-display text-lime-300">Open Protocol</TableHead>
                   <TableHead className="text-center font-display text-emerald-300">Open Models</TableHead>
                   <TableHead className="text-center font-display text-teal-300">Decentralized</TableHead>
+                  <TableHead className="text-center font-display text-amber-300">Permissionless</TableHead>
                   <TableHead className="text-center font-display text-cyan-300">Ease of Use</TableHead>
                   <TableHead className="text-center font-display text-sky-300">Portability</TableHead>
                   <TableHead className="text-center font-display text-violet-300">Capabilities</TableHead>
@@ -138,6 +139,9 @@ export function ComparisonTable() {
                         <ScoreCell value={tool.scores.decentralization} color="teal" />
                       </TableCell>
                       <TableCell className="text-center">
+                        <ScoreCell value={tool.scores.permissionlessPayment} color="amber" />
+                      </TableCell>
+                      <TableCell className="text-center">
                         <ScoreCell value={tool.scores.easeOfUse} color="cyan" />
                       </TableCell>
                       <TableCell className="text-center">
@@ -187,6 +191,10 @@ export function ComparisonTable() {
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-teal-400" />
             <span>Decentralized</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-amber-400" />
+            <span>Permissionless</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-cyan-400" />

@@ -34,9 +34,10 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
      tool.scores.protocolSupport * 1.2 +
      tool.scores.openModelSupport * 1.2 +
      tool.scores.decentralization * 1.0 +
+     tool.scores.permissionlessPayment * 1.2 +
      tool.scores.easeOfUse +
      tool.scores.portability * 1.5 +
-     tool.scores.capabilities) / 9.9 * 20
+     tool.scores.capabilities) / 11.1 * 20
   );
 
   return (
@@ -116,6 +117,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
           <ScoreBar label="Open Protocol" value={tool.scores.protocolSupport} color="lime" />
           <ScoreBar label="Open Models" value={tool.scores.openModelSupport} color="emerald" />
           <ScoreBar label="Decentralization" value={tool.scores.decentralization} color="teal" />
+          <ScoreBar label="Permissionless Pay" value={tool.scores.permissionlessPayment} color="amber" />
           <ScoreBar label="Ease of Use" value={tool.scores.easeOfUse} color="cyan" />
           <ScoreBar label="Portability" value={tool.scores.portability} color="sky" />
           <ScoreBar label="Capabilities" value={tool.scores.capabilities} color="violet" />

@@ -23,6 +23,7 @@ export interface ToolScores {
   protocolSupport: number; // 1-5 (OpenAI API compatibility)
   openModelSupport: number; // 1-5 (Support for open models like Llama, Mistral, etc.)
   decentralization: number; // 1-5 (Nostr, Bitcoin, etc.)
+  permissionlessPayment: number; // 1-5 (No account required, Bitcoin/Lightning payment)
   easeOfUse: number; // 1-5
   portability: number; // 1-5 (Freedom from vendor lock-in)
   capabilities: number; // 1-5
@@ -55,6 +56,7 @@ export const AI_TOOLS: AITool[] = [
       protocolSupport: 5, // Supports any OpenAI-compatible provider including OpenRouter, local models via Ollama
       openModelSupport: 5, // Can use any model via OpenRouter, Ollama, or other compatible providers
       decentralization: 5, // Native Nostr, Bitcoin/Lightning support
+      permissionlessPayment: 5, // No account required, pay with Bitcoin/Lightning via Nostr identity
       easeOfUse: 4,
       portability: 5, // No vendor lock-in: self-hostable, BYO API keys, local storage, deploy anywhere, no subscriptions
       capabilities: 3 // Frontend-focused (React/Tailwind/shadcn), web apps only, limited stack flexibility
@@ -114,6 +116,7 @@ export const AI_TOOLS: AITool[] = [
       protocolSupport: 4, // Supports OpenAI API, can configure custom endpoints
       openModelSupport: 3, // Can use Azure OpenAI, some local model support via API
       decentralization: 1, // No support for Nostr, Bitcoin, or decentralized protocols
+      permissionlessPayment: 1, // Requires account, credit card only, no Bitcoin/Lightning
       easeOfUse: 5, // Excellent UX, familiar VS Code interface
       portability: 4, // Code stays local on your machine, can use any deployment, but subscription for AI features
       capabilities: 5 // Full-stack, any language/framework, complex apps
@@ -169,6 +172,7 @@ export const AI_TOOLS: AITool[] = [
       protocolSupport: 1, // Locked to their proprietary AI backend
       openModelSupport: 1, // No support for custom models
       decentralization: 1, // No support for Nostr, Bitcoin, etc.
+      permissionlessPayment: 1, // Requires account, credit card only, no Bitcoin/Lightning
       easeOfUse: 5,
       portability: 2, // Platform lock-in: managed Supabase, their deployment, subscription required, GitHub sync available
       capabilities: 4 // Full-stack but locked to React + Supabase stack
@@ -225,6 +229,7 @@ export const AI_TOOLS: AITool[] = [
       protocolSupport: 1, // Locked to their proprietary AI backend
       openModelSupport: 1, // No support for custom models
       decentralization: 1, // No support for Nostr, Bitcoin, etc.
+      permissionlessPayment: 1, // Requires account, credit card only, no Bitcoin/Lightning
       easeOfUse: 5, // Very user-friendly, natural language to app
       portability: 2, // Platform lock-in: their database, their deployment, subscription model
       capabilities: 4 // Full-stack but locked to their specific stack
@@ -281,6 +286,7 @@ export const AI_TOOLS: AITool[] = [
       protocolSupport: 2, // Limited - uses their own AI, some model selection
       openModelSupport: 2, // Limited model options, no bring-your-own
       decentralization: 2, // Can build apps that use these, but no native support
+      permissionlessPayment: 1, // Requires account, credit card only, no Bitcoin/Lightning
       easeOfUse: 5,
       portability: 2, // Platform lock-in: code on their servers, their hosting, subscription for features, export possible but workflow tied to platform
       capabilities: 5 // Full-stack, multi-language, flexible frameworks
@@ -339,6 +345,7 @@ export const AI_TOOLS: AITool[] = [
       protocolSupport: 1, // Locked to Vercel's AI backend
       openModelSupport: 1, // No custom model support
       decentralization: 1, // No decentralized protocol awareness
+      permissionlessPayment: 1, // Requires account, credit card only, no Bitcoin/Lightning
       easeOfUse: 5,
       portability: 3, // Output is copy-paste code you own, but UI-only, requires Vercel account, subscription model
       capabilities: 2 // Frontend/UI only (React components), no backend, locked to React/Tailwind/shadcn
@@ -394,6 +401,7 @@ export const AI_TOOLS: AITool[] = [
       protocolSupport: 5, // Supports any OpenAI-compatible provider
       openModelSupport: 5, // Works with Ollama, any OpenAI-compatible endpoint
       decentralization: 3, // Some Bitcoin awareness via Block, limited Nostr
+      permissionlessPayment: 4, // Free tool, BYO API keys - can use providers that accept Bitcoin (OpenRouter, etc.)
       easeOfUse: 3,
       portability: 5, // No vendor lock-in: runs locally, fully open-source, BYO everything, no platform dependencies
       capabilities: 5 // Full-stack, any language/framework, works with any codebase
@@ -511,6 +519,20 @@ export const RUBRIC_CATEGORIES = [
       '3 = Can build with protocols with some guidance',
       '2 = Limited awareness of decentralized tech',
       '1 = No support for freedom tech protocols'
+    ]
+  },
+  {
+    id: 'permissionlessPayment',
+    name: 'Permissionless Payment',
+    description: 'Can you use it without an account and pay with Bitcoin/Lightning?',
+    weight: 'critical',
+    icon: 'Wallet',
+    details: [
+      '5 = No account required, accepts Bitcoin/Lightning, pseudonymous access via Nostr',
+      '4 = Free/BYO keys, can use Bitcoin-accepting providers indirectly',
+      '3 = Free tier available, some alternative payment options',
+      '2 = Account required but free tier exists, credit card only for paid',
+      '1 = Account required, credit card only, no Bitcoin/Lightning support'
     ]
   },
   {
