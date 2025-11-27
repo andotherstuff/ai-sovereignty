@@ -237,7 +237,7 @@ export function Manifesto() {
                         rel="noopener noreferrer"
                         className="group block"
                       >
-                        <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/80">
+                        <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-pink-500/40 transition-all duration-300 hover:bg-card/80">
                           <div className="relative h-32 mb-4 rounded-lg overflow-hidden">
                             <img
                               src="/activists/gustavo-tovar-arroyo.webp"
@@ -246,14 +246,14 @@ export function Manifesto() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                           </div>
-                          <span className="text-xs text-cyan-400 font-medium uppercase tracking-wide">Global Movement</span>
-                          <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-cyan-300 transition-colors">
+                          <span className="text-xs text-pink-400 font-medium uppercase tracking-wide">Global Movement</span>
+                          <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-pink-300 transition-colors">
                             Oslo Freedom Forum
                           </h5>
                           <p className="text-sm text-muted-foreground line-clamp-2">
                             Where the world's leading human rights defenders share their stories and strategies.
                           </p>
-                          <span className="inline-flex items-center gap-1 text-cyan-400 text-sm mt-3 group-hover:gap-2 transition-all">
+                          <span className="inline-flex items-center gap-1 text-pink-400 text-sm mt-3 group-hover:gap-2 transition-all">
                             Watch talks
                             <ExternalLink className="w-3 h-3" />
                           </span>
