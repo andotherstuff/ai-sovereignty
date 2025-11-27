@@ -172,12 +172,12 @@ export function Manifesto() {
                     <div className="grid md:grid-cols-3 gap-5">
                       {/* Story Card 1 - AI for Activists */}
                       <a
-                        href="https://hrf.org/hrf-labs/ai-for-activists/"
+                        href="https://hrf.org/program/ai-for-individual-rights/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group block"
                       >
-                        <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/80">
+                        <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-pink-500/40 transition-all duration-300 hover:bg-card/80">
                           <div className="relative h-32 mb-4 rounded-lg overflow-hidden">
                             <img
                               src="/activists/ai-activists-workshop.webp"
@@ -186,14 +186,14 @@ export function Manifesto() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                           </div>
-                          <span className="text-xs text-cyan-400 font-medium uppercase tracking-wide">HRF Labs</span>
-                          <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-cyan-300 transition-colors">
+                          <span className="text-xs text-pink-400 font-medium uppercase tracking-wide">HRF</span>
+                          <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-pink-300 transition-colors">
                             AI for Activists Program
                           </h5>
                           <p className="text-sm text-muted-foreground line-clamp-2">
                             Training human rights defenders to leverage AI tools safely and effectively.
                           </p>
-                          <span className="inline-flex items-center gap-1 text-cyan-400 text-sm mt-3 group-hover:gap-2 transition-all">
+                          <span className="inline-flex items-center gap-1 text-pink-400 text-sm mt-3 group-hover:gap-2 transition-all">
                             Learn more
                             <ExternalLink className="w-3 h-3" />
                           </span>
@@ -202,12 +202,12 @@ export function Manifesto() {
 
                       {/* Story Card 2 - Freedom Tech */}
                       <a
-                        href="https://hrf.org/hrf-labs/freedom-tech/"
+                        href="https://hrf.org/program/financial-freedom/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group block"
                       >
-                        <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/80">
+                        <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-pink-500/40 transition-all duration-300 hover:bg-card/80">
                           <div className="relative h-32 mb-4 rounded-lg overflow-hidden">
                             <img
                               src="/activists/freedom-tech-track.webp"
@@ -216,14 +216,14 @@ export function Manifesto() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                           </div>
-                          <span className="text-xs text-cyan-400 font-medium uppercase tracking-wide">HRF Labs</span>
-                          <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-cyan-300 transition-colors">
+                          <span className="text-xs text-pink-400 font-medium uppercase tracking-wide">HRF</span>
+                          <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-pink-300 transition-colors">
                             Freedom Tech Initiative
                           </h5>
                           <p className="text-sm text-muted-foreground line-clamp-2">
                             Open-source technology protecting dissidents and enabling free expression worldwide.
                           </p>
-                          <span className="inline-flex items-center gap-1 text-cyan-400 text-sm mt-3 group-hover:gap-2 transition-all">
+                          <span className="inline-flex items-center gap-1 text-pink-400 text-sm mt-3 group-hover:gap-2 transition-all">
                             Explore tools
                             <ExternalLink className="w-3 h-3" />
                           </span>
@@ -323,10 +323,10 @@ export function Manifesto() {
                         </div>
 
                         <a
-                          href="https://hrf.org/hrf-labs/ai-for-activists/"
+                          href="https://hrf.org/program/ai-for-individual-rights/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all group"
+                          className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400 text-sm font-medium hover:bg-pink-500/20 hover:border-pink-500/50 transition-all group"
                         >
                           AI for Activists
                           <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
