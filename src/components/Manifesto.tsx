@@ -160,13 +160,10 @@ export function Manifesto() {
                     </div>
                   </div>
 
-                  {/* Real Stories Section */}
+                  {/* Resources Section */}
                   <div className="mb-10">
-                    <h4 className="text-xl font-display font-semibold text-foreground mb-6 flex items-center gap-2">
-                      <span className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                        <span className="text-cyan-300">📖</span>
-                      </span>
-                      Real Stories, Real Stakes
+                    <h4 className="text-xl font-display font-semibold text-foreground mb-6">
+                      Resources for Freedom Builders
                     </h4>
 
                     <div className="grid md:grid-cols-3 gap-5">
