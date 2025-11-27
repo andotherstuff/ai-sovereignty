@@ -51,13 +51,15 @@ export function Header({ onNavigate }: HeaderProps) {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-2 group"
-          >
-            <Logo className="text-2xl md:text-3xl" />
-          </Link>
+          {/* Logo - hidden on homepage since it's redundant with hero */}
+          {!isHomepage && (
+            <Link
+              to="/"
+              className="flex items-center gap-2 group"
+            >
+              <Logo className="text-2xl md:text-3xl" />
+            </Link>
+          )}
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
