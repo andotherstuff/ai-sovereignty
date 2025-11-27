@@ -69,32 +69,32 @@ export function Manifesto() {
                   <div className="grid grid-cols-4 h-48 md:h-64">
                     <div className="relative overflow-hidden">
                       <img
-                        src="https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
-                        alt="Journalist working in the field"
+                        src="/activists/joey-siu.webp"
+                        alt="Joey Siu, Hong Kong activist, speaks at Oslo Freedom Forum in Taiwan"
                         className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                     </div>
                     <div className="relative overflow-hidden">
                       <img
-                        src="https://images.pexels.com/photos/6147369/pexels-photo-6147369.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
-                        alt="Activist holding a sign for freedom"
+                        src="/activists/venancio-mondlane.webp"
+                        alt="Venancio Mondlane, Mozambique opposition leader, delivers a passionate speech at Oslo Freedom Forum"
                         className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                     </div>
                     <div className="relative overflow-hidden">
                       <img
-                        src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
-                        alt="Human rights defender speaking"
+                        src="/activists/discounted-lives-exhibit.png"
+                        alt="'Discounted Lives' exhibit about Uyghur forced labor at Oslo Freedom Forum"
                         className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                     </div>
                     <div className="relative overflow-hidden">
                       <img
-                        src="https://images.pexels.com/photos/4427627/pexels-photo-4427627.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
-                        alt="Privacy advocate working securely"
+                        src="/activists/gaelle-borgia.webp"
+                        alt="Gaelle Borgia speaks about China and Russia's influence in Africa at Oslo Freedom Forum"
                         className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
@@ -170,9 +170,9 @@ export function Manifesto() {
                     </h4>
 
                     <div className="grid md:grid-cols-3 gap-5">
-                      {/* Story Card 1 */}
+                      {/* Story Card 1 - AI for Activists */}
                       <a
-                        href="https://cpj.org/2024/02/journalist-surveillance-digital-safety/"
+                        href="https://hrf.org/hrf-labs/ai-for-activists/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group block"
@@ -180,29 +180,29 @@ export function Manifesto() {
                         <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/80">
                           <div className="relative h-32 mb-4 rounded-lg overflow-hidden">
                             <img
-                              src="https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                              alt="Journalist with camera documenting events"
+                              src="/activists/ai-activists-workshop.webp"
+                              alt="AI for Activists workshop at the 2025 Oslo Freedom Forum"
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                           </div>
-                          <span className="text-xs text-cyan-400 font-medium uppercase tracking-wide">CPJ Report</span>
+                          <span className="text-xs text-cyan-400 font-medium uppercase tracking-wide">HRF Labs</span>
                           <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-cyan-300 transition-colors">
-                            Journalists Under Digital Surveillance
+                            AI for Activists Program
                           </h5>
                           <p className="text-sm text-muted-foreground line-clamp-2">
-                            How reporters worldwide face unprecedented digital threats to their sources and work.
+                            Training human rights defenders to leverage AI tools safely and effectively.
                           </p>
                           <span className="inline-flex items-center gap-1 text-cyan-400 text-sm mt-3 group-hover:gap-2 transition-all">
-                            Read more
+                            Learn more
                             <ExternalLink className="w-3 h-3" />
                           </span>
                         </div>
                       </a>
 
-                      {/* Story Card 2 */}
+                      {/* Story Card 2 - Freedom Tech */}
                       <a
-                        href="https://www.eff.org/deeplinks/2024/01/surveillance-ai-tools"
+                        href="https://hrf.org/hrf-labs/freedom-tech/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group block"
@@ -210,29 +210,29 @@ export function Manifesto() {
                         <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/80">
                           <div className="relative h-32 mb-4 rounded-lg overflow-hidden">
                             <img
-                              src="https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                              alt="Activists marching for digital rights"
+                              src="/activists/freedom-tech-track.webp"
+                              alt="Freedom Tech Track at the 2025 Oslo Freedom Forum"
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                           </div>
-                          <span className="text-xs text-cyan-400 font-medium uppercase tracking-wide">EFF Analysis</span>
+                          <span className="text-xs text-cyan-400 font-medium uppercase tracking-wide">HRF Labs</span>
                           <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-cyan-300 transition-colors">
-                            AI & Surveillance Concerns
+                            Freedom Tech Initiative
                           </h5>
                           <p className="text-sm text-muted-foreground line-clamp-2">
-                            Understanding the privacy implications of AI tools for activists and civil liberties.
+                            Open-source technology protecting dissidents and enabling free expression worldwide.
                           </p>
                           <span className="inline-flex items-center gap-1 text-cyan-400 text-sm mt-3 group-hover:gap-2 transition-all">
-                            Read more
+                            Explore tools
                             <ExternalLink className="w-3 h-3" />
                           </span>
                         </div>
                       </a>
 
-                      {/* Story Card 3 */}
+                      {/* Story Card 3 - Oslo Freedom Forum */}
                       <a
-                        href="https://hrf.org/programs/freedom-tech/"
+                        href="https://oslofreedomforum.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group block"
@@ -240,21 +240,21 @@ export function Manifesto() {
                         <div className="h-full p-5 rounded-xl bg-card/50 border border-border hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/80">
                           <div className="relative h-32 mb-4 rounded-lg overflow-hidden">
                             <img
-                              src="https://images.pexels.com/photos/7691705/pexels-photo-7691705.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                              alt="Human rights advocate speaking to crowd"
+                              src="/activists/gustavo-tovar-arroyo.webp"
+                              alt="Gustavo Tovar Arroyo speaks at Oslo Freedom Forum in Taiwan"
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                           </div>
-                          <span className="text-xs text-cyan-400 font-medium uppercase tracking-wide">HRF Initiative</span>
+                          <span className="text-xs text-cyan-400 font-medium uppercase tracking-wide">Global Movement</span>
                           <h5 className="font-display font-semibold text-foreground mt-1 mb-2 group-hover:text-cyan-300 transition-colors">
-                            Freedom Tech Program
+                            Oslo Freedom Forum
                           </h5>
                           <p className="text-sm text-muted-foreground line-clamp-2">
-                            How technology can protect dissidents and human rights defenders worldwide.
+                            Where the world's leading human rights defenders share their stories and strategies.
                           </p>
                           <span className="inline-flex items-center gap-1 text-cyan-400 text-sm mt-3 group-hover:gap-2 transition-all">
-                            Read more
+                            Watch talks
                             <ExternalLink className="w-3 h-3" />
                           </span>
                         </div>
@@ -298,46 +298,40 @@ export function Manifesto() {
                     </div>
                   </div>
 
-                  {/* Testimonial Avatars */}
+                  {/* Oslo Freedom Forum Community */}
                   <div className="mt-8 pt-8 border-t border-border/50">
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-                      <div className="flex items-center gap-4">
-                        <div className="flex -space-x-3">
-                          <img
-                            src="https://images.pexels.com/photos/6146931/pexels-photo-6146931.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop"
-                            alt="Privacy advocate"
-                            className="w-10 h-10 rounded-full border-2 border-background object-cover"
-                          />
-                          <img
-                            src="https://images.pexels.com/photos/5717546/pexels-photo-5717546.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop"
-                            alt="Digital rights activist"
-                            className="w-10 h-10 rounded-full border-2 border-background object-cover"
-                          />
-                          <img
-                            src="https://images.pexels.com/photos/6205509/pexels-photo-6205509.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop"
-                            alt="Independent journalist"
-                            className="w-10 h-10 rounded-full border-2 border-background object-cover"
-                          />
-                          <div className="w-10 h-10 rounded-full border-2 border-background bg-cyan-500/20 flex items-center justify-center text-xs text-cyan-300 font-medium">
-                            +
-                          </div>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                          <span className="text-foreground font-medium">Trusted by activists worldwide</span>
-                          <br />
-                          <span className="text-xs">From journalists to human rights defenders</span>
-                        </p>
+                    <div className="flex flex-col lg:flex-row items-center gap-6">
+                      {/* OFF Lobby Image */}
+                      <div className="relative w-full lg:w-1/3 h-32 rounded-xl overflow-hidden">
+                        <img
+                          src="/activists/off-lobby.webp"
+                          alt="Attendees gather at the Oslo Freedom Forum lobby"
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/60" />
                       </div>
 
-                      <a
-                        href="https://hrf.org/program/ai-for-individual-rights/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all group"
-                      >
-                        Learn about AI for Human Rights
-                        <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                      </a>
+                      {/* Text and CTA */}
+                      <div className="flex-1 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div className="text-center sm:text-left">
+                          <p className="text-foreground font-medium mb-1">
+                            Join the global freedom movement
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            The Oslo Freedom Forum brings together human rights defenders, technologists, and activists from around the world.
+                          </p>
+                        </div>
+
+                        <a
+                          href="https://hrf.org/hrf-labs/ai-for-activists/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all group"
+                        >
+                          AI for Activists
+                          <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
