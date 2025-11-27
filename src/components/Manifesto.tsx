@@ -38,29 +38,6 @@ export function Manifesto() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="p-6 rounded-xl bg-card/30 border border-border">
-                  <h4 className="text-xl font-display font-semibold text-foreground mb-4">🔒 Closed AI</h4>
-                  <ul className="space-y-3">
-                    <li>• Your data trains their models</li>
-                    <li>• No visibility into how it works</li>
-                    <li>• Can be shut down or censored</li>
-                    <li>• Lock-in to their ecosystem</li>
-                    <li>• Terms can change anytime</li>
-                  </ul>
-                </div>
-                <div className="p-6 rounded-xl bg-cyan-500/10 border border-cyan-500/30">
-                  <h4 className="text-xl font-display font-semibold text-foreground mb-4">🔓 Open AI</h4>
-                  <ul className="space-y-3">
-                    <li>• Audit what runs on your machine</li>
-                    <li>• Self-host for true privacy</li>
-                    <li>• Can't be taken away from you</li>
-                    <li>• Community-driven improvements</li>
-                    <li>• Freedom to fork and modify</li>
-                  </ul>
-                </div>
-              </div>
-
               <div className="p-8 rounded-2xl bg-card/50 border border-border">
                 <h3 className="text-2xl font-display font-semibold text-foreground mb-4">The Open Source AI Definition</h3>
                 <p>
