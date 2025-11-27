@@ -118,12 +118,9 @@ export function Quiz({ onComplete }: QuizProps) {
 
           {/* Question */}
           <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-3">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold">
               {question.question}
             </h2>
-            {question.description && (
-              <p className="text-muted-foreground text-lg">{question.description}</p>
-            )}
           </div>
 
           {/* Options */}
@@ -138,22 +135,15 @@ export function Quiz({ onComplete }: QuizProps) {
                   }`}
                   onClick={() => handleAnswer(option.id)}
                 >
-                  <CardContent className="p-5 flex items-start gap-4">
-                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors mt-0.5 ${
+                  <CardContent className="p-5 flex items-center gap-4">
+                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
                       isSelected ? 'border-cyan-500 bg-cyan-500' : 'border-muted-foreground'
                     }`}>
                       {isSelected && (
                         <div className="w-2 h-2 rounded-full bg-black" />
                       )}
                     </div>
-                    <div>
-                      <div className="font-display font-medium text-lg">{option.label}</div>
-                      {option.description && (
-                        <div className="text-muted-foreground mt-1">
-                          {option.description}
-                        </div>
-                      )}
-                    </div>
+                    <div className="font-display font-medium text-lg">{option.label}</div>
                   </CardContent>
                 </Card>
               );
