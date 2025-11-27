@@ -10,10 +10,10 @@ export function Footer() {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             {/* About */}
             <div>
-              <h3 className="font-display font-bold text-lg text-gradient mb-3">Freedom AI Tool Evaluator</h3>
+              <h3 className="font-display font-bold text-lg text-gradient mb-3">AI Sovereignty Index</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Helping freedom-minded creators find AI tools that respect their sovereignty,
-                privacy, and values.
+                Helping creators find AI tools that respect their sovereignty,
+                privacy, and autonomy.
               </p>
             </div>
 

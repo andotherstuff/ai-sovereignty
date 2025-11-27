@@ -49,13 +49,13 @@ export function Hero({ onExplore }: HeroProps) {
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold tracking-tight mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <span className="text-gradient-glow">Freedom AI</span>
+            <span className="text-gradient-glow">AI Sovereignty</span>
             <br />
-            <span className="text-foreground">Tool Evaluator</span>
+            <span className="text-foreground">Index</span>
           </h1>
 
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Navigate the AI landscape with <span className="text-cyan-400 font-medium">freedom</span> in mind
+            Navigate the AI landscape with <span className="text-cyan-400 font-medium">sovereignty</span> in mind
           </p>
 
           {/* Tagline */}

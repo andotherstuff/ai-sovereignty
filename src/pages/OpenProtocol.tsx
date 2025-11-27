@@ -19,9 +19,9 @@ import { Link } from 'react-router-dom';
 
 export default function OpenProtocol() {
   useSeoMeta({
-    title: 'Open Protocol | FATE - Freedom AI Tool Evaluator',
+    title: 'Open Protocol | AI Sovereignty Index',
     description: 'Open protocols that prevent vendor lock-in. The universal API standard that lets you switch AI providers freely without changing your code.',
-    ogTitle: 'Open Protocol | FATE',
+    ogTitle: 'Open Protocol | AI Sovereignty Index',
     ogDescription: 'Open protocols that prevent vendor lock-in. Switch AI providers freely without changing your code.',
     ogImage: '/og-image.png',
     ogType: 'website',

@@ -55,7 +55,7 @@ export function Header({ onNavigate }: HeaderProps) {
             to="/"
             className="flex items-center gap-2 group"
           >
-            <span className="text-xl md:text-2xl font-display font-bold text-gradient">FATE</span>
+            <span className="text-xl md:text-2xl font-display font-bold text-gradient">AI Sovereignty Index</span>
           </Link>
 
           {/* Desktop Navigation */}

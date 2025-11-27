@@ -16,10 +16,10 @@ import {
 
 const Index = () => {
   useSeoMeta({
-    title: 'FATE - Freedom AI Tool Evaluator',
-    description: 'Navigate the AI landscape with freedom in mind. We champion open protocols that prevent vendor lock-in, open models you can run anywhere, and open tools that respect your sovereignty.',
-    ogTitle: 'FATE - Freedom AI Tool Evaluator',
-    ogDescription: 'Navigate the AI landscape with freedom in mind. Open protocols, open models, and open tools that respect your sovereignty.',
+    title: 'AI Sovereignty Index',
+    description: 'Navigate the AI landscape with sovereignty in mind. We champion open protocols that prevent vendor lock-in, open models you can run anywhere, and open tools that respect your autonomy.',
+    ogTitle: 'AI Sovereignty Index',
+    ogDescription: 'Navigate the AI landscape with sovereignty in mind. Open protocols, open models, and open tools that respect your autonomy.',
     ogImage: '/og-image.png',
     ogType: 'website',
     twitterCard: 'summary_large_image',

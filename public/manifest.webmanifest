@@ -1,7 +1,7 @@
 {
-  "name": "FATE - Freedom AI Tool Evaluator",
-  "short_name": "FATE",
-  "description": "Take control of your AI destiny",
+  "name": "AI Sovereignty Index",
+  "short_name": "AI Sovereignty",
+  "description": "Navigate the AI landscape with sovereignty in mind",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f0d0b",

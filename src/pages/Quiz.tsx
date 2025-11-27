@@ -4,9 +4,9 @@ import { Quiz as QuizComponent } from '@/components/Quiz';
 
 export default function Quiz() {
   useSeoMeta({
-    title: 'Find Your Tool | FATE - Freedom AI Tool Evaluator',
+    title: 'Find Your Tool | AI Sovereignty Index',
     description: 'Find the AI coding tool that respects your sovereignty. Answer questions about your project needs, privacy requirements, and values.',
-    ogTitle: 'Find Your Tool | FATE',
+    ogTitle: 'Find Your Tool | AI Sovereignty Index',
     ogDescription: 'Find the AI coding tool that respects your sovereignty and aligns with your values.',
     ogImage: '/og-image.png',
     ogType: 'website',

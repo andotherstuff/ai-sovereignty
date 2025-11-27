@@ -23,9 +23,9 @@ import { Link } from 'react-router-dom';
 
 export default function OpenModels() {
   useSeoMeta({
-    title: 'Open Models | FATE - Freedom AI Tool Evaluator',
+    title: 'Open Models | AI Sovereignty Index',
     description: 'AI models you can run anywhere. Discover truly open AI with accessible weights, transparent training, and freedom to modify.',
-    ogTitle: 'Open Models | FATE',
+    ogTitle: 'Open Models | AI Sovereignty Index',
     ogDescription: 'AI models you can run anywhere. Accessible weights, transparent training, and freedom to modify.',
     ogImage: '/og-image.png',
     ogType: 'website',
