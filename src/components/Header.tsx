@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Logo } from '@/components/Logo';
 
 interface HeaderProps {
   onNavigate?: (section: string) => void;
@@ -55,7 +56,7 @@ export function Header({ onNavigate }: HeaderProps) {
             to="/"
             className="flex items-center gap-2 group"
           >
-            <span className="text-xl md:text-2xl font-display font-bold text-gradient">AI Sovereignty Index</span>
+            <Logo className="text-2xl md:text-3xl" />
           </Link>
 
           {/* Desktop Navigation */}
