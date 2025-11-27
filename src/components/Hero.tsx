@@ -35,7 +35,7 @@ export function Hero({ onExplore }: HeroProps) {
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl pt-12 md:pt-16">
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold tracking-tight mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <span className="text-gradient-glow">AI Sovereignty</span>
