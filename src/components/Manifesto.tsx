@@ -11,7 +11,7 @@ export function Manifesto() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-              Why <span className="text-gradient">Open AI*</span> Matters
+              Why <span className="text-gradient">Open AI</span> Matters
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Closed AI concentrates power. Open AI distributes it. The difference matters more than you think.
@@ -34,7 +34,7 @@ export function Manifesto() {
                   When the AI you depend on is a black box controlled by a corporation, you've traded one form of gatekeeping for another. Your creativity flows through their servers. Your ideas pass through their filters. Your sovereignty over your own tools is an illusion.
                 </p>
                 <p className="mt-4">
-                  <span className="text-cyan-700 dark:text-cyan-300 font-medium">*OpenAI—the company—has hijacked the very meaning of "open."</span> Despite its name, OpenAI keeps its model weights locked away, refuses to disclose training data, and operates as one of the most closed AI companies in existence. They started as a non-profit promising to benefit humanity, then pivoted to a capped-profit structure backed by Microsoft. When we say "open AI," we mean the <em>opposite</em> of what OpenAI the company represents.
+                  <span className="text-cyan-700 dark:text-cyan-300 font-medium">The word "open" gets thrown around a lot in AI marketing</span>, but true openness means something specific: accessible weights, transparent training, and the freedom to run, modify, and share models without restriction.
                 </p>
               </div>
 
