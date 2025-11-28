@@ -16,17 +16,19 @@ export function ToolComparison() {
 
   const sortedTools = [...AI_TOOLS].sort((a, b) => {
     switch (sortBy) {
-      case 'freedom':
+      case 'freedom': {
         // Prioritize open source and privacy
         const freedomA = a.scores.openSource * 2 + a.scores.privacy * 2 + a.scores.protocolSupport;
         const freedomB = b.scores.openSource * 2 + b.scores.privacy * 2 + b.scores.protocolSupport;
         return freedomB - freedomA;
+      }
       case 'ease':
         return b.scores.easeOfUse - a.scores.easeOfUse;
-      case 'overall':
+      case 'overall': {
         const overallA = Object.values(a.scores).reduce((sum, v) => sum + v, 0);
         const overallB = Object.values(b.scores).reduce((sum, v) => sum + v, 0);
         return overallB - overallA;
+      }
       default:
         return 0;
     }

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import { QUIZ_QUESTIONS, calculateQuizResults, findRequirementMismatches, type AITool, type RequirementMismatch } from '@/lib/tools';
+import { QUIZ_QUESTIONS, calculateQuizResults, findRequirementMismatches, type AITool } from '@/lib/tools';
 
 interface QuizProps {
   onComplete?: () => void;

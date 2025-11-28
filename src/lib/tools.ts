@@ -976,7 +976,9 @@ export function calculateQuizResults(answers: Record<string, string>): { tool: A
     if (!option) return;
 
     Object.entries(option.weights).forEach(([toolId, weight]) => {
-      scores[toolId] = (scores[toolId] || 0) + weight;
+      if (weight !== undefined) {
+        scores[toolId] = (scores[toolId] || 0) + weight;
+      }
     });
   });
 

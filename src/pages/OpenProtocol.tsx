@@ -11,7 +11,6 @@ import {
   Code,
   Globe,
   Layers,
-  ExternalLink,
   Sparkles
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
