@@ -79,6 +79,28 @@ Not sure which tool is right for you? Take our [interactive quiz](https://ai-sov
 - [HRF AI for Individual Rights](https://hrf.org/program/ai-for-individual-rights/)
 - [GNU Free Software Definition](https://www.gnu.org/philosophy/free-sw.en.html)
 
+## Deployment
+
+### GitHub Pages
+
+This project is configured to deploy automatically to GitHub Pages via GitHub Actions. To enable:
+
+1. Go to your repository **Settings** → **Pages**
+2. Under "Build and deployment", select **GitHub Actions** as the source
+3. Push to the `main` branch to trigger a deployment
+
+For custom domains, add a `CNAME` file to the `public/` directory with your domain.
+
+If deploying to a subpath (e.g., `username.github.io/repo-name`), update the `base` option in `vite.config.ts`:
+
+```ts
+base: '/repo-name/',
+```
+
+### Other Platforms
+
+The `dist/` folder can be deployed to any static hosting service (Netlify, Vercel, Cloudflare Pages, etc.).
+
 ## Contributing
 
 This project is licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html). Contributions are welcome!
