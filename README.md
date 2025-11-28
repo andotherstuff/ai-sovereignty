@@ -10,7 +10,7 @@ The AI Sovereignty Index champions **open protocols** that prevent vendor lock-i
 
 ## Why Open AI Matters
 
-*OpenAI—the company—has hijacked the very meaning of "open."* Despite its name, OpenAI keeps its model weights locked away, refuses to disclose training data, and operates as one of the most closed AI companies in existence. When we say "open AI," we mean the *opposite* of what OpenAI the company represents.
+The word "open" gets thrown around a lot in AI marketing, but true openness means something specific: accessible weights, transparent training, and the freedom to run, modify, and share models without restriction.
 
 Closed AI concentrates power. Open AI distributes it. The difference matters more than you think.
 
