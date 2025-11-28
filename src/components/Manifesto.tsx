@@ -22,19 +22,19 @@ export function Manifesto() {
           <div className="prose prose-invert prose-lg max-w-none">
             <div className="space-y-8 text-muted-foreground leading-relaxed text-lg">
 
-              <div className="p-8 rounded-2xl bg-card/80 dark:bg-card/50 border border-cyan-600/30 dark:border-cyan-500/20">
+              <div className="p-8 rounded-2xl bg-card/80 dark:bg-card/50 border border-cyan-700/30 dark:border-cyan-500/20">
                 <h3 className="text-2xl font-display font-semibold text-foreground mb-4">The Promise of AI—And The Peril</h3>
                 <p>
                   Artificial intelligence is transforming how we create software. "Vibe coding"—building applications through natural language conversation with AI—is making development accessible to millions who never wrote a line of code before.
                 </p>
                 <p className="mt-4">
-                  But here's the critical question: <span className="text-cyan-600 dark:text-cyan-300 font-medium">Who controls these AI tools?</span>
+                  But here's the critical question: <span className="text-cyan-700 dark:text-cyan-300 font-medium">Who controls these AI tools?</span>
                 </p>
                 <p className="mt-4">
                   When the AI you depend on is a black box controlled by a corporation, you've traded one form of gatekeeping for another. Your creativity flows through their servers. Your ideas pass through their filters. Your sovereignty over your own tools is an illusion.
                 </p>
                 <p className="mt-4">
-                  <span className="text-cyan-600 dark:text-cyan-300 font-medium">*OpenAI—the company—has hijacked the very meaning of "open."</span> Despite its name, OpenAI keeps its model weights locked away, refuses to disclose training data, and operates as one of the most closed AI companies in existence. They started as a non-profit promising to benefit humanity, then pivoted to a capped-profit structure backed by Microsoft. When we say "open AI," we mean the <em>opposite</em> of what OpenAI the company represents.
+                  <span className="text-cyan-700 dark:text-cyan-300 font-medium">*OpenAI—the company—has hijacked the very meaning of "open."</span> Despite its name, OpenAI keeps its model weights locked away, refuses to disclose training data, and operates as one of the most closed AI companies in existence. They started as a non-profit promising to benefit humanity, then pivoted to a capped-profit structure backed by Microsoft. When we say "open AI," we mean the <em>opposite</em> of what OpenAI the company represents.
                 </p>
               </div>
 
@@ -46,7 +46,7 @@ export function Manifesto() {
                     href="https://opensource.org/ai/open-source-ai-definition"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-cyan-600 hover:text-cyan-500 dark:text-cyan-300 dark:hover:text-cyan-200 inline-flex items-center gap-1"
+                    className="text-cyan-700 hover:text-cyan-600 dark:text-cyan-300 dark:hover:text-cyan-200 inline-flex items-center gap-1"
                   >
                     Open Source Initiative's Open Source AI Definition
                     <ExternalLink className="w-4 h-4" />
@@ -54,15 +54,15 @@ export function Manifesto() {
                   . True open source AI means:
                 </p>
                 <ul className="mt-4 space-y-3">
-                  <li><span className="text-cyan-600 dark:text-cyan-300">→</span> Freedom to use the system for any purpose</li>
-                  <li><span className="text-cyan-600 dark:text-cyan-300">→</span> Freedom to study how the system works</li>
-                  <li><span className="text-cyan-600 dark:text-cyan-300">→</span> Freedom to modify the system</li>
-                  <li><span className="text-cyan-600 dark:text-cyan-300">→</span> Freedom to share the system with others</li>
+                  <li><span className="text-cyan-700 dark:text-cyan-300">→</span> Freedom to use the system for any purpose</li>
+                  <li><span className="text-cyan-700 dark:text-cyan-300">→</span> Freedom to study how the system works</li>
+                  <li><span className="text-cyan-700 dark:text-cyan-300">→</span> Freedom to modify the system</li>
+                  <li><span className="text-cyan-700 dark:text-cyan-300">→</span> Freedom to share the system with others</li>
                 </ul>
               </div>
 
               {/* For Activists & Privacy Seekers - Expanded Section */}
-              <div className="rounded-3xl bg-gradient-to-br from-cyan-100/50 via-card/80 to-background dark:from-cyan-950/40 dark:via-card/60 dark:to-background border border-cyan-600/30 dark:border-cyan-500/30 overflow-hidden">
+              <div className="rounded-3xl bg-gradient-to-br from-cyan-100/50 via-card/80 to-background dark:from-cyan-950/40 dark:via-card/60 dark:to-background border border-cyan-700/30 dark:border-cyan-500/30 overflow-hidden">
                 {/* Section Header with Hero Image Mosaic */}
                 <div className="relative">
                   {/* Image Mosaic Grid */}
@@ -104,7 +104,7 @@ export function Manifesto() {
                   {/* Overlay Title */}
                   <div className="absolute inset-0 flex items-end justify-center pb-6">
                     <div className="text-center">
-                      <span className="inline-block px-4 py-1 rounded-full bg-cyan-600/20 border border-cyan-600/50 text-cyan-700 dark:bg-cyan-500/20 dark:border-cyan-500/40 dark:text-cyan-300 text-sm font-medium mb-3 backdrop-blur-sm">
+                      <span className="inline-block px-4 py-1 rounded-full bg-cyan-700/20 border border-cyan-700/50 text-cyan-700 dark:bg-cyan-500/20 dark:border-cyan-500/40 dark:text-cyan-300 text-sm font-medium mb-3 backdrop-blur-sm">
                         🛡️ For Those Who Need It Most
                       </span>
                       <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground drop-shadow-lg">

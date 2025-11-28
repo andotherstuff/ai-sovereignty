@@ -1,0 +1,18 @@
+commit 8f556852fd50eedbddfe0a2639e1d4918b9d11d5
+Author: MK Fain <mk@marykatefain.com>
+Date:   Thu, 27 Nov 2025 03:22:23 GMT
+
+    Add light theme support with theme toggle
+
+- Add proper light theme CSS variables in index.css
+- Update dark mode specific utility classes (text-gradient, glow effects)
+- Add theme toggle button to Header (desktop and mobile)
+- Update Hero, GlobeHero components with light-mode compatible overlays
+- Update Index page pillars section for light mode
+- Update Manifesto component colors for both themes
+- Update Footer links with light/dark variants
+- Update ToolCard score bars and badges for light mode accessibility
+- Default theme remains dark, users can toggle to light mode
+
+
+(File content diff not implemented - use git log for commit details)

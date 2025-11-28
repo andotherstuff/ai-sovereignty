@@ -105,17 +105,17 @@ const Index = () => {
                   to={pillar.to}
                   className="group block"
                 >
-                  <div className="h-full p-8 rounded-3xl bg-card/80 dark:bg-card/50 border border-border hover:border-cyan-600/50 dark:hover:border-cyan-500/40 transition-all duration-500 hover:bg-card hover:shadow-xl hover:shadow-cyan-600/5 dark:hover:shadow-cyan-500/5">
+                  <div className="h-full p-8 rounded-3xl bg-card/80 dark:bg-card/50 border border-border hover:border-cyan-700/50 dark:hover:border-cyan-500/40 transition-all duration-500 hover:bg-card hover:shadow-xl hover:shadow-cyan-700/5 dark:hover:shadow-cyan-500/5">
                     {/* Icon & Title */}
                     <div className="flex items-start gap-4 mb-6">
                       <div className={`w-14 h-14 rounded-2xl bg-${pillar.color}-500/20 dark:bg-${pillar.color}-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <pillar.icon className={`w-7 h-7 text-${pillar.color}-600 dark:text-${pillar.color}-400`} />
+                        <pillar.icon className={`w-7 h-7 text-${pillar.color}-700 dark:text-${pillar.color}-400`} />
                       </div>
                       <div>
-                        <span className={`text-xs font-medium text-${pillar.color}-600 dark:text-${pillar.color}-400 uppercase tracking-wide`}>
+                        <span className={`text-xs font-medium text-${pillar.color}-700 dark:text-${pillar.color}-400 uppercase tracking-wide`}>
                           {pillar.subtitle}
                         </span>
-                        <h3 className="text-2xl font-display font-bold group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
+                        <h3 className="text-2xl font-display font-bold group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">
                           {pillar.title}
                         </h3>
                       </div>
@@ -130,14 +130,14 @@ const Index = () => {
                     <div className="space-y-2 mb-8">
                       {pillar.highlights.map((highlight, i) => (
                         <div key={i} className="flex items-center gap-2 text-sm">
-                          <CheckCircle2 className={`w-4 h-4 text-${pillar.color}-600 dark:text-${pillar.color}-400`} />
+                          <CheckCircle2 className={`w-4 h-4 text-${pillar.color}-700 dark:text-${pillar.color}-400`} />
                           <span className="text-muted-foreground">{highlight}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* CTA */}
-                    <div className="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-medium group-hover:gap-3 transition-all">
+                    <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-400 font-medium group-hover:gap-3 transition-all">
                       <span>{pillar.cta}</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
@@ -152,7 +152,7 @@ const Index = () => {
         <section className="py-24 md:py-32">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-cyan-100/50 via-card/80 to-background dark:from-cyan-950/30 dark:via-card/50 dark:to-background border border-cyan-600/20 dark:border-cyan-500/20">
+              <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-cyan-100/50 via-card/80 to-background dark:from-cyan-950/30 dark:via-card/50 dark:to-background border border-cyan-700/20 dark:border-cyan-500/20">
                 <h3 className="text-2xl md:text-3xl font-display font-bold mb-4">
                   Ready to Find Your <span className="text-gradient">Freedom Tool</span>?
                 </h3>
@@ -174,7 +174,7 @@ const Index = () => {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="text-lg px-8 py-6 border-cyan-600/40 text-cyan-700 hover:bg-cyan-500/10 dark:border-cyan-500/30 dark:text-cyan-400"
+                      className="text-lg px-8 py-6 border-cyan-700/40 text-cyan-700 hover:bg-cyan-500/10 dark:border-cyan-500/30 dark:text-cyan-400"
                     >
                       Explore Open Models
                     </Button>

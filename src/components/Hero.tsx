@@ -19,8 +19,8 @@ export function Hero({ onExplore }: HeroProps) {
       />
 
       {/* Gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70 dark:via-background/90 dark:to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/70 dark:via-transparent dark:to-background/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/30 dark:via-background/90 dark:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40 dark:via-transparent dark:to-background/50" />
 
       {/* Atmospheric glow effect on the right side */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl" />
@@ -44,14 +44,14 @@ export function Hero({ onExplore }: HeroProps) {
           </h1>
 
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            A framework for evaluating AI protocols, models, and tools for <span className="text-cyan-600 dark:text-cyan-400 font-medium">human freedom</span>
+            A framework for evaluating AI protocols, models, and tools for <span className="text-cyan-700 dark:text-cyan-400 font-medium">human freedom</span>
           </p>
 
           {/* Tagline */}
           <p className="max-w-xl text-base md:text-lg text-muted-foreground/80 mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: '0.3s' }}>
-            We champion <span className="text-cyan-600 dark:text-cyan-400 font-medium">open protocols</span> that prevent vendor lock-in,
-            <span className="text-sky-600 dark:text-sky-400 font-medium"> open models</span> you can run anywhere, and{' '}
-            <span className="text-blue-600 dark:text-blue-400 font-medium">open tools</span> that respect your sovereignty—so you can build with AI that aligns with your values.
+            We champion <span className="text-cyan-700 dark:text-cyan-400 font-medium">open protocols</span> that prevent vendor lock-in,
+            <span className="text-sky-700 dark:text-sky-400 font-medium"> open models</span> you can run anywhere, and{' '}
+            <span className="text-blue-700 dark:text-blue-400 font-medium">open tools</span> that respect your sovereignty—so you can build with AI that aligns with your values.
           </p>
 
           {/* CTA Buttons */}
@@ -68,7 +68,7 @@ export function Hero({ onExplore }: HeroProps) {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 border-cyan-600/40 text-cyan-700 hover:bg-cyan-500/10 hover:border-cyan-600/60 dark:border-cyan-500/30 dark:text-cyan-400 dark:hover:border-cyan-500/50 transition-all duration-300 backdrop-blur-sm"
+              className="text-lg px-8 py-6 border-cyan-700/40 text-cyan-700 hover:bg-cyan-500/10 hover:border-cyan-700/60 dark:border-cyan-500/30 dark:text-cyan-400 dark:hover:border-cyan-500/50 transition-all duration-300 backdrop-blur-sm"
               onClick={onExplore}
             >
               Explore Open AI
@@ -77,18 +77,18 @@ export function Hero({ onExplore }: HeroProps) {
 
           {/* Three Pillars of Open AI */}
           <div className="grid md:grid-cols-3 gap-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <Link to="/open-protocol" className="group p-5 rounded-2xl bg-card/80 dark:bg-card/60 border border-border/50 backdrop-blur-md hover:border-cyan-600/50 dark:hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/90 dark:hover:bg-card/80">
-              <Globe className="w-7 h-7 text-cyan-600 dark:text-cyan-400 mb-3 group-hover:scale-110 transition-transform" />
+            <Link to="/open-protocol" className="group p-5 rounded-2xl bg-card/80 dark:bg-card/60 border border-border/50 backdrop-blur-md hover:border-cyan-700/50 dark:hover:border-cyan-500/40 transition-all duration-300 hover:bg-card/90 dark:hover:bg-card/80">
+              <Globe className="w-7 h-7 text-cyan-700 dark:text-cyan-400 mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="font-display font-semibold mb-2 text-sm">Open Protocol</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">One universal API standard that lets you switch providers freely</p>
             </Link>
-            <Link to="/open-models" className="group p-5 rounded-2xl bg-card/80 dark:bg-card/60 border border-border/50 backdrop-blur-md hover:border-sky-600/50 dark:hover:border-sky-500/40 transition-all duration-300 hover:bg-card/90 dark:hover:bg-card/80">
-              <Database className="w-7 h-7 text-sky-600 dark:text-sky-400 mb-3 group-hover:scale-110 transition-transform" />
+            <Link to="/open-models" className="group p-5 rounded-2xl bg-card/80 dark:bg-card/60 border border-border/50 backdrop-blur-md hover:border-sky-700/50 dark:hover:border-sky-500/40 transition-all duration-300 hover:bg-card/90 dark:hover:bg-card/80">
+              <Database className="w-7 h-7 text-sky-700 dark:text-sky-400 mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="font-display font-semibold mb-2 text-sm">Open Models</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">AI with accessible weights, transparent training, and freedom to modify</p>
             </Link>
-            <Link to="/open-tools" className="group p-5 rounded-2xl bg-card/80 dark:bg-card/60 border border-border/50 backdrop-blur-md hover:border-blue-600/50 dark:hover:border-blue-500/40 transition-all duration-300 hover:bg-card/90 dark:hover:bg-card/80">
-              <Wrench className="w-7 h-7 text-blue-600 dark:text-blue-400 mb-3 group-hover:scale-110 transition-transform" />
+            <Link to="/open-tools" className="group p-5 rounded-2xl bg-card/80 dark:bg-card/60 border border-border/50 backdrop-blur-md hover:border-blue-700/50 dark:hover:border-blue-500/40 transition-all duration-300 hover:bg-card/90 dark:hover:bg-card/80">
+              <Wrench className="w-7 h-7 text-blue-700 dark:text-blue-400 mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="font-display font-semibold mb-2 text-sm">Open Tools</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">Vibe coding assistants evaluated for openness, privacy, and protocol support</p>
             </Link>

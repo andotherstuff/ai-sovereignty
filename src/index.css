@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 10%;
 
-    --primary: 199 89% 40%;
+    --primary: 199 89% 32%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 20% 96%;
@@ -23,7 +23,7 @@
     --muted: 210 20% 94%;
     --muted-foreground: 220 15% 40%;
 
-    --accent: 199 89% 40%;
+    --accent: 199 89% 32%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -31,23 +31,23 @@
 
     --border: 210 20% 88%;
     --input: 210 20% 88%;
-    --ring: 199 89% 40%;
+    --ring: 199 89% 32%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 220 20% 20%;
-    --sidebar-primary: 199 89% 40%;
+    --sidebar-primary: 199 89% 32%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 210 20% 96%;
     --sidebar-accent-foreground: 220 20% 20%;
     --sidebar-border: 210 20% 88%;
-    --sidebar-ring: 199 89% 40%;
+    --sidebar-ring: 199 89% 32%;
 
     /* Cosmic accent colors - darker for light mode */
-    --cosmic-blue: 199 89% 40%;
-    --cosmic-cyan: 187 100% 35%;
-    --cosmic-glow: 199 100% 45%;
+    --cosmic-blue: 199 89% 32%;
+    --cosmic-cyan: 187 100% 28%;
+    --cosmic-glow: 199 100% 35%;
   }
 
   .dark {
@@ -112,7 +112,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-cyan-600 via-blue-600 to-sky-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-700 via-blue-700 to-sky-700 bg-clip-text text-transparent;
   }
 
   .dark .text-gradient {
@@ -120,8 +120,8 @@
   }
 
   .text-gradient-glow {
-    @apply bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-600 bg-clip-text text-transparent;
-    text-shadow: 0 0 60px hsl(199 89% 40% / 0.3);
+    @apply bg-gradient-to-r from-cyan-700 via-sky-700 to-blue-700 bg-clip-text text-transparent;
+    text-shadow: 0 0 60px hsl(199 89% 32% / 0.3);
   }
 
   .dark .text-gradient-glow {

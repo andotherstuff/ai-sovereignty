@@ -24,7 +24,7 @@ export function Footer() {
                 <li>
                   <Link
                     to="/open-protocol"
-                    className="text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
+                    className="text-muted-foreground hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
                   >
                     Open Protocol
                   </Link>
@@ -32,7 +32,7 @@ export function Footer() {
                 <li>
                   <Link
                     to="/open-models"
-                    className="text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
+                    className="text-muted-foreground hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
                   >
                     Open Models
                   </Link>
@@ -40,7 +40,7 @@ export function Footer() {
                 <li>
                   <Link
                     to="/open-tools"
-                    className="text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
+                    className="text-muted-foreground hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
                   >
                     Open Tools
                   </Link>
@@ -57,7 +57,7 @@ export function Footer() {
                     href="https://opensource.org/ai/open-source-ai-definition"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-1.5"
+                    className="text-muted-foreground hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-1.5"
                   >
                     OSI AI Definition
                     <ExternalLink className="w-4 h-4" />
@@ -68,7 +68,7 @@ export function Footer() {
                     href="https://www.gnu.org/philosophy/free-sw.en.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-1.5"
+                    className="text-muted-foreground hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-1.5"
                   >
                     Free Software Def.
                     <ExternalLink className="w-4 h-4" />
@@ -79,7 +79,7 @@ export function Footer() {
                     href="https://hrf.org/program/ai-for-individual-rights/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-1.5"
+                    className="text-muted-foreground hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-1.5"
                   >
                     HRF AI Rights
                     <ExternalLink className="w-4 h-4" />
@@ -103,7 +103,7 @@ export function Footer() {
                   className="w-12 h-12 object-contain"
                 />
                 <div>
-                  <div className="font-display font-medium group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">And Other Stuff</div>
+                  <div className="font-display font-medium group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">And Other Stuff</div>
                   <div className="text-muted-foreground text-sm">Technology for Human Thriving</div>
                 </div>
               </a>
@@ -118,7 +118,7 @@ export function Footer() {
                 href="https://www.gnu.org/licenses/agpl-3.0.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
+                className="hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
               >
                 AGPL-3.0
               </a>
@@ -128,7 +128,7 @@ export function Footer() {
                 href="https://gitlab.com/soapbox-pub/fate.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-1.5"
+                className="hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-1.5"
               >
                 <GitlabIcon className="w-4 h-4" />
                 GitLab
@@ -138,9 +138,9 @@ export function Footer() {
             <div className="flex items-center gap-4">
               <Link
                 to="/open-tools#shakespeare"
-                className="text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-2"
+                className="text-muted-foreground hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors inline-flex items-center gap-2"
               >
-                <Heart className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+                <Heart className="w-4 h-4 text-cyan-700 dark:text-cyan-400" />
                 Made with Shakespeare
               </Link>
             </div>

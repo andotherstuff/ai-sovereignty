@@ -69,7 +69,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
                 className="w-10 h-10 object-contain"
               />
             ) : (
-              <span className="text-2xl font-display font-bold text-cyan-600 dark:text-cyan-400">
+              <span className="text-2xl font-display font-bold text-cyan-700 dark:text-cyan-400">
                 {tool.name.charAt(0)}
               </span>
             )}
@@ -145,11 +145,11 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
                 </ul>
               </div>
               <div>
-                <h4 className="font-display font-medium text-cyan-600 dark:text-cyan-300 mb-3">⚠ Considerations</h4>
+                <h4 className="font-display font-medium text-cyan-700 dark:text-cyan-300 mb-3">⚠ Considerations</h4>
                 <ul className="space-y-2">
                   {tool.limitations.map((limitation, i) => (
                     <li key={i} className="text-muted-foreground flex items-start gap-2">
-                      <AlertTriangle className="w-4 h-4 text-cyan-500 dark:text-cyan-400 shrink-0 mt-1" />
+                      <AlertTriangle className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-1" />
                       <span>{limitation}</span>
                     </li>
                   ))}
@@ -199,7 +199,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
             {/* Pricing */}
             <div className="p-4 rounded-lg bg-muted/30">
               <h4 className="font-display font-medium text-foreground mb-1">Pricing</h4>
-              <p className="text-cyan-600 dark:text-cyan-300 font-medium text-lg">{tool.pricing.startingPrice || 'Free'}</p>
+              <p className="text-cyan-700 dark:text-cyan-300 font-medium text-lg">{tool.pricing.startingPrice || 'Free'}</p>
               <p className="text-muted-foreground mt-1">{tool.pricing.details}</p>
             </div>
           </div>
@@ -219,7 +219,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
             <Button
               variant="outline"
               size="sm"
-              className="text-cyan-600 dark:text-cyan-300 border-cyan-600/40 dark:border-cyan-500/30 hover:bg-cyan-500/10"
+              className="text-cyan-700 dark:text-cyan-300 border-cyan-700/40 dark:border-cyan-500/30 hover:bg-cyan-500/10"
               asChild
             >
               <a href={tool.url} target="_blank" rel="noopener noreferrer">
@@ -231,7 +231,7 @@ export function ToolCard({ tool, expanded = false, onToggleExpand, rank }: ToolC
 
           {/* Overall Score */}
           <div className="text-right">
-            <div className="text-2xl font-display font-bold text-cyan-600 dark:text-cyan-400">{overallScore}<span className="text-base text-muted-foreground font-normal">/100</span></div>
+            <div className="text-2xl font-display font-bold text-cyan-700 dark:text-cyan-400">{overallScore}<span className="text-base text-muted-foreground font-normal">/100</span></div>
           </div>
         </div>
       </CardContent>
@@ -270,7 +270,7 @@ const colorClasses: Record<ScoreColor, { bar: string; text: string; label: strin
   },
   cyan: {
     bar: 'bg-cyan-500 dark:bg-cyan-400',
-    text: 'text-cyan-600 dark:text-cyan-300',
+    text: 'text-cyan-700 dark:text-cyan-300',
     label: 'text-cyan-700 dark:text-cyan-200'
   },
   sky: {

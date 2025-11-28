@@ -82,7 +82,7 @@ export function Header({ onNavigate }: HeaderProps) {
                     variant="ghost"
                     size="sm"
                     onClick={() => handleNavClick(item)}
-                    className="text-muted-foreground hover:text-foreground hover:bg-cyan-600/10 dark:hover:bg-cyan-500/10 font-display font-medium"
+                    className="text-muted-foreground hover:text-foreground hover:bg-cyan-700/10 dark:hover:bg-cyan-500/10 font-display font-medium"
                   >
                     {item.label}
                   </Button>
@@ -97,8 +97,8 @@ export function Header({ onNavigate }: HeaderProps) {
                     className={cn(
                       'font-display font-medium',
                       isActive(item.to!)
-                        ? 'text-cyan-600 bg-cyan-600/10 dark:text-cyan-400 dark:bg-cyan-500/10'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-cyan-600/10 dark:hover:bg-cyan-500/10'
+                        ? 'text-cyan-700 bg-cyan-700/10 dark:text-cyan-400 dark:bg-cyan-500/10'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-cyan-700/10 dark:hover:bg-cyan-500/10'
                     )}
                   >
                     {item.label}
@@ -116,7 +116,7 @@ export function Header({ onNavigate }: HeaderProps) {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-cyan-600/40 text-cyan-700 hover:bg-cyan-500/10 font-display font-medium dark:border-cyan-500/30 dark:text-cyan-400"
+                className="border-cyan-700/40 text-cyan-700 hover:bg-cyan-500/10 font-display font-medium dark:border-cyan-500/30 dark:text-cyan-400"
               >
                 AOS
               </Button>
@@ -178,7 +178,7 @@ export function Header({ onNavigate }: HeaderProps) {
                     className={cn(
                       'w-full justify-start font-display',
                       isActive(item.to!)
-                        ? 'text-cyan-600 bg-cyan-600/10 dark:text-cyan-400 dark:bg-cyan-500/10'
+                        ? 'text-cyan-700 bg-cyan-700/10 dark:text-cyan-400 dark:bg-cyan-500/10'
                         : 'text-muted-foreground hover:text-foreground'
                     )}
                   >
@@ -196,7 +196,7 @@ export function Header({ onNavigate }: HeaderProps) {
             >
               <Button
                 variant="outline"
-                className="w-full border-cyan-600/40 text-cyan-700 font-display dark:border-cyan-500/30 dark:text-cyan-400"
+                className="w-full border-cyan-700/40 text-cyan-700 font-display dark:border-cyan-500/30 dark:text-cyan-400"
               >
                 Visit And Other Stuff
               </Button>
